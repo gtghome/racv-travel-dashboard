@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RACV Travel Intelligence — Victoria</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div class="dashboard">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-label="RACV Travel Intelligence">
+        <rect width="28" height="28" rx="6" fill="#003DA5"/>
+        <path d="M7 8h8a4 4 0 0 1 0 8h-8V8z" fill="white" opacity="0.9"/>
+        <path d="M15 16l5 6" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="21" cy="19" r="3" fill="#c8921a"/>
+      </svg>
+      <div class="sidebar-logo-text">
+        <div class="brand">RACV</div>
+        <div class="sub">Travel Intelligence</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-section">
+      <div class="sidebar-section-label">Overview</div>
+      <div class="nav-item active" data-page="overview">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        <span>Dashboard</span>
+      </div>
+    </nav>
+
+    <nav class="sidebar-section">
+      <div class="sidebar-section-label">Victoria</div>
+      <div class="nav-item" data-page="tourism">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l5-5 4 4 5-6 4 4"/><path d="M3 21h18"/></svg>
+        <span>Tourism Stats</span>
+      </div>
+      <div class="nav-item" data-page="destinations">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="4"/><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 14 8 14s8-8.75 8-14a8 8 0 0 0-8-8z"/></svg>
+        <span>Destinations</span>
+      </div>
+      <div class="nav-item" data-page="departures">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.5H2M18.5 5.5L22 16.5M5.5 5.5L2 16.5M9 5.5h6M7 21h10"/></svg>
+        <span>Departures</span>
+      </div>
+    </nav>
+
+    <nav class="sidebar-section">
+      <div class="sidebar-section-label">RACV</div>
+      <div class="nav-item" data-page="channel">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <span>Channel Health</span>
+      </div>
+      <div class="nav-item" data-page="promotions">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span>Promotions</span>
+      </div>
+      <div class="nav-item" data-page="suppliers">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span>Suppliers</span>
+      </div>
+    </nav>
+
+    <nav class="sidebar-section">
+      <div class="sidebar-section-label">Intelligence</div>
+      <div class="nav-item" data-page="market">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <span>Market Intel</span>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <span>Data: Apr 2026 · TRA/ABS</span>
+    </div>
+  </aside>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-left">
+      <div>
+        <div class="header-title" id="page-title">Dashboard Overview</div>
+        <div class="header-subtitle">Victoria Travel Intelligence · April 2026</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="live-badge">
+        <span class="live-dot"></span>
+        <span>Live data</span>
+      </div>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main class="main" id="main-content">
+
+    <!-- ===================================================
+         PAGE 1: OVERVIEW DASHBOARD
+         =================================================== -->
+    <section class="page active" id="page-overview">
+      <div class="page-header">
+        <h1>Victoria Travel — Executive Overview</h1>
+        <p>Key performance indicators and status signals · Year ending December 2025</p>
+      </div>
+
+      <!-- TRAFFIC LIGHTS ROW -->
+      <div class="section-gap">
+        <div style="font-size:var(--text-xs); font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--color-text-muted); margin-bottom:var(--space-3);">Channel Status Signals</div>
+        <div class="traffic-light-grid">
+          <div class="tl-card">
+            <div class="tl-light green"></div>
+            <div class="tl-content">
+              <div class="tl-label">Victoria Visitor Spend</div>
+              <div class="tl-value">$46.7B · Record high</div>
+              <div class="tl-trend up">▲ +6% YoY</div>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-light green"></div>
+            <div class="tl-content">
+              <div class="tl-label">Inbound Visitor Volume</div>
+              <div class="tl-value">118.7M total visitors</div>
+              <div class="tl-trend up">▲ +7.2% YoY</div>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-light green"></div>
+            <div class="tl-content">
+              <div class="tl-label">Intl. Visitor Spend VIC</div>
+              <div class="tl-value">$9.7B international</div>
+              <div class="tl-trend up">▲ +7% YoY</div>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-light amber"></div>
+            <div class="tl-content">
+              <div class="tl-label">Total Visitor Nights</div>
+              <div class="tl-value">166.1M nights</div>
+              <div class="tl-trend down">▼ −1.9% YoY</div>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-light green"></div>
+            <div class="tl-content">
+              <div class="tl-label">Outbound Aus. Travel</div>
+              <div class="tl-value">12.4M trips/year</div>
+              <div class="tl-trend up">▲ +9.7% YoY</div>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-light amber"></div>
+            <div class="tl-content">
+              <div class="tl-label">Travel to USA</div>
+              <div class="tl-value">Declining volumes</div>
+              <div class="tl-trend down">▼ −12.7% Sep</div>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-light green"></div>
+            <div class="tl-content">
+              <div class="tl-label">Japan Bookings</div>
+              <div class="tl-value">Top trending market</div>
+              <div class="tl-trend up">▲ +24.9% YoY</div>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-light green"></div>
+            <div class="tl-content">
+              <div class="tl-label">RACV Promotions Live</div>
+              <div class="tl-value">14 active offers</div>
+              <div class="tl-trend up">▲ On track</div>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-light amber"></div>
+            <div class="tl-content">
+              <div class="tl-label">Aus. Inbound vs Pre-Covid</div>
+              <div class="tl-value">8.84M vs 9.5M peak</div>
+              <div class="tl-trend flat">— 93% recovered</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOP KPI CARDS -->
+      <div class="grid-4 section-gap">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Total Tourism Spend</span>
+            <span class="card-badge green">Record</span>
+          </div>
+          <div class="kpi-value num">$46.7B</div>
+          <div class="kpi-label">Victoria · YE Dec 2025</div>
+          <div class="kpi-delta up">▲ +6% year-on-year</div>
+          <div class="kpi-sub">vs $44.1B prior year</div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Total Visitors</span>
+            <span class="card-badge green">+7.2%</span>
+          </div>
+          <div class="kpi-value num">118.7M</div>
+          <div class="kpi-label">All visitor types · VIC</div>
+          <div class="kpi-delta up">▲ +7.98M vs prev yr</div>
+          <div class="kpi-sub">Domestic + International</div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Outbound Trips (Aus)</span>
+            <span class="card-badge blue">Growth</span>
+          </div>
+          <div class="kpi-value num">12.4M</div>
+          <div class="kpi-label">Year ending Sep 2025</div>
+          <div class="kpi-delta up">▲ +9.7% YoY</div>
+          <div class="kpi-sub">2026 forecast: 13M+</div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Avg. Trip Budget</span>
+            <span class="card-badge gold">+15%</span>
+          </div>
+          <div class="kpi-value num">$9,800</div>
+          <div class="kpi-label">Per trip (AUD) 2025</div>
+          <div class="kpi-delta up">▲ +15% vs pre-pandemic</div>
+          <div class="kpi-sub">Overseas leisure</div>
+        </div>
+      </div>
+
+      <!-- CHARTS ROW -->
+      <div class="grid-2 section-gap">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Victoria Tourism Spend (Annual $B)</span>
+            <span class="card-badge green">6-yr trend</span>
+          </div>
+          <div class="chart-container" style="height:200px">
+            <canvas id="chart-vic-spend"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Australian Outbound Trips (M)</span>
+            <span class="card-badge blue">Recovery curve</span>
+          </div>
+          <div class="chart-container" style="height:200px">
+            <canvas id="chart-outbound"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- INSIGHTS STRIP -->
+      <div class="card section-gap">
+        <div class="card-header">
+          <span class="card-title">Key Insights</span>
+          <span class="card-badge blue">Apr 2026</span>
+        </div>
+        <div class="grid-2">
+          <div>
+            <div class="insight-chip">
+              <span class="insight-icon">🏆</span>
+              <div class="insight-text"><strong>Victoria record spend:</strong> $46.7B in 2025, cementing 2nd place nationally. Melbourne remains the #1 interstate overnight leisure destination with 3.5M visitors spending $5.9B.</div>
+            </div>
+            <div class="insight-chip">
+              <span class="insight-icon">✈️</span>
+              <div class="insight-text"><strong>Outbound boom:</strong> Australians took 12.4M overseas trips in 2025, forecast to surpass 13M in 2026. Average spend is AUD $9,800/trip — 15% above pre-pandemic.</div>
+            </div>
+            <div class="insight-chip">
+              <span class="insight-icon">🇯🇵</span>
+              <div class="insight-text"><strong>Japan is the standout:</strong> +24.9% YoY growth for Australian outbound travel to Japan. Strong AUD vs Yen driving interest. RACV tour partners actively promoting Japanese itineraries.</div>
+            </div>
+          </div>
+          <div>
+            <div class="insight-chip">
+              <span class="insight-icon">⚠️</span>
+              <div class="insight-text"><strong>US travel declining:</strong> September showed a -12.7% drop in Australians travelling to the USA. High airfares and cost pressures are redirecting demand to Asia. Watch RACV USA product mix.</div>
+            </div>
+            <div class="insight-chip">
+              <span class="insight-icon">🌏</span>
+              <div class="insight-text"><strong>China rebound strong:</strong> Chinese visitors to Victoria spent $3.1B, +15.4% YoY. India volume #1 nationally for VIC with $808M spend. Key inbound segments for Melbourne.</div>
+            </div>
+            <div class="insight-chip">
+              <span class="insight-icon">🛳️</span>
+              <div class="insight-text"><strong>Cruise & luxury touring up:</strong> APT, Viking, Scenic cruises all posting record bookings. RACV member segment aligns strongly with 55+ demographic driving premium travel demand.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         PAGE 2: VICTORIA TOURISM STATS
+         =================================================== -->
+    <section class="page" id="page-tourism">
+      <div class="page-header">
+        <h1>Victoria Tourism Statistics</h1>
+        <p>Domestic &amp; international visitor data · Tourism Research Australia · YE December 2025</p>
+      </div>
+
+      <!-- TOP KPIs -->
+      <div class="grid-4 section-gap">
+        <div class="card">
+          <div class="card-header"><span class="card-title">Total Spend</span><span class="card-badge green">Record</span></div>
+          <div class="kpi-value num">$46.7B</div>
+          <div class="kpi-delta up">▲ +6.0% YoY</div>
+          <div class="kpi-sub">YE December 2025</div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Total Visitors</span><span class="card-badge green">+7.2%</span></div>
+          <div class="kpi-value num">118.7M</div>
+          <div class="kpi-delta up">▲ +7.2% YoY</div>
+          <div class="kpi-sub">Dom. + Intl combined</div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Visitor Nights</span><span class="card-badge amber">−1.9%</span></div>
+          <div class="kpi-value num">166.1M</div>
+          <div class="kpi-delta down">▼ −1.9% YoY</div>
+          <div class="kpi-sub">Total nights stayed</div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Intl. Spend VIC</span><span class="card-badge green">+7%</span></div>
+          <div class="kpi-value num">$9.7B</div>
+          <div class="kpi-delta up">▲ +7.0% YoY</div>
+          <div class="kpi-sub">International visitors</div>
+        </div>
+      </div>
+
+      <div class="grid-2 section-gap">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Visitor Spend by Quarter ($B)</span>
+            <span class="card-badge green">2025</span>
+          </div>
+          <div class="chart-container" style="height:220px">
+            <canvas id="chart-quarterly-spend"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">International Spend by Market</span>
+            <span class="card-badge blue">Top 6</span>
+          </div>
+          <div class="chart-container" style="height:220px">
+            <canvas id="chart-intl-markets"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Regional breakdown -->
+      <div class="grid-2 section-gap">
+        <div class="card">
+          <div class="card-header"><span class="card-title">Regional Victoria Visitor Spend</span></div>
+          <div class="progress-row"><div class="progress-label">Melbourne CBD</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:85%"></div></div><div class="progress-val num">$5.9B</div></div>
+          <div class="progress-row"><div class="progress-label">Yarra Valley</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:40%"></div></div><div class="progress-val num">$1.8B</div></div>
+          <div class="progress-row"><div class="progress-label">Great Ocean Road</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:34%"></div></div><div class="progress-val num">$1.5B</div></div>
+          <div class="progress-row"><div class="progress-label">Mornington Peninsula</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:30%"></div></div><div class="progress-val num">$1.3B</div></div>
+          <div class="progress-row"><div class="progress-label">Phillip Island</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:22%"></div></div><div class="progress-val num">$960M</div></div>
+          <div class="progress-row"><div class="progress-label">Grampians</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:16%"></div></div><div class="progress-val num">$700M</div></div>
+          <div class="progress-row"><div class="progress-label">Regional Intl (Record)</div><div class="progress-bar-wrap"><div class="progress-bar gold" style="width:20%"></div></div><div class="progress-val num">$840M</div></div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Melbourne — Interstate Leisure</span><span class="card-badge green">Top City AU</span></div>
+          <div class="grid-2" style="gap:var(--space-3); margin-bottom:var(--space-4)">
+            <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-3)">
+              <div class="kpi-value num" style="font-size:1.3rem">3.5M</div>
+              <div class="kpi-label">Interstate visitors</div>
+            </div>
+            <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-3)">
+              <div class="kpi-value num" style="font-size:1.3rem">13M</div>
+              <div class="kpi-label">Nights stayed</div>
+            </div>
+            <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-3)">
+              <div class="kpi-value num" style="font-size:1.3rem">$5.9B</div>
+              <div class="kpi-label">Visitor spend</div>
+            </div>
+            <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-3)">
+              <div class="kpi-value num" style="font-size:1.3rem">827K</div>
+              <div class="kpi-label">Interstate trips</div>
+            </div>
+          </div>
+          <div class="insight-chip">
+            <span class="insight-icon">📌</span>
+            <div class="insight-text">Melbourne ranked <strong>#1 interstate overnight leisure destination</strong> in Australia — above Sydney, Brisbane and Gold Coast.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visitor types table -->
+      <div class="card section-gap">
+        <div class="card-header"><span class="card-title">Visitor Segment Breakdown · Victoria 2025</span></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Segment</th><th>Visitors</th><th>Nights</th><th>Spend</th><th>YoY</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Domestic Overnight</td><td class="num">89.4M</td><td class="num">142.6M</td><td class="num">$30.8B</td><td class="kpi-delta up num">▲ +5.2%</td><td><span class="tag green">On Track</span></td></tr>
+              <tr><td>International</td><td class="num">3.8M</td><td class="num">—</td><td class="num">$9.7B</td><td class="kpi-delta up num">▲ +7.0%</td><td><span class="tag green">Strong</span></td></tr>
+              <tr><td>Domestic Day Trip</td><td class="num">25.5M</td><td class="num">—</td><td class="num">$6.2B</td><td class="kpi-delta up num">▲ +12.1%</td><td><span class="tag green">Strong</span></td></tr>
+              <tr><td>Regional Victoria (Intl)</td><td class="num">~1.1M</td><td class="num">—</td><td class="num">$840M</td><td class="kpi-delta up num">▲ Record</td><td><span class="tag gold">Record</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         PAGE 3: DESTINATIONS
+         =================================================== -->
+    <section class="page" id="page-destinations">
+      <div class="page-header">
+        <h1>Popular Destinations</h1>
+        <p>Top trending destinations for Australian travellers · Expedia, Skyscanner, Google 2025–2026</p>
+      </div>
+
+      <div class="grid-3 section-gap">
+        <div class="card">
+          <div class="card-header"><span class="card-title">Top 10 Trending 2026</span><span class="card-badge blue">Expedia</span></div>
+          <div class="chart-container" style="height:240px">
+            <canvas id="chart-top-destinations"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Google Year in Search 2025</span><span class="card-badge green">Top Travel</span></div>
+          <div style="display:flex;flex-direction:column;gap:var(--space-2)">
+            <div class="progress-row"><div class="progress-label">Dubai</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:95%"></div></div><div class="progress-val">#1</div></div>
+            <div class="progress-row"><div class="progress-label">Bali</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:88%"></div></div><div class="progress-val">#2</div></div>
+            <div class="progress-row"><div class="progress-label">Phuket</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:80%"></div></div><div class="progress-val">#3</div></div>
+            <div class="progress-row"><div class="progress-label">Doha</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:65%"></div></div><div class="progress-val">#4</div></div>
+            <div class="progress-row"><div class="progress-label">Auckland</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:58%"></div></div><div class="progress-val">#5</div></div>
+            <div class="progress-row"><div class="progress-label">Singapore</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:52%"></div></div><div class="progress-val">#6</div></div>
+            <div class="progress-row"><div class="progress-label">Hamilton Island</div><div class="progress-bar-wrap"><div class="progress-bar gold" style="width:44%"></div></div><div class="progress-val">#7</div></div>
+            <div class="progress-row"><div class="progress-label">Los Angeles</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:38%"></div></div><div class="progress-val">#8</div></div>
+            <div class="progress-row"><div class="progress-label">Lord Howe Island</div><div class="progress-bar-wrap"><div class="progress-bar gold" style="width:30%"></div></div><div class="progress-val">#9</div></div>
+            <div class="progress-row"><div class="progress-label">Honolulu</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:22%"></div></div><div class="progress-val">#10</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">YoY Search Growth</span><span class="card-badge green">Trending Up</span></div>
+          <div class="chart-container" style="height:240px">
+            <canvas id="chart-search-growth"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Destination detail table -->
+      <div class="card section-gap">
+        <div class="card-header"><span class="card-title">Destination Intelligence Table</span><span class="card-badge blue">For RACV Product Team</span></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Destination</th><th>Region</th><th>Search Trend</th><th>Growth YoY</th><th>RACV Products</th><th>Opportunity</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Nha Trang, Vietnam</strong></td><td>SE Asia</td><td><span class="tag green">🔥 #1 Trending</span></td><td class="kpi-delta up num">▲ +140%</td><td>Intrepid, APT</td><td><span class="tag gold">High</span></td></tr>
+              <tr><td><strong>Kuala Lumpur, Malaysia</strong></td><td>SE Asia</td><td><span class="tag green">🔥 Hot</span></td><td class="kpi-delta up num">▲ +95%</td><td>Intrepid</td><td><span class="tag gold">High</span></td></tr>
+              <tr><td><strong>Japan (Hyogo)</strong></td><td>NE Asia</td><td><span class="tag green">Rising</span></td><td class="kpi-delta up num">▲ +24.9%</td><td>Intrepid, APT</td><td><span class="tag gold">High</span></td></tr>
+              <tr><td><strong>Phu Quoc, Vietnam</strong></td><td>SE Asia</td><td><span class="tag green">Rising</span></td><td class="kpi-delta up num">▲ +82%</td><td>Intrepid</td><td><span class="tag green">Medium</span></td></tr>
+              <tr><td><strong>Kos, Greece</strong></td><td>Europe/Med</td><td><span class="tag amber">Growing</span></td><td class="kpi-delta up num">▲ +47%</td><td>APT, Cosmos</td><td><span class="tag green">Medium</span></td></tr>
+              <tr><td><strong>Mallorca, Spain</strong></td><td>Europe/Med</td><td><span class="tag amber">Growing</span></td><td class="kpi-delta up num">▲ +38%</td><td>APT, Cosmos</td><td><span class="tag green">Medium</span></td></tr>
+              <tr><td><strong>Budapest, Hungary</strong></td><td>Europe</td><td><span class="tag amber">Stable</span></td><td class="kpi-delta up num">▲ +28%</td><td>APT River Cruise</td><td><span class="tag green">Medium</span></td></tr>
+              <tr><td><strong>Bali, Indonesia</strong></td><td>SE Asia</td><td><span class="tag green">Evergreen</span></td><td class="kpi-delta up num">▲ +12%</td><td>RACV Direct</td><td><span class="tag green">Medium</span></td></tr>
+              <tr><td><strong>USA (Mainland)</strong></td><td>Americas</td><td><span class="tag red">Declining</span></td><td class="kpi-delta down num">▼ −12.7%</td><td>Multiple</td><td><span class="tag amber">Monitor</span></td></tr>
+              <tr><td><strong>Palau</strong></td><td>Pacific</td><td><span class="tag green">Emerging</span></td><td class="kpi-delta up num">▲ +60%+</td><td>Gap</td><td><span class="tag red">Untapped</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="grid-2 section-gap">
+        <div class="card">
+          <div class="card-header"><span class="card-title">Key Destination Trends</span></div>
+          <div class="insight-chip">
+            <span class="insight-icon">🌴</span>
+            <div class="insight-text"><strong>SE Asia dominates 2026 trending list:</strong> Vietnam, Malaysia, and the Philippines leading, driven by affordability and strong AUD/local currency rates.</div>
+          </div>
+          <div class="insight-chip">
+            <span class="insight-icon">❄️</span>
+            <div class="insight-text"><strong>"Coolcation" trend rising:</strong> Nordic/Baltic destinations (Norway, Finland, Estonia) up 20–60% YoY. Off-season Italy bookings up 166% (Intrepid data).</div>
+          </div>
+          <div class="insight-chip">
+            <span class="insight-icon">🏝️</span>
+            <div class="insight-text"><strong>Domestic standouts:</strong> Hamilton Island (#7 Google) and Lord Howe Island (#9) showing strong domestic intent. RACV resort pipeline opportunity in QLD coastal.</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Travel Season Timing</span><span class="card-badge blue">Bookings 2026</span></div>
+          <div class="chart-container" style="height:190px">
+            <canvas id="chart-seasonality"></canvas>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         PAGE 4: DEPARTURES
+         =================================================== -->
+    <section class="page" id="page-departures">
+      <div class="page-header">
+        <h1>Australian Departure Trends</h1>
+        <p>Outbound travel statistics · ABS, ATIA, Airlines 2025–2026</p>
+      </div>
+
+      <div class="grid-4 section-gap">
+        <div class="card">
+          <div class="card-header"><span class="card-title">Annual Outbound Trips</span><span class="card-badge green">+9.7%</span></div>
+          <div class="kpi-value num">12.4M</div>
+          <div class="kpi-delta up">▲ from 11.3M prior yr</div>
+          <div class="kpi-sub">YE September 2025</div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">2026 Forecast Trips</span><span class="card-badge blue">Projected</span></div>
+          <div class="kpi-value num">13M+</div>
+          <div class="kpi-delta up">▲ +8–10% forecast</div>
+          <div class="kpi-sub">Most analysts consensus</div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Seat Capacity Growth</span><span class="card-badge green">+23%</span></div>
+          <div class="kpi-value num">+23%</div>
+          <div class="kpi-delta up">▲ vs pre-pandemic</div>
+          <div class="kpi-sub">Dec 2025 vs 2019</div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Holiday Purpose</span><span class="card-badge gold">60%</span></div>
+          <div class="kpi-value num">60%</div>
+          <div class="kpi-delta flat">— Holiday trips</div>
+          <div class="kpi-sub">25–33% VFR, rest business</div>
+        </div>
+      </div>
+
+      <div class="grid-2 section-gap">
+        <div class="card">
+          <div class="card-header"><span class="card-title">Outbound Trips by Destination Region (2025)</span></div>
+          <div class="chart-container" style="height:230px">
+            <canvas id="chart-outbound-regions"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Monthly Departure Volume (2025)</span></div>
+          <div class="chart-container" style="height:230px">
+            <canvas id="chart-monthly-departures"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Airline & Aviation -->
+      <div class="grid-2 section-gap">
+        <div class="card">
+          <div class="card-header"><span class="card-title">Top Outbound Markets · Growth YoY</span></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Destination</th><th>Volume Est.</th><th>YoY Growth</th><th>Signal</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Japan</td><td class="num">~1.1M</td><td class="kpi-delta up num">▲ +24.9%</td><td><span class="tag green">🔥 Hot</span></td></tr>
+                <tr><td>New Zealand</td><td class="num">~2.1M</td><td class="kpi-delta up num">▲ +8.4%</td><td><span class="tag green">Strong</span></td></tr>
+                <tr><td>Indonesia (Bali)</td><td class="num">~1.5M</td><td class="kpi-delta up num">▲ +11.2%</td><td><span class="tag green">Strong</span></td></tr>
+                <tr><td>UK</td><td class="num">~620K</td><td class="kpi-delta up num">▲ +12.4%</td><td><span class="tag green">Strong</span></td></tr>
+                <tr><td>China</td><td class="num">~480K</td><td class="kpi-delta up num">▲ +15.0%</td><td><span class="tag green">Rising</span></td></tr>
+                <tr><td>Thailand</td><td class="num">~820K</td><td class="kpi-delta down num">▼ −3.1%</td><td><span class="tag amber">Watch</span></td></tr>
+                <tr><td>USA</td><td class="num">~570K</td><td class="kpi-delta down num">▼ −0.3%</td><td><span class="tag red">Declining</span></td></tr>
+                <tr><td>Singapore</td><td class="num">~710K</td><td class="kpi-delta down num">▼ −2.8%</td><td><span class="tag amber">Soft</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Aviation Developments</span></div>
+          <div class="insight-chip">
+            <span class="insight-icon">✈️</span>
+            <div class="insight-text"><strong>Qantas Project Sunrise (2026):</strong> Nonstop Sydney–New York and Sydney–London launching H2 2026. Game-changer for ultra-long-haul leisure bookings.</div>
+          </div>
+          <div class="insight-chip">
+            <span class="insight-icon">🍁</span>
+            <div class="insight-text"><strong>Qantas Vancouver–Sydney daily:</strong> Launched Jan 2026 (+68% seat increase). North America capacity up substantially — watch for RACV Canada/Alaska tour demand.</div>
+          </div>
+          <div class="insight-chip">
+            <span class="insight-icon">📊</span>
+            <div class="insight-text"><strong>Intl. passenger growth +9.5%:</strong> August 2025 vs prior year. Jetstar and Qantas top contributors. Singapore Airlines, Emirates holding strong market share.</div>
+          </div>
+          <div class="insight-chip">
+            <span class="insight-icon">🏙️</span>
+            <div class="insight-text"><strong>Domestic routes expanding:</strong> Adelaide–Melbourne, Gold Coast–Sydney, Brisbane–Melbourne all up 3–6% capacity. Good for RACV resort and domestic tour products.</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         PAGE 5: CHANNEL HEALTH
+         =================================================== -->
+    <section class="page" id="page-channel">
+      <div class="page-header">
+        <h1>RACV Channel Health</h1>
+        <p>Travel product performance, member engagement, and channel signals · April 2026</p>
+      </div>
+
+      <!-- Traffic lights for RACV channels -->
+      <div class="section-gap">
+        <div style="font-size:var(--text-xs); font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--color-text-muted); margin-bottom:var(--space-3);">RACV Travel Channel Signals</div>
+        <div class="traffic-light-grid">
+          <div class="tl-card">
+            <div class="tl-light green"></div>
+            <div class="tl-content">
+              <div class="tl-label">RACV Resort Bookings</div>
+              <div class="tl-value">All properties · Strong</div>
+              <div class="tl-trend up">▲ Peak season sold out</div>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-light green"></div>
+            <div class="tl-content">
+              <div class="tl-label">Tour Packages — Asia</div>
+              <div class="tl-value">Japan / Vietnam leading</div>
+              <div class="tl-trend up">▲ Demand high</div>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-light green"></div>
+            <div class="tl-content">
+              <div class="tl-label">Cruise Channel</div>
+              <div class="tl-value">APT, Viking, Scenic</div>
+              <div class="tl-trend up">▲ Record bookings</div>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-light amber"></div>
+            <div class="tl-content">
+              <div class="tl-label">USA / Americas Tours</div>
+              <div class="tl-value">Softer demand</div>
+              <div class="tl-trend down">▼ Monitor volumes</div>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-light green"></div>
+            <div class="tl-content">
+              <div class="tl-label">Travel Insurance</div>
+              <div class="tl-value">Intl + Dom + Annual</div>
+              <div class="tl-trend up">▲ Attach rate up</div>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-light amber"></div>
+            <div class="tl-content">
+              <div class="tl-label">Domestic Product</div>
+              <div class="tl-value">VIC/TAS/QLD resorts</div>
+              <div class="tl-trend flat">— Flat vs prior yr</div>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-light green"></div>
+            <div class="tl-content">
+              <div class="tl-label">Europe Early Birds</div>
+              <div class="tl-value">Cosmos, APT active</div>
+              <div class="tl-trend up">▲ Open to May 2026</div>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-light green"></div>
+            <div class="tl-content">
+              <div class="tl-label">Member Engagement</div>
+              <div class="tl-value">Retail + Digital</div>
+              <div class="tl-trend up">▲ Store traffic up</div>
+            </div>
+          </div>
+          <div class="tl-card">
+            <div class="tl-light amber"></div>
+            <div class="tl-content">
+              <div class="tl-label">Airport Parking</div>
+              <div class="tl-value">MEL Airport partners</div>
+              <div class="tl-trend flat">— Stable pricing</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2 section-gap">
+        <div class="card">
+          <div class="card-header"><span class="card-title">RACV Travel Revenue Mix (Est.)</span><span class="card-badge blue">2025–26</span></div>
+          <div class="chart-container" style="height:220px">
+            <canvas id="chart-racv-mix"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Member Benefits Engagement</span><span class="card-badge green">Active</span></div>
+          <div class="progress-row"><div class="progress-label">RACV Resorts</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:82%"></div></div><div class="progress-val">High</div></div>
+          <div class="progress-row"><div class="progress-label">Tours &amp; Cruises</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:71%"></div></div><div class="progress-val">High</div></div>
+          <div class="progress-row"><div class="progress-label">Travel Insurance</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:66%"></div></div><div class="progress-val">Med-H</div></div>
+          <div class="progress-row"><div class="progress-label">Airport Parking</div><div class="progress-bar-wrap"><div class="progress-bar gold" style="width:55%"></div></div><div class="progress-val">Medium</div></div>
+          <div class="progress-row"><div class="progress-label">Intl. Driving Permit</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:40%"></div></div><div class="progress-val">Med</div></div>
+          <div class="progress-row"><div class="progress-label">Car Hire (Hertz)</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:48%"></div></div><div class="progress-val">Med</div></div>
+          <div class="progress-row"><div class="progress-label">Attractions / Experiences</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:38%"></div></div><div class="progress-val">Low-M</div></div>
+          <div class="progress-row"><div class="progress-label">Pet Boarding (Hanrob)</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:28%"></div></div><div class="progress-val">Low</div></div>
+        </div>
+      </div>
+
+      <div class="card section-gap">
+        <div class="card-header"><span class="card-title">RACV Resort Properties</span></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Property</th><th>State</th><th>Member Saving</th><th>Category</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>RACV Torquay Resort</strong></td><td>VIC</td><td class="num">Up to 30%</td><td>Coastal</td><td><span class="tag green">Open</span></td></tr>
+              <tr><td><strong>RACV Healesville C&amp;R</strong></td><td>VIC</td><td class="num">Up to 30%</td><td>Wine Region</td><td><span class="tag green">Open</span></td></tr>
+              <tr><td><strong>RACV Cape Schanck Resort</strong></td><td>VIC</td><td class="num">Up to 30%</td><td>Golf / Coastal</td><td><span class="tag green">Open</span></td></tr>
+              <tr><td><strong>RACV Hobart Hotel</strong></td><td>TAS</td><td class="num">Up to 30%</td><td>City / Heritage</td><td><span class="tag green">Open</span></td></tr>
+              <tr><td><strong>RACV Inverloch Resort</strong></td><td>VIC</td><td class="num">Up to 30%</td><td>Coastal</td><td><span class="tag green">Open</span></td></tr>
+              <tr><td><strong>RACV Cobram Resort</strong></td><td>VIC</td><td class="num">Up to 30%</td><td>Regional</td><td><span class="tag amber">Seasonal</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         PAGE 6: PROMOTIONS
+         =================================================== -->
+    <section class="page" id="page-promotions">
+      <div class="page-header">
+        <h1>Active Travel Promotions</h1>
+        <p>Current RACV and major travel brand deals · April 2026</p>
+      </div>
+
+      <div class="grid-2 section-gap">
+        <div>
+          <div style="font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-muted);margin-bottom:var(--space-3)">RACV Promotions Live Now</div>
+          <div class="grid-2">
+            <div class="promo-card">
+              <div class="promo-brand">
+                <div class="promo-logo" style="background:#003DA5">R</div>
+                <div>
+                  <div class="promo-title">RACV Resorts — Member Rate</div>
+                  <span class="tag blue">Member</span>
+                </div>
+              </div>
+              <div class="promo-detail">Save up to <strong>30% off</strong> selected accommodation. Non-members save 20%.</div>
+              <div class="promo-expiry">Valid to June 2026 · Selected dates</div>
+            </div>
+            <div class="promo-card">
+              <div class="promo-brand">
+                <div class="promo-logo" style="background:#e05c12">A</div>
+                <div>
+                  <div class="promo-title">APT Luxury — Last Chance 2026</div>
+                  <span class="tag gold">Hot Deal</span>
+                </div>
+              </div>
+              <div class="promo-detail">Save up to <strong>$7,000 per couple</strong> on Europe, Vietnam, Kimberley &amp; more.</div>
+              <div class="promo-expiry">Book by 2 April 2026</div>
+            </div>
+            <div class="promo-card">
+              <div class="promo-brand">
+                <div class="promo-logo" style="background:#1a7d42">I</div>
+                <div>
+                  <div class="promo-title">Intrepid — Outback &amp; Tropics</div>
+                  <span class="tag green">Aus Sale</span>
+                </div>
+              </div>
+              <div class="promo-detail">Save up to <strong>$1,294</strong> on small-group Australia adventures. Apr–Dec 2026.</div>
+              <div class="promo-expiry">Booking must be made by 31 Mar 2026</div>
+            </div>
+            <div class="promo-card">
+              <div class="promo-brand">
+                <div class="promo-logo" style="background:#4f86d8">V</div>
+                <div>
+                  <div class="promo-title">Viking — Fly Free</div>
+                  <span class="tag blue">Cruise</span>
+                </div>
+              </div>
+              <div class="promo-detail">Companion <strong>Fly Free</strong> up to AU$2,500. All-inclusive river, ocean &amp; expedition.</div>
+              <div class="promo-expiry">Select 2026 departures</div>
+            </div>
+            <div class="promo-card">
+              <div class="promo-brand">
+                <div class="promo-logo" style="background:#7a39bb">C</div>
+                <div>
+                  <div class="promo-title">Cosmos Europe — Earlybird</div>
+                  <span class="tag primary">Europe</span>
+                </div>
+              </div>
+              <div class="promo-detail">Save up to <strong>$500 per couple</strong> on Europe tours. Singles waiver included.</div>
+              <div class="promo-expiry">Book Sep 2025–May 2026 for 2026 travel</div>
+            </div>
+            <div class="promo-card">
+              <div class="promo-brand">
+                <div class="promo-logo" style="background:#c8921a">S</div>
+                <div>
+                  <div class="promo-title">Scenic Cruises — Suite Upgrade</div>
+                  <span class="tag gold">Luxury</span>
+                </div>
+              </div>
+              <div class="promo-detail">Complimentary suite upgrade valued up to <strong>$4,415/person</strong>. Europe river.</div>
+              <div class="promo-expiry">Feb–Mar &amp; Oct–Dec 2026 sailings</div>
+            </div>
+            <div class="promo-card">
+              <div class="promo-brand">
+                <div class="promo-logo" style="background:#006494">N</div>
+                <div>
+                  <div class="promo-title">Norwegian Cruise Line</div>
+                  <span class="tag blue">Cruise</span>
+                </div>
+              </div>
+              <div class="promo-detail"><strong>50% off</strong> + Unlimited Beverages + Dining + USD$400 credit per cabin.</div>
+              <div class="promo-expiry">Select 2026 sailings</div>
+            </div>
+            <div class="promo-card">
+              <div class="promo-brand">
+                <div class="promo-logo" style="background:#be2323">J</div>
+                <div>
+                  <div class="promo-title">Journey Beyond — Fly Free Rail</div>
+                  <span class="tag green">Domestic</span>
+                </div>
+              </div>
+              <div class="promo-detail">Fly Free on Red Centre Spectacular, Margaret River &amp; Territory Tour.</div>
+              <div class="promo-expiry">Select 2026 departures · RACV Members</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-muted);margin-bottom:var(--space-3)">Major Brand Campaigns Active</div>
+          <div class="grid-2">
+            <div class="promo-card">
+              <div class="promo-brand">
+                <div class="promo-logo" style="background:#e41c23">Q</div>
+                <div>
+                  <div class="promo-title">Qantas — Project Sunrise</div>
+                  <span class="tag green">2026 Launch</span>
+                </div>
+              </div>
+              <div class="promo-detail">Nonstop Sydney–NYC &amp; Sydney–London launches H2 2026. Pre-sale booking open.</div>
+              <div class="promo-expiry">Earlybird pricing available now</div>
+            </div>
+            <div class="promo-card">
+              <div class="promo-brand">
+                <div class="promo-logo" style="background:#ff6600">J</div>
+                <div>
+                  <div class="promo-title">Jetstar — Asia Seat Sales</div>
+                  <span class="tag amber">Budget</span>
+                </div>
+              </div>
+              <div class="promo-detail">Regular sale fares to Bali, Bangkok, Tokyo, Singapore. Book early for best fares.</div>
+              <div class="promo-expiry">Rolling promotions · Check weekly</div>
+            </div>
+            <div class="promo-card">
+              <div class="promo-brand">
+                <div class="promo-logo" style="background:#005eb8">E</div>
+                <div>
+                  <div class="promo-title">Expedia — 2026 Trending</div>
+                  <span class="tag blue">Platform</span>
+                </div>
+              </div>
+              <div class="promo-detail">Nha Trang, Kuala Lumpur, Palau trending 95–140% YoY. Hotel + flight packages.</div>
+              <div class="promo-expiry">Year-round platform deals</div>
+            </div>
+            <div class="promo-card">
+              <div class="promo-brand">
+                <div class="promo-logo" style="background:#cc0000">A</div>
+                <div>
+                  <div class="promo-title">Airbnb — Victoria Stays</div>
+                  <span class="tag amber">Domestic</span>
+                </div>
+              </div>
+              <div class="promo-detail">Regional Victoria stays trending. Great Ocean Road, Daylesford, Mornington top listings.</div>
+              <div class="promo-expiry">Ongoing · Regional push 2026</div>
+            </div>
+          </div>
+
+          <div style="margin-top:var(--space-4)">
+            <div style="font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-muted);margin-bottom:var(--space-3)">Promotions Calendar</div>
+            <div class="card" style="padding:var(--space-4)">
+              <div class="chart-container" style="height:180px">
+                <canvas id="chart-promo-calendar"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         PAGE 7: SUPPLIERS
+         =================================================== -->
+    <section class="page" id="page-suppliers">
+      <div class="page-header">
+        <h1>Key Supplier Intelligence</h1>
+        <p>RACV preferred suppliers and partner performance · 2025–2026</p>
+      </div>
+
+      <div class="grid-3 section-gap">
+        <div class="card">
+          <div class="card-header"><span class="card-title">Supplier Performance Index</span><span class="card-badge green">2026 YTD</span></div>
+          <div class="chart-container" style="height:220px">
+            <canvas id="chart-supplier-radar"></canvas>
+          </div>
+        </div>
+        <div class="card col-span-2">
+          <div class="card-header"><span class="card-title">Preferred Supplier Directory</span></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Supplier</th><th>Category</th><th>Member Saving</th><th>Active Deal</th><th>Performance</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>APT Luxury Travel</strong></td><td>Tours &amp; Cruise</td><td class="num">Up to $7K/couple</td><td>Last Chance 2026 Sale</td><td class="kpi-delta up">▲ Excellent</td><td><span class="tag green">Active</span></td></tr>
+                <tr><td><strong>Intrepid Travel</strong></td><td>Small Group Tours</td><td class="num">Up to 20%</td><td>Outback &amp; Tropics Sale</td><td class="kpi-delta up">▲ Strong</td><td><span class="tag green">Active</span></td></tr>
+                <tr><td><strong>Viking Cruises</strong></td><td>River / Ocean Cruise</td><td class="num">Fly Free AU$2,500</td><td>2026 Fly Free</td><td class="kpi-delta up">▲ Excellent</td><td><span class="tag green">Active</span></td></tr>
+                <tr><td><strong>Scenic Luxury Cruises</strong></td><td>River Cruise</td><td class="num">$4,415/pp upgrade</td><td>Suite Upgrade</td><td class="kpi-delta up">▲ Excellent</td><td><span class="tag green">Active</span></td></tr>
+                <tr><td><strong>Norwegian Cruise Line</strong></td><td>Ocean Cruise</td><td class="num">50% off + extras</td><td>Free Beverage Pkg</td><td class="kpi-delta up">▲ Strong</td><td><span class="tag green">Active</span></td></tr>
+                <tr><td><strong>Cosmos Tours</strong></td><td>Escorted Tours</td><td class="num">$500/couple</td><td>Europe Earlybird</td><td class="kpi-delta flat">— Stable</td><td><span class="tag green">Active</span></td></tr>
+                <tr><td><strong>Journey Beyond</strong></td><td>Luxury Rail</td><td>Fly Free</td><td>2026 Rail Journeys</td><td class="kpi-delta flat">— Stable</td><td><span class="tag green">Active</span></td></tr>
+                <tr><td><strong>Andrews Airport Parking</strong></td><td>Airport Services</td><td class="num">Up to 25%</td><td>MEL Airport Parking</td><td class="kpi-delta flat">— Stable</td><td><span class="tag green">Active</span></td></tr>
+                <tr><td><strong>Hertz Car Rental</strong></td><td>Car Hire</td><td>Member Rate</td><td>Seasonal Offers</td><td class="kpi-delta flat">— Stable</td><td><span class="tag amber">Monitor</span></td></tr>
+                <tr><td><strong>Dreamworld</strong></td><td>Attractions</td><td class="num">$116.10 (2-day)</td><td>QLD Family Pack</td><td class="kpi-delta up">▲ Growing</td><td><span class="tag green">Active</span></td></tr>
+                <tr><td><strong>Melbourne Skydeck</strong></td><td>Attractions</td><td>Buy 1 Get 1</td><td>Mon–Fri offer</td><td class="kpi-delta flat">— Stable</td><td><span class="tag green">Active</span></td></tr>
+                <tr><td><strong>Hanrob Hotel</strong></td><td>Pet Services</td><td>Member Rate</td><td>Dog Boarding</td><td class="kpi-delta flat">— Stable</td><td><span class="tag amber">Emerging</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2 section-gap">
+        <div class="card">
+          <div class="card-header"><span class="card-title">Supplier Category Mix</span></div>
+          <div class="chart-container" style="height:200px">
+            <canvas id="chart-supplier-cat"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Supplier Health Indicators</span></div>
+          <div class="insight-chip">
+            <span class="insight-icon">🏆</span>
+            <div class="insight-text"><strong>APT and Viking top performers:</strong> Both posting record forward bookings for 2026. RACV member discount combinable with their own sales — strong value proposition.</div>
+          </div>
+          <div class="insight-chip">
+            <span class="insight-icon">🎯</span>
+            <div class="insight-text"><strong>Intrepid B Corp alignment:</strong> As a certified carbon-neutral B Corp, Intrepid aligns with RACV sustainability values. Small-group model suits the 35–55 RACV traveller demographic.</div>
+          </div>
+          <div class="insight-chip">
+            <span class="insight-icon">🚂</span>
+            <div class="insight-text"><strong>Journey Beyond domestic opportunity:</strong> Luxury rail travel growing among 60+ demographic. Red Centre Spectacular and Margaret River offerings well-suited to RACV member profile.</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===================================================
+         PAGE 8: MARKET INTELLIGENCE
+         =================================================== -->
+    <section class="page" id="page-market">
+      <div class="page-header">
+        <h1>Market Intelligence</h1>
+        <p>Google Trends signals, web traffic indicators, and competitive landscape · 2025–2026</p>
+      </div>
+
+      <div class="grid-4 section-gap">
+        <div class="card">
+          <div class="card-header"><span class="card-title">Travel Search Volume</span><span class="card-badge green">+18%</span></div>
+          <div class="kpi-value num">+18%</div>
+          <div class="kpi-delta up">▲ YoY search growth</div>
+          <div class="kpi-sub">Google Travel AU Q1 2026</div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">"Japan Travel" Trend</span><span class="card-badge green">Peak</span></div>
+          <div class="kpi-value num">100</div>
+          <div class="kpi-delta up">▲ Peak trend index</div>
+          <div class="kpi-sub">Google Trends AU · Apr 2026</div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">RACV.com.au Traffic</span><span class="card-badge blue">Est.</span></div>
+          <div class="kpi-value num">+12%</div>
+          <div class="kpi-delta up">▲ Travel pages YoY</div>
+          <div class="kpi-sub">Estimated organic growth</div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Travel Promo CTR</span><span class="card-badge gold">Strong</span></div>
+          <div class="kpi-value num">4.2%</div>
+          <div class="kpi-delta up">▲ vs 3.1% prior yr</div>
+          <div class="kpi-sub">Email campaign average</div>
+        </div>
+      </div>
+
+      <div class="grid-2 section-gap">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Google Trends — Travel Topics AU (Indexed)</span>
+            <span class="card-badge blue">12 months</span>
+          </div>
+          <div class="chart-container" style="height:230px">
+            <canvas id="chart-google-trends"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">RACV Web Traffic — Travel Products (Est. Index)</span>
+            <span class="card-badge green">Growing</span>
+          </div>
+          <div class="chart-container" style="height:230px">
+            <canvas id="chart-web-traffic"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2 section-gap">
+        <div class="card">
+          <div class="card-header"><span class="card-title">Trending Search Topics — AU Travel 2025–26</span></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Search Topic</th><th>Trend Direction</th><th>Relevance to RACV</th><th>Action</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Japan travel 2026</td><td class="kpi-delta up">▲ +24.9% outbound</td><td>High — Intrepid/APT products</td><td><span class="tag green">Promote</span></td></tr>
+                <tr><td>Vietnam tours 2026</td><td class="kpi-delta up">▲ +140% search</td><td>High — Nha Trang emerging</td><td><span class="tag green">Promote</span></td></tr>
+                <tr><td>River cruise Europe</td><td class="kpi-delta up">▲ Sustained</td><td>High — APT, Viking, Scenic</td><td><span class="tag green">Promote</span></td></tr>
+                <tr><td>Bali travel</td><td class="kpi-delta up">▲ Evergreen #2 Google</td><td>High — Package demand</td><td><span class="tag green">Maintain</span></td></tr>
+                <tr><td>Luxury cruise 2026</td><td class="kpi-delta up">▲ Strong premium</td><td>High — RACV demographic</td><td><span class="tag green">Promote</span></td></tr>
+                <tr><td>USA holidays 2026</td><td class="kpi-delta down">▼ Declining</td><td>Medium — Watch volumes</td><td><span class="tag amber">Monitor</span></td></tr>
+                <tr><td>Coolcation Nordic</td><td class="kpi-delta up">▲ +20-60% emerging</td><td>Medium — Gap in product</td><td><span class="tag gold">Explore</span></td></tr>
+                <tr><td>Hamilton Island stays</td><td class="kpi-delta up">▲ #7 Google AU</td><td>Medium — Domestic push</td><td><span class="tag amber">Consider</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Competitive Landscape</span><span class="card-badge blue">Key Competitors</span></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Competitor</th><th>Strengths</th><th>RACV Advantage</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Flight Centre</strong></td><td>Price + range</td><td>Member loyalty + trust</td></tr>
+                <tr><td><strong>Expedia / Booking.com</strong></td><td>Online booking</td><td>Expert consultation + brand</td></tr>
+                <tr><td><strong>AAA Travel</strong></td><td>US affiliate network</td><td>VIC focus + resorts</td></tr>
+                <tr><td><strong>Helloworld</strong></td><td>Agent network</td><td>Member exclusive deals</td></tr>
+                <tr><td><strong>Luxury Escapes</strong></td><td>Flash deals</td><td>Year-round value + insurance</td></tr>
+                <tr><td><strong>Online direct (airlines)</strong></td><td>Low cost</td><td>Full-service + insurance</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <hr class="divider">
+          <div class="insight-chip">
+            <span class="insight-icon">💡</span>
+            <div class="insight-text"><strong>RACV brand moat:</strong> 1.7M+ Victorian members trust RACV for reliability. Combined roadside + travel + insurance ecosystem creates switching cost competitors can't replicate.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recommendations -->
+      <div class="card section-gap">
+        <div class="card-header"><span class="card-title">Strategic Recommendations — Q2 2026</span><span class="card-badge gold">Insights</span></div>
+        <div class="grid-3">
+          <div class="insight-chip" style="flex-direction:column; align-items:flex-start">
+            <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-2)">
+              <span class="insight-icon">🎯</span>
+              <strong style="font-size:var(--text-xs);color:var(--color-text)">Lean into Asia demand</strong>
+            </div>
+            <div class="insight-text">Double down on Japan and Vietnam packages via Intrepid and APT. These markets show 25–140% search growth with strong RACV supplier alignment.</div>
+          </div>
+          <div class="insight-chip" style="flex-direction:column; align-items:flex-start">
+            <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-2)">
+              <span class="insight-icon">🛳️</span>
+              <strong style="font-size:var(--text-xs);color:var(--color-text)">Push luxury cruising</strong>
+            </div>
+            <div class="insight-text">APT, Viking, Scenic, and Norwegian all have active 2026 deals. RACV member demographic (55+) aligns perfectly with river cruise buyer profile.</div>
+          </div>
+          <div class="insight-chip" style="flex-direction:column; align-items:flex-start">
+            <div style="display:flex;align-items:center;gap:var(--space-2);margin-bottom:var(--space-2)">
+              <span class="insight-icon">🏡</span>
+              <strong style="font-size:var(--text-xs);color:var(--color-text)">Victoria regional push</strong>
+            </div>
+            <div class="insight-text">Regional VIC hit a record $840M in international spend. RACV Resorts + day trip packages from Melbourne can capture the domestic short-break surge.</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<!-- ===== CHARTS & INTERACTIVITY ===== -->
+<script>
+// ===== THEME TOGGLE =====
+(function(){
+  const toggle = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  let dark = matchMedia('(prefers-color-scheme:dark)').matches;
+  root.setAttribute('data-theme', dark ? 'dark' : 'light');
+  function updateIcon(){
+    toggle.innerHTML = dark
+      ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  }
+  updateIcon();
+  toggle.addEventListener('click', ()=>{
+    dark = !dark;
+    root.setAttribute('data-theme', dark ? 'dark' : 'light');
+    updateIcon();
+    // Re-init charts on theme change
+    setTimeout(initAllCharts, 50);
+  });
+})();
+
+// ===== PAGE NAVIGATION =====
+const navItems = document.querySelectorAll('.nav-item[data-page]');
+const pages = document.querySelectorAll('.page');
+const pageTitles = {
+  overview: 'Dashboard Overview',
+  tourism: 'Victoria Tourism Stats',
+  destinations: 'Popular Destinations',
+  departures: 'Departure Trends',
+  channel: 'RACV Channel Health',
+  promotions: 'Active Promotions',
+  suppliers: 'Supplier Intelligence',
+  market: 'Market Intelligence'
+};
+navItems.forEach(item => {
+  item.addEventListener('click', ()=>{
+    const pageId = item.getAttribute('data-page');
+    navItems.forEach(n => n.classList.remove('active'));
+    item.classList.add('active');
+    pages.forEach(p => {
+      p.classList.remove('active');
+      if(p.id === 'page-' + pageId) p.classList.add('active');
+    });
+    document.getElementById('page-title').textContent = pageTitles[pageId] || 'Dashboard';
+    // lazy init charts
+    setTimeout(()=>{ initAllCharts(); }, 60);
+  });
+});
+
+// ===== CHART UTILITIES =====
+function getCSSVar(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+function getChartColors() {
+  return {
+    text: getCSSVar('--color-text'),
+    muted: getCSSVar('--color-text-muted'),
+    faint: getCSSVar('--color-text-faint'),
+    border: getCSSVar('--color-border'),
+    surface: getCSSVar('--color-surface'),
+    primary: getCSSVar('--color-primary'),
+    gold: getCSSVar('--color-gold'),
+    green: getCSSVar('--color-green-dot'),
+    amber: getCSSVar('--color-amber-dot'),
+    red: getCSSVar('--color-red-dot'),
+    blue: '#4f86d8',
+    purple: '#7a39bb',
+  };
+}
+
+Chart.defaults.font.family = "'Inter', system-ui, sans-serif";
+Chart.defaults.font.size = 11;
+
+const chartInstances = {};
+function destroyChart(id) {
+  if(chartInstances[id]) { chartInstances[id].destroy(); delete chartInstances[id]; }
+}
+function canvasExists(id) {
+  const el = document.getElementById(id);
+  return el && el.offsetParent !== null;
+}
+
+function initAllCharts() {
+  const c = getChartColors();
+  const gridColor = c.faint + '44';
+  const tickColor = c.muted;
+
+  function baseScale() {
+    return {
+      x: { grid:{ color: gridColor }, ticks:{ color: tickColor } },
+      y: { grid:{ color: gridColor }, ticks:{ color: tickColor } }
+    };
+  }
+  function baseLegend(pos='top') {
+    return { display: true, position: pos, labels:{ color: c.muted, boxWidth:10, padding:12 } };
+  }
+
+  // ---- Chart: Victoria Spend ----
+  if(canvasExists('chart-vic-spend')) {
+    destroyChart('chart-vic-spend');
+    chartInstances['chart-vic-spend'] = new Chart(document.getElementById('chart-vic-spend'), {
+      type: 'bar',
+      data: {
+        labels: ['2019','2020','2021','2022','2023','2024','2025'],
+        datasets: [{
+          label: 'Total Spend ($B)',
+          data: [38.2, 11.3, 10.8, 22.4, 36.8, 44.1, 46.7],
+          backgroundColor: [c.primary+'88', c.red+'88', c.red+'88', c.amber+'88', c.primary+'88', c.primary+'88', c.green+'cc'],
+          borderColor: [c.primary, c.red, c.red, c.amber, c.primary, c.primary, c.green],
+          borderWidth: 1.5, borderRadius: 4,
+        }]
+      },
+      options: { responsive:true, maintainAspectRatio:false, plugins:{ legend:{display:false} },
+        scales: baseScale() }
+    });
+  }
+
+  // ---- Chart: Outbound ----
+  if(canvasExists('chart-outbound')) {
+    destroyChart('chart-outbound');
+    chartInstances['chart-outbound'] = new Chart(document.getElementById('chart-outbound'), {
+      type: 'line',
+      data: {
+        labels: ['2019','2020','2021','2022','2023','2024','2025','2026F'],
+        datasets: [{
+          label: 'Outbound Trips (M)',
+          data: [11.2, 2.1, 1.4, 5.8, 9.7, 11.3, 12.4, 13.2],
+          borderColor: c.primary, backgroundColor: c.primary+'22',
+          tension: 0.4, fill: true, pointRadius: 4, pointBackgroundColor: c.primary,
+        }]
+      },
+      options: { responsive:true, maintainAspectRatio:false, plugins:{ legend:{display:false} },
+        scales: baseScale() }
+    });
+  }
+
+  // ---- Chart: Quarterly Spend ----
+  if(canvasExists('chart-quarterly-spend')) {
+    destroyChart('chart-quarterly-spend');
+    chartInstances['chart-quarterly-spend'] = new Chart(document.getElementById('chart-quarterly-spend'), {
+      type: 'bar',
+      data: {
+        labels: ['Q1 2025','Q2 2025','Q3 2025','Q4 2025'],
+        datasets: [
+          { label: 'Domestic ($B)', data: [9.2, 7.8, 7.3, 12.5], backgroundColor: c.primary+'99', borderRadius: 4 },
+          { label: 'International ($B)', data: [2.1, 2.3, 2.6, 2.7], backgroundColor: c.gold+'cc', borderRadius: 4 },
+        ]
+      },
+      options: { responsive:true, maintainAspectRatio:false,
+        plugins:{ legend: baseLegend() },
+        scales: { ...baseScale(), x:{ ...baseScale().x, stacked:false }, y:{ ...baseScale().y, stacked:false } }
+      }
+    });
+  }
+
+  // ---- Chart: Intl Markets ----
+  if(canvasExists('chart-intl-markets')) {
+    destroyChart('chart-intl-markets');
+    chartInstances['chart-intl-markets'] = new Chart(document.getElementById('chart-intl-markets'), {
+      type: 'doughnut',
+      data: {
+        labels: ['China','UK','USA','India','NZ','Other'],
+        datasets: [{
+          data: [31, 12, 9, 8, 8, 32],
+          backgroundColor: [c.primary, c.blue, c.red+'bb', c.gold, c.green, c.muted+'66'],
+          borderWidth: 0, borderRadius: 2,
+        }]
+      },
+      options: { responsive:true, maintainAspectRatio:false, cutout:'60%',
+        plugins:{ legend: baseLegend('right') } }
+    });
+  }
+
+  // ---- Chart: Top Destinations ----
+  if(canvasExists('chart-top-destinations')) {
+    destroyChart('chart-top-destinations');
+    const dests = ['Nha Trang','Kuala Lumpur','Palau','Phu Quoc','Hyogo JP','Kos GR','Mallorca','Budapest','Nadi FJ','Portland US'];
+    chartInstances['chart-top-destinations'] = new Chart(document.getElementById('chart-top-destinations'), {
+      type: 'bar',
+      data: {
+        labels: dests.map((_,i)=>`${i+1}. ${_}`),
+        datasets: [{
+          data: [140, 95, 72, 82, 58, 47, 38, 28, 35, 18],
+          backgroundColor: [c.green, c.green, c.primary, c.green, c.primary+'cc',
+            c.gold+'cc', c.gold+'cc', c.primary+'88', c.primary+'88', c.red+'88'],
+          borderRadius: 3,
+        }]
+      },
+      options: { responsive:true, maintainAspectRatio:false, indexAxis:'y',
+        plugins:{ legend:{display:false},
+          tooltip:{ callbacks:{ label: ctx=>`+${ctx.parsed.x}% search YoY` } } },
+        scales: baseScale()
+      }
+    });
+  }
+
+  // ---- Chart: Search Growth ----
+  if(canvasExists('chart-search-growth')) {
+    destroyChart('chart-search-growth');
+    chartInstances['chart-search-growth'] = new Chart(document.getElementById('chart-search-growth'), {
+      type: 'bar',
+      data: {
+        labels: ['Japan','Vietnam','Nordic','SE Asia','Europe','Pacific','Domestic','USA'],
+        datasets: [{
+          label: 'YoY Search Growth %',
+          data: [24.9, 110, 35, 22, 18, 28, 14, -6],
+          backgroundColor: ctx => ctx.parsed.y < 0 ? c.red+'99' : c.primary+'99',
+          borderColor: ctx => ctx.parsed.y < 0 ? c.red : c.primary,
+          borderWidth: 1.5, borderRadius: 3,
+        }]
+      },
+      options: { responsive:true, maintainAspectRatio:false,
+        plugins:{ legend:{display:false} },
+        scales: baseScale()
+      }
+    });
+  }
+
+  // ---- Chart: Seasonality ----
+  if(canvasExists('chart-seasonality')) {
+    destroyChart('chart-seasonality');
+    chartInstances['chart-seasonality'] = new Chart(document.getElementById('chart-seasonality'), {
+      type: 'line',
+      data: {
+        labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+        datasets: [
+          { label: 'Bookings Index', data: [65,72,88,82,90,78,95,88,80,85,92,100],
+            borderColor: c.primary, tension:0.4, fill:true, backgroundColor:c.primary+'22', pointRadius:3 },
+          { label: 'Enquiries Index', data: [75,80,95,88,82,70,90,85,88,92,98,85],
+            borderColor: c.gold, tension:0.4, fill:false, pointRadius:3 },
+        ]
+      },
+      options: { responsive:true, maintainAspectRatio:false,
+        plugins:{ legend: baseLegend() }, scales: baseScale() }
+    });
+  }
+
+  // ---- Chart: Outbound Regions ----
+  if(canvasExists('chart-outbound-regions')) {
+    destroyChart('chart-outbound-regions');
+    chartInstances['chart-outbound-regions'] = new Chart(document.getElementById('chart-outbound-regions'), {
+      type: 'doughnut',
+      data: {
+        labels: ['SE Asia','NE Asia','NZ/Pacific','Europe','Americas','Middle East','Other'],
+        datasets: [{
+          data: [35, 22, 18, 14, 6, 3, 2],
+          backgroundColor: [c.primary, c.gold, c.green, c.blue, c.red+'bb', c.purple, c.muted+'66'],
+          borderWidth: 0, borderRadius: 2,
+        }]
+      },
+      options: { responsive:true, maintainAspectRatio:false, cutout:'55%',
+        plugins:{ legend: baseLegend('right') } }
+    });
+  }
+
+  // ---- Chart: Monthly Departures ----
+  if(canvasExists('chart-monthly-departures')) {
+    destroyChart('chart-monthly-departures');
+    chartInstances['chart-monthly-departures'] = new Chart(document.getElementById('chart-monthly-departures'), {
+      type: 'bar',
+      data: {
+        labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+        datasets: [{
+          label: 'Departures (M)',
+          data: [1.12, 1.22, 1.05, 0.98, 1.18, 0.92, 1.08, 1.15, 0.95, 1.02, 1.22, 1.45],
+          backgroundColor: c.primary+'88', borderColor: c.primary, borderWidth:1.5, borderRadius:3,
+        }]
+      },
+      options: { responsive:true, maintainAspectRatio:false,
+        plugins:{ legend:{display:false} }, scales: baseScale() }
+    });
+  }
+
+  // ---- Chart: RACV Mix ----
+  if(canvasExists('chart-racv-mix')) {
+    destroyChart('chart-racv-mix');
+    chartInstances['chart-racv-mix'] = new Chart(document.getElementById('chart-racv-mix'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Tours & Cruises','RACV Resorts','Travel Insurance','Airport Parking','Attractions','Car Hire'],
+        datasets: [{
+          data: [38, 28, 18, 8, 5, 3],
+          backgroundColor: [c.primary, c.gold, c.green, c.blue, c.purple, c.muted+'88'],
+          borderWidth: 0, borderRadius: 2,
+        }]
+      },
+      options: { responsive:true, maintainAspectRatio:false, cutout:'55%',
+        plugins:{ legend: baseLegend('right') } }
+    });
+  }
+
+  // ---- Chart: Supplier Radar ----
+  if(canvasExists('chart-supplier-radar')) {
+    destroyChart('chart-supplier-radar');
+    chartInstances['chart-supplier-radar'] = new Chart(document.getElementById('chart-supplier-radar'), {
+      type: 'radar',
+      data: {
+        labels: ['Volume','Margin','Member Value','Brand Fit','Deal Quality','Trend'],
+        datasets: [
+          { label: 'APT', data: [85,82,90,88,92,80], borderColor:c.primary, backgroundColor:c.primary+'30', pointBackgroundColor:c.primary },
+          { label: 'Viking', data: [78,85,88,85,90,82], borderColor:c.gold, backgroundColor:c.gold+'30', pointBackgroundColor:c.gold },
+          { label: 'Intrepid', data: [72,70,80,95,75,92], borderColor:c.green, backgroundColor:c.green+'30', pointBackgroundColor:c.green },
+        ]
+      },
+      options: { responsive:true, maintainAspectRatio:false,
+        plugins:{ legend: baseLegend('bottom') },
+        scales: { r: { grid:{color:gridColor}, ticks:{color:tickColor, backdropColor:'transparent'}, pointLabels:{color:c.muted} } }
+      }
+    });
+  }
+
+  // ---- Chart: Supplier Cat ----
+  if(canvasExists('chart-supplier-cat')) {
+    destroyChart('chart-supplier-cat');
+    chartInstances['chart-supplier-cat'] = new Chart(document.getElementById('chart-supplier-cat'), {
+      type: 'bar',
+      data: {
+        labels: ['Tours','Cruise','Resorts','Insurance','Airport','Attractions','Other'],
+        datasets: [{
+          label: 'Suppliers Active',
+          data: [3, 4, 6, 1, 3, 2, 2],
+          backgroundColor: [c.primary+'cc', c.gold+'cc', c.blue+'cc', c.green+'cc', c.purple+'cc', c.amber+'cc', c.muted+'88'],
+          borderRadius: 4,
+        }]
+      },
+      options: { responsive:true, maintainAspectRatio:false,
+        plugins:{ legend:{display:false} }, scales: baseScale() }
+    });
+  }
+
+  // ---- Chart: Promo Calendar ----
+  if(canvasExists('chart-promo-calendar')) {
+    destroyChart('chart-promo-calendar');
+    chartInstances['chart-promo-calendar'] = new Chart(document.getElementById('chart-promo-calendar'), {
+      type: 'bar',
+      data: {
+        labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+        datasets: [
+          { label: 'RACV Promos Live', data: [8,7,12,14,10,8,9,10,12,11,16,14], backgroundColor: c.primary+'99', borderRadius:3 },
+          { label: 'Major Brand Campaigns', data: [5,4,8,9,7,5,6,8,9,8,14,12], backgroundColor: c.gold+'99', borderRadius:3 },
+        ]
+      },
+      options: { responsive:true, maintainAspectRatio:false,
+        plugins:{ legend: baseLegend('top') }, scales: baseScale() }
+    });
+  }
+
+  // ---- Chart: Google Trends ----
+  if(canvasExists('chart-google-trends')) {
+    destroyChart('chart-google-trends');
+    chartInstances['chart-google-trends'] = new Chart(document.getElementById('chart-google-trends'), {
+      type: 'line',
+      data: {
+        labels: ['Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr'],
+        datasets: [
+          { label: 'Japan Travel', data: [60,65,72,88,84,90,95,82,78,90,95,98,100], borderColor:c.primary, tension:0.4, pointRadius:0 },
+          { label: 'Bali Travel', data: [82,80,78,85,88,80,82,78,75,82,85,88,90], borderColor:c.gold, tension:0.4, pointRadius:0 },
+          { label: 'Vietnam Tours', data: [35,40,48,58,62,68,72,65,60,75,82,90,95], borderColor:c.green, tension:0.4, pointRadius:0 },
+          { label: 'River Cruise', data: [55,60,55,50,52,60,65,70,65,68,72,75,78], borderColor:c.purple, tension:0.4, pointRadius:0 },
+        ]
+      },
+      options: { responsive:true, maintainAspectRatio:false,
+        plugins:{ legend: baseLegend('bottom') }, scales: baseScale() }
+    });
+  }
+
+  // ---- Chart: Web Traffic ----
+  if(canvasExists('chart-web-traffic')) {
+    destroyChart('chart-web-traffic');
+    chartInstances['chart-web-traffic'] = new Chart(document.getElementById('chart-web-traffic'), {
+      type: 'line',
+      data: {
+        labels: ['Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr'],
+        datasets: [
+          { label: 'Tours & Cruises', data: [72,75,80,90,88,85,92,95,88,90,95,98,105], borderColor:c.primary, fill:true, backgroundColor:c.primary+'18', tension:0.4, pointRadius:2 },
+          { label: 'Resorts', data: [68,70,72,85,88,80,82,85,90,88,86,90,94], borderColor:c.gold, tension:0.4, pointRadius:2 },
+          { label: 'Insurance', data: [60,62,65,70,72,75,78,80,82,80,82,85,88], borderColor:c.green, tension:0.4, pointRadius:2 },
+        ]
+      },
+      options: { responsive:true, maintainAspectRatio:false,
+        plugins:{ legend: baseLegend('bottom') }, scales: baseScale() }
+    });
+  }
+}
+
+// Init on load
+window.addEventListener('load', ()=>{ setTimeout(initAllCharts, 100); });
+
+// Animate progress bars on page load
+function animateBars() {
+  document.querySelectorAll('.progress-bar[style]').forEach(bar => {
+    const w = bar.style.width;
+    bar.style.width = '0%';
+    setTimeout(()=>{ bar.style.width = w; }, 200);
+  });
+}
+window.addEventListener('load', animateBars);
+</script>
+
+</body>
+</html>
