@@ -183,7 +183,7 @@
       </div>
       <div class="nav-item" data-page="newsletter">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.09h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span>GTG Daily</span>
+        <span>3-Day Update</span>
       </div>
       <div class="nav-item" data-page="brand">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -1689,8 +1689,8 @@
      =================================================== -->
 <section class="page" id="page-newsletter">
   <div class="page-header">
-    <h1>GTG Daily Business Update</h1>
-    <p>Daily travel intelligence briefing from Gtg -- auto-refreshes every weekday at 7:00 AM AEST</p>
+    <h1>GTG 3-Day Business Update</h1>
+    <p>3-day travel intelligence briefing from Gtg -- auto-refreshes every 3 days at 7:00 AM AEST</p>
   </div>
 
   <!-- ====== TODAY'S EDITION (visible by default) ====== -->
@@ -1701,7 +1701,7 @@
       <div style="position:absolute;top:-20px;right:-20px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.04)"></div>
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--space-4);position:relative">
         <div>
-          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;opacity:0.55;margin-bottom:6px">Daily Business Update from Gtg</div>
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;opacity:0.55;margin-bottom:6px">3-Day Business Update from Gtg</div>
           <div style="font-size:var(--text-xl);font-weight:800;letter-spacing:-0.03em;line-height:1.15" id="daily-date-hero">Friday 10 April 2026</div>
           <div style="font-size:var(--text-xs);opacity:0.6;margin-top:6px">Issue #4 -- 7:00 AM AEST -- RACV Travel Intelligence Dashboard</div>
           <div style="display:flex;gap:var(--space-2);margin-top:var(--space-3);flex-wrap:wrap">
@@ -3356,11 +3356,61 @@ window.addEventListener('load', ()=>{ setTimeout(initAllCharts, 100); });
 
 // Daily edition archive navigation
 var dailyArchiveData = {
-  thu9: { date: 'Thursday 9 April 2026', issue: 3, alert: 'US-Iran ceasefire announced 8 April. Oil fell 15% to ~$94/bbl. But only 10-15 ships/day transiting Hormuz vs 138 normal. 800 tankers stranded. IATA warns months to normalise jet fuel.', vic: 'Easter mixed: Mornington Peninsula solid, remote VIC (Dargo) down 20%. Free public transport April continues. 81 VIC stations without fuel. Daily fuel price cap active. Youth u/18 free transport permanent from Jan 2026.', au: '460+ flight disruptions this week. Fuel excise halved 26.3c/L for 3 months. Government secured supply through May. ABS Jan 2026: 2.1M departures (+3.3% YoY). Qantas closing regional bases at CBR, HBA, MQL.', global: 'Airlines cutting 5-20% of flights globally, fares up 30-40%. SAS cancelling 1,000 April flights. Lufthansa may ground 40 aircraft. AirAsia fares +30-40%. Italian airports rationing. Jet fuel $195/bbl. IATA: months to recover.', action: 'Two-pronged member value sprint: (1) Fuel savings push -- EG Ampol 5c/L + excise cut = strongest value prop in years. (2) TI disruption cover -- 460+ weekly disruptions means cancellation cover is the #1 product to promote.' },
-  wed8: { date: 'Wednesday 8 April 2026', issue: 2, alert: 'Ceasefire announced between US and Iran. Oil prices dropped sharply. Hormuz ceasefire terms remain unclear -- Iran requiring coordination with armed forces. Only a handful of ships transited initially. Market cautiously optimistic but shipping companies taking wait-and-see approach.', vic: 'Easter Monday -- tourism operators counting results. Free public transport continuing across all Victoria. Fuel excise cut of 26.3c/L officially in effect since 1 April. VIC daily fuel price cap active.', au: 'Ceasefire announcement dominates. Oil dropped 14-16% to ~$94/bbl. ASX surged. Government confirmed fuel supply contracts through May. Airlines still adjusting schedules -- no immediate reversal of cuts.', global: 'IATA chief Willie Walsh warns months to recover jet fuel supply even with Hormuz open. Refinery damage across Middle East estimated at $25B+. SAS, Lufthansa, AirAsia maintaining cuts. No airlines reversing fare increases yet.', action: 'Monitor airline route changes -- ceasefire creates uncertainty window. Do not assume fares will drop quickly. RACV tour partners should hold pricing and await clarity.' },
-  tue7: { date: 'Tuesday 7 April 2026', issue: 2, alert: 'Easter tourism results coming in across Australia. Mixed picture -- proximity to metro areas was the deciding factor. National fuel supply secured but regional shortages persist.', vic: 'Mornington Peninsula reported pretty solid visitor numbers over Easter. However remote areas like Dargo (eastern VIC) down approximately 20%. Wine regions performed well -- Orange NSW saw record sales. Sydney tourist bus bookings halved.', au: 'ABC reporting mixed Easter results nationally. Government reassured on fuel supply through May. 460+ flight disruptions across Easter weekend. Brisbane compounded by 23-day rail shutdown. Tourism operators worried about next 3 months.', global: 'Global jet fuel crisis continues. Airlines maintaining flight cuts and fare increases. No ceasefire in place yet (announced day after). Oil still elevated above $100/bbl. IATA data shows jet fuel at $195/bbl end of March.', action: 'Regional VIC operators need direct support from RACV. Partner with caravan parks and regional attractions for member-exclusive recovery packages. The proximity trend validates RACV resort positioning within 90 min of Melbourne.' },
-  mon6: { date: 'Monday 6 April 2026', issue: 1, alert: 'Fuel crisis deepens. Easter aviation saw 418+ disruptions across Qantas, Jetstar, Virgin Australia. Strait of Hormuz closure has doubled jet fuel prices. US aviation in multi-front crisis.', vic: 'RACV issued Easter road safety guidance citing 22% drop in Victorian road toll YoY. Fuel crisis driving significant Easter booking cancellations at regional caravan parks. Caravan and Residential Parks Victoria reporting concerns sector-wide.', au: '418+ flight disruptions across Easter. Qantas/Jetstar/Virgin all affected. Brisbane compounded by rail shutdown. ABS January 2026 data: 2.1M departures (+3.3% YoY). Fuel averaging $2.27 unleaded, $3.12 diesel.', global: 'US aviation in multi-front crisis: 50,000 TSA officers unpaid (DHS shutdown Day 48), jet fuel doubled to $4.57/gal, 171M spring break passengers, Republic Airways facing bankruptcy. United Airlines cut 5% Q2-Q3 capacity. Emirates suspended US services.', action: 'Activate RACV fuel savings and travel insurance communications targeting Easter disruption pain points. This is the highest-ROI communications moment available to RACV Travel this month.' },
-  fri4: { date: 'Friday 4 April 2026', issue: 0, alert: 'Victoria free public transport for entire month of April. Fuel crisis hitting regional tourism operators. GEO/AI content strategy identified as Q2 priority.', vic: 'Victoria entire public transport network free from 31 March to 30 April 2026. Government response to soaring fuel prices. Myki cards not required. Strong window for RACV regional day trip promotion via rail.', au: 'Outbound travel at 12.4M trips (+9.7% YoY). Japan leading growth at +24.9%. Qantas Project Sunrise confirmed for H2 2026. Average trip budget AUD $9,800. Inbound at 8.84M visitors.', global: 'AI trip planning going mainstream. Gartner forecasts -25% traditional search by end 2026. Luxury rail bookings +41% YoY. Wellness and coolcation trends booming. 89% say live events make travel worthwhile.', action: 'Launch GEO / AI content sprint -- 10 structured Q&A pages, expert-attributed, schema-marked. This is the single highest-ROI content investment for Q2 2026. RACV must be cited by AI systems for travel insurance and resort queries.' }
+  thu9: {
+    date: 'Thursday 9 April 2026', issue: 3,
+    alert: 'US-Iran ceasefire announced 8 April. Oil fell 15% to ~$94/bbl. But only 10-15 ships/day transiting Hormuz vs 138 normal. 800 tankers stranded. IATA warns months to normalise jet fuel.',
+    vic: 'Easter mixed: Mornington Peninsula solid, remote VIC (Dargo) down 20%. Free public transport April continues. 81 VIC stations without fuel. Daily fuel price cap active. Youth u/18 free transport permanent from Jan 2026.',
+    au: '460+ flight disruptions this week. Fuel excise halved 26.3c/L for 3 months. Government secured supply through May. ABS Jan 2026: 2.1M departures (+3.3% YoY). Qantas closing regional bases at CBR, HBA, MQL.',
+    global: 'Airlines cutting 5-20% of flights globally, fares up 30-40%. SAS cancelling 1,000 April flights. Lufthansa may ground 40 aircraft. AirAsia fares +30-40%. Italian airports rationing. Jet fuel $195/bbl. IATA: months to recover.',
+    action: 'Two-pronged member value sprint: (1) Fuel savings push -- EG Ampol 5c/L + excise cut = strongest value prop in years. (2) TI disruption cover -- 460+ weekly disruptions means cancellation cover is the #1 product to promote.',
+    signals: 'VIC Spend: $46.7B (Record, +6%) | Jet Fuel: $195/bbl (2x rise) | Fares: +30-40% global | VIC Stations Out: 81 | RACV NPS: +63 | AU Outbound: 12.4M (+9.7%)',
+    supplierWatch: 'APT: Europe/Vietnam tours at risk from Lufthansa/SAS/Cathay cuts. Confirm Apr-Jun itineraries. | Cosmos: Europe earlybird at moderate risk if SAS/Ryanair cuts deepen. | Viking/Scenic: River cruise legs protected short-term. | Intrepid: SE Asia at risk from AirAsia/Vietnam Airlines cuts. Japan routes intact. | Journey Beyond: Domestic rail entirely protected -- elevated positioning opportunity.',
+    racvAction: 'Launch fuel savings email (EG Ampol 5c/L + excise cut) + prominently feature TI cancellation cover in all booking confirmations and partner communications immediately.'
+  },
+  wed8: {
+    date: 'Wednesday 8 April 2026', issue: 2,
+    alert: 'Ceasefire announced between US and Iran. Oil prices dropped sharply. Hormuz ceasefire terms remain unclear.',
+    vic: 'Easter Monday -- operators counting results. Free public transport continuing. Fuel excise cut in effect. VIC daily fuel price cap active.',
+    au: 'Ceasefire dominates. Oil dropped 14-16% to ~$94/bbl. ASX surged. Government confirmed supply through May. Airlines still adjusting -- no reversal of cuts.',
+    global: 'IATA: months to recover jet fuel even with Hormuz open. Refinery damage $25B+. SAS, Lufthansa, AirAsia maintaining cuts.',
+    action: 'Monitor airline route changes -- ceasefire creates uncertainty window. Do not assume fares will drop quickly.',
+    signals: 'VIC Spend: $46.7B (Record) | Oil: ~$94/bbl (down from $110) | Fares: +30-40% maintained | VIC Stations: 81 out | RACV NPS: +63 | AU Outbound: 12.4M',
+    supplierWatch: 'APT: Monitoring Europe routes. Cosmos: Holding June pricing. Viking/Scenic: Protected. Intrepid: SE Asia risk from AirAsia. Journey Beyond: Domestic rail safe.',
+    racvAction: 'Hold tour pricing. Monitor airline schedule changes for RACV partner itineraries before adjusting member communications.'
+  },
+  tue7: {
+    date: 'Tuesday 7 April 2026', issue: 2,
+    alert: 'Easter tourism results coming in. Mixed -- proximity to metro was decisive. Fuel supply secured but regional shortages persist.',
+    vic: 'Mornington Peninsula solid. Remote VIC (Dargo) down 20%. Wine regions strong -- Orange NSW +19% revenue. Sydney tourist bus bookings halved.',
+    au: 'Mixed Easter results. Supply secured through May. 460+ flight disruptions Easter weekend. Brisbane compounded by rail shutdown.',
+    global: 'Jet fuel crisis continues. Airlines maintaining cuts. No ceasefire yet. Oil above $100/bbl. Jet fuel at $195/bbl.',
+    action: 'Regional VIC operators need RACV support. Partner with caravan parks for member-exclusive recovery packages.',
+    signals: 'VIC Spend: $46.7B (Record) | Oil: >$100/bbl | Fares: +30-40% | VIC Stations: ~80 out | RACV NPS: +63 | Easter disruptions: 460+',
+    supplierWatch: 'APT: Europe itineraries at risk. Cosmos: Monitoring. Viking/Scenic: River cruise protected. Intrepid: SE Asia risk elevated. Journey Beyond: Domestic rail unaffected.',
+    racvAction: 'Partner with regional VIC caravan parks and attractions for member-exclusive recovery packages. Proximity-based resort messaging for Torquay, Cape Schanck, Healesville.'
+  },
+  mon6: {
+    date: 'Monday 6 April 2026', issue: 1,
+    alert: 'Fuel crisis deepens. 418+ Easter flight disruptions. Hormuz closure doubled jet fuel. US aviation in multi-front crisis.',
+    vic: 'RACV Easter road safety: VIC road toll down 22% YoY. Regional caravan park cancellations surging. Caravan and Residential Parks Victoria seeking support.',
+    au: '418+ disruptions. Qantas/Jetstar/Virgin affected. ABS Jan 2026: 2.1M departures (+3.3% YoY). Fuel: $2.27 unleaded, $3.12 diesel.',
+    global: 'US: 50,000 TSA unpaid (Day 48), jet fuel $4.57/gal, Republic Airways near bankruptcy. United cut 5% Q2-Q3. Emirates suspended US services.',
+    action: 'Activate RACV fuel savings + TI comms targeting Easter disruption pain points. Highest-ROI comms moment of the month.',
+    signals: 'VIC Spend: $46.7B (Record) | Jet fuel: $195/bbl (doubled) | Fares: rising | Easter disruptions: 418+ | RACV NPS: +63 | AU Outbound: 12.4M',
+    supplierWatch: 'APT: Europe/Vietnam risk from affected carriers. Cosmos: Europe at risk. Viking/Scenic: Protected. Intrepid: Monitor SE Asia. Journey Beyond: Domestic protected.',
+    racvAction: 'Send targeted member email: EG Ampol 5c/L fuel discount + Roadside Assistance coverage + RACV TI trip cancellation protection.'
+  },
+  fri4: {
+    date: 'Friday 4 April 2026', issue: 0,
+    alert: 'VIC free public transport for April. Fuel crisis hitting regional operators. GEO/AI content strategy identified as Q2 priority.',
+    vic: 'All VIC public transport free 31 Mar-30 Apr. Government response to fuel prices. Myki not required. Strong RACV regional day trip window.',
+    au: 'Outbound 12.4M (+9.7%). Japan +24.9%. Qantas Project Sunrise H2 2026. Avg trip $9,800. Inbound 8.84M visitors.',
+    global: 'AI trip planning mainstream. Gartner: -25% traditional search by 2026. Luxury rail +41%. Wellness/coolcation booming. 89% want live events.',
+    action: 'Launch GEO/AI content sprint -- 10 Q&A pages for AI citation. Highest-ROI content investment for Q2 2026.',
+    signals: 'VIC Spend: $46.7B (Record) | AU Outbound: 12.4M (+9.7%) | Avg Trip: $9,800 | RACV NPS: +63 | Inbound: 8.84M | Intl VIC: $9.7B',
+    supplierWatch: 'APT: Last Chance 2026 sale active ($7K/couple). Viking: Fly Free offer live. Intrepid: Outback sale. Cosmos: Europe earlybird. Scenic: Suite upgrade. Journey Beyond: Fly Free Rail.',
+    racvAction: 'Launch GEO content hub with structured Q&A pages. Position RACV for AI citation. Amplify free VIC transport in regional resort messaging.'
+  }
 };
 
 function showDailyEdition(id) {
@@ -3384,6 +3434,9 @@ function showDailyEdition(id) {
   if(rowMap[id] !== undefined) {
     rows[rowMap[id]].style.background = 'var(--color-primary-highlight)';
   }
+  var signalsHtml = d.signals ? '<div style="margin-bottom:var(--space-4)"><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-text-muted);margin-bottom:var(--space-2)">Dashboard Signals (at time of edition)</div><div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4)"><div style="font-size:var(--text-xs);color:var(--color-text);line-height:1.8;font-variant-numeric:tabular-nums">' + d.signals.split(' | ').join('&nbsp;&nbsp;&bull;&nbsp;&nbsp;') + '</div></div></div>' : '';
+  var supplierHtml = d.supplierWatch ? '<div style="margin-bottom:var(--space-4)"><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-text-muted);margin-bottom:var(--space-2)">Supplier Watch (at time of edition)</div><div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4)"><div style="font-size:var(--text-xs);color:var(--color-text);line-height:1.8">' + d.supplierWatch.split(' | ').map(function(s){ var p=s.split(': '); return '<strong>'+p[0]+':</strong> '+(p[1]||''); }).join('<br>') + '</div></div></div>' : '';
+  var racvActionHtml = d.racvAction ? '<div style="margin-bottom:var(--space-4)"><div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-primary);margin-bottom:var(--space-2)">Recommended RACV Action</div><div style="background:var(--color-primary-highlight);border:1px solid var(--color-primary);border-radius:var(--radius-md);padding:var(--space-3) var(--space-4)"><div style="font-size:var(--text-xs);color:var(--color-text);line-height:1.7;font-weight:500">' + d.racvAction + '</div></div></div>' : '';
   archiveDiv.innerHTML = '<div class="card section-gap" style="border-left:4px solid var(--color-primary)">' +
     '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-4)">' +
     '<div><div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--color-text-muted);margin-bottom:4px">Past Edition -- Issue #' + d.issue + '</div>' +
@@ -3392,10 +3445,13 @@ function showDailyEdition(id) {
     '<div style="background:var(--color-red-bg);border-left:3px solid var(--color-red-dot);padding:var(--space-3) var(--space-4);border-radius:0 var(--radius-md) var(--radius-md) 0;margin-bottom:var(--space-4)">' +
     '<div style="font-size:10px;font-weight:800;text-transform:uppercase;color:var(--color-red);letter-spacing:0.06em;margin-bottom:4px">Alert</div>' +
     '<div style="font-size:var(--text-xs);color:var(--color-text);line-height:1.7">' + d.alert + '</div></div>' +
+    signalsHtml +
     '<div class="grid-3" style="gap:var(--space-4);margin-bottom:var(--space-4)">' +
     '<div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-4)"><div style="display:inline-block;background:var(--color-primary-highlight);color:var(--color-primary);font-size:9px;font-weight:800;padding:3px 8px;border-radius:var(--radius-full);text-transform:uppercase;margin-bottom:var(--space-2)">Victoria</div><div style="font-size:var(--text-xs);color:var(--color-text);line-height:1.7">' + d.vic + '</div></div>' +
     '<div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-4)"><div style="display:inline-block;background:var(--color-gold-highlight);color:var(--color-gold);font-size:9px;font-weight:800;padding:3px 8px;border-radius:var(--radius-full);text-transform:uppercase;margin-bottom:var(--space-2)">Australia</div><div style="font-size:var(--text-xs);color:var(--color-text);line-height:1.7">' + d.au + '</div></div>' +
     '<div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:var(--space-4)"><div style="display:inline-block;background:var(--color-green-bg);color:var(--color-green);font-size:9px;font-weight:800;padding:3px 8px;border-radius:var(--radius-full);text-transform:uppercase;margin-bottom:var(--space-2)">Global</div><div style="font-size:var(--text-xs);color:var(--color-text);line-height:1.7">' + d.global + '</div></div></div>' +
+    supplierHtml +
+    racvActionHtml +
     '<div style="background:var(--color-gold-highlight);border:1px solid var(--color-gold);border-radius:var(--radius-md);padding:var(--space-4)">' +
     '<div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-gold);margin-bottom:var(--space-2)">Action of the Day</div>' +
     '<div style="font-size:var(--text-xs);color:var(--color-text);line-height:1.7">' + d.action + '</div></div></div>';
