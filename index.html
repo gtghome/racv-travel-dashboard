@@ -172,6 +172,22 @@
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20l2-2h16l2 2"/><path d="M4 18V9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9"/><path d="M12 3v4"/><path d="M9 7h6"/></svg>
         <span>Cruises</span>
       </div>
+      <div class="nav-item" data-page="touring">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span>Group Touring</span>
+      </div>
+      <div class="nav-item" data-page="attractions">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+        <span>Attractions</span>
+      </div>
+      <div class="nav-item" data-page="hotels">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2H6a2 2 0 0 0-2 2v16l4-3h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg>
+        <span>Hotels</span>
+      </div>
+      <div class="nav-item" data-page="packages">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        <span>Packages</span>
+      </div>
     </nav>
 
     <nav class="sidebar-section">
@@ -5233,344 +5249,256 @@
   </div>
 
   <!-- ===================== SECTION 7: WORLD MAP ===================== -->
-  <div class="section-gap">
-    <div class="card-header" style="margin-bottom:var(--space-3);">
-      <span class="card-title">RACV Partner Fleet — Live Deployment Map</span>
-      <span class="card-badge blue">APPROXIMATE POSITIONS · APRIL 2026</span>
+  
+    <!-- ============================================================
+     CRUISE MAP REPLACEMENT: paste this over the SVG map section in page-cruises
+     ============================================================ -->
+
+<div class="section-gap">
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Partner Fleet Deployment by Continent &mdash; 2026</span>
+      <span class="card-badge blue">14 Vessels</span>
     </div>
 
-    <div style="background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-4);overflow:hidden;">
-
-      <!-- SVG World Map -->
-      <svg viewBox="0 0 900 380" width="100%" height="380" style="display:block;" xmlns="http://www.w3.org/2000/svg" aria-label="World map showing RACV cruise partner ship positions">
-        <defs>
-          <radialGradient id="oceanGrad" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#c8ddf5" stop-opacity="0.35"/>
-            <stop offset="100%" stop-color="#a8c8e8" stop-opacity="0.18"/>
-          </radialGradient>
-          <filter id="shipGlow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="2" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-          <!-- Dark mode ocean -->
-          <style>
-            .ocean-fill { fill: url(#oceanGrad); }
-            [data-theme="dark"] .ocean-fill { fill: #1a2d42; fill-opacity: 0.6; }
-            @media (prefers-color-scheme: dark) {
-              :root:not([data-theme]) .ocean-fill { fill: #1a2d42; fill-opacity: 0.6; }
-            }
-            .land-fill { fill: #d4dde6; stroke: #b8c4d0; stroke-width: 0.5; }
-            [data-theme="dark"] .land-fill { fill: #2a3a4a; stroke: #3a4d60; }
-            @media (prefers-color-scheme: dark) {
-              :root:not([data-theme]) .land-fill { fill: #2a3a4a; stroke: #3a4d60; }
-            }
-            .map-label { font-family: 'Inter', sans-serif; font-size: 8px; fill: #7a8898; }
-            [data-theme="dark"] .map-label { fill: #5a7090; }
-            @media (prefers-color-scheme: dark) {
-              :root:not([data-theme]) .map-label { fill: #5a7090; }
-            }
-            .ship-label { font-family: 'Inter', sans-serif; font-size: 7.5px; font-weight: 600; fill: #0f1923; }
-            [data-theme="dark"] .ship-label { fill: #c8d5e0; }
-            @media (prefers-color-scheme: dark) {
-              :root:not([data-theme]) .ship-label { fill: #c8d5e0; }
-            }
-          </style>
-        </defs>
-
-        <!-- Ocean background -->
-        <rect width="900" height="380" class="ocean-fill" rx="8"/>
-
-        <!-- Graticule lines (subtle) -->
-        <g stroke="#9ab8d0" stroke-width="0.3" stroke-dasharray="2,4" opacity="0.3">
-          <!-- Latitude lines -->
-          <line x1="0" y1="95" x2="900" y2="95"/>   <!-- ~60N -->
-          <line x1="0" y1="145" x2="900" y2="145"/>  <!-- ~40N -->
-          <line x1="0" y1="190" x2="900" y2="190"/>  <!-- ~20N / Equator region -->
-          <line x1="0" y1="220" x2="900" y2="220"/>  <!-- Equator -->
-          <line x1="0" y1="260" x2="900" y2="260"/>  <!-- ~20S -->
-          <line x1="0" y1="300" x2="900" y2="300"/>  <!-- ~40S -->
-          <line x1="0" y1="340" x2="900" y2="340"/>  <!-- ~60S -->
-          <!-- Longitude lines -->
-          <line x1="112" y1="0" x2="112" y2="380"/> <!-- 0/Greenwich -->
-          <line x1="225" y1="0" x2="225" y2="380"/> <!-- 45E -->
-          <line x1="337" y1="0" x2="337" y2="380"/> <!-- 90E -->
-          <line x1="450" y1="0" x2="450" y2="380"/> <!-- 135E / IDL region -->
-          <line x1="562" y1="0" x2="562" y2="380"/> <!-- 180 -->
-          <line x1="675" y1="0" x2="675" y2="380"/> <!-- -135W -->
-          <line x1="787" y1="0" x2="787" y2="380"/> <!-- -90W -->
-        </g>
-
-        <!-- ====== CONTINENTS (simplified polygons) ====== -->
-
-        <!-- NORTH AMERICA -->
-        <path class="land-fill" d="
-          M 590,55 L 640,48 L 690,52 L 730,60 L 755,75 L 760,95 L 750,115
-          L 740,130 L 730,145 L 715,155 L 700,160 L 685,175 L 670,185
-          L 655,190 L 640,200 L 625,205 L 610,195 L 600,180 L 590,165
-          L 575,150 L 565,135 L 560,115 L 565,95 L 570,75 Z
-        "/>
-        <!-- Mexico/Central America nub -->
-        <path class="land-fill" d="M 610,195 L 625,205 L 620,220 L 608,225 L 600,215 L 598,205 Z"/>
-        <!-- Greenland -->
-        <path class="land-fill" d="M 580,28 L 615,22 L 630,30 L 625,45 L 605,50 L 588,45 Z"/>
-        <!-- Alaska -->
-        <path class="land-fill" d="M 530,55 L 560,48 L 568,58 L 558,68 L 540,65 Z"/>
-
-        <!-- SOUTH AMERICA -->
-        <path class="land-fill" d="
-          M 630,225 L 660,218 L 680,228 L 690,245 L 692,265
-          L 685,285 L 672,300 L 655,315 L 638,320 L 625,305
-          L 618,285 L 615,265 L 617,245 L 622,232 Z
-        "/>
-
-        <!-- EUROPE -->
-        <path class="land-fill" d="
-          M 100,70 L 130,65 L 160,62 L 185,68 L 195,80 L 190,95
-          L 175,108 L 160,115 L 145,118 L 128,115 L 112,108
-          L 98,95 L 92,82 Z
-        "/>
-        <!-- Scandinavian peninsula (simplified) -->
-        <path class="land-fill" d="M 148,55 L 170,45 L 185,50 L 182,65 L 165,70 L 148,68 Z"/>
-        <!-- Iberian -->
-        <path class="land-fill" d="M 92,100 L 112,105 L 112,118 L 95,120 L 84,112 Z"/>
-        <!-- UK -->
-        <path class="land-fill" d="M 100,72 L 112,68 L 118,78 L 108,85 L 97,82 Z"/>
-
-        <!-- AFRICA -->
-        <path class="land-fill" d="
-          M 108,118 L 145,118 L 175,122 L 195,135 L 205,155
-          L 208,180 L 205,205 L 198,230 L 185,250 L 168,265
-          L 152,270 L 135,265 L 120,250 L 108,230 L 100,205
-          L 97,180 L 98,155 L 102,135 Z
-        "/>
-        <!-- Madagascar -->
-        <path class="land-fill" d="M 220,228 L 230,222 L 238,235 L 232,250 L 220,248 Z"/>
-
-        <!-- ASIA (simplified) -->
-        <path class="land-fill" d="
-          M 195,68 L 230,55 L 270,48 L 310,50 L 345,58 L 375,65
-          L 395,75 L 405,90 L 400,110 L 385,125 L 365,135
-          L 340,140 L 315,148 L 290,145 L 270,140 L 250,135
-          L 230,125 L 212,118 L 198,108 L 195,92 Z
-        "/>
-        <!-- Indian subcontinent -->
-        <path class="land-fill" d="M 295,148 L 318,145 L 330,160 L 325,180 L 312,188 L 298,180 L 290,163 Z"/>
-        <!-- Japan -->
-        <path class="land-fill" d="M 430,105 L 440,100 L 448,108 L 442,118 L 432,118 Z"/>
-        <!-- Southeast Asia peninsula -->
-        <path class="land-fill" d="M 360,148 L 382,142 L 395,155 L 388,172 L 372,178 L 358,168 Z"/>
-        <!-- Indonesia (simplified) -->
-        <path class="land-fill" d="M 385,185 L 415,180 L 430,188 L 428,198 L 410,202 L 390,198 Z"/>
-        <path class="land-fill" d="M 432,188 L 455,183 L 462,192 L 455,200 L 438,198 Z"/>
-
-        <!-- AUSTRALIA -->
-        <path class="land-fill" d="
-          M 420,248 L 460,238 L 498,238 L 525,248 L 538,262
-          L 535,280 L 520,295 L 498,303 L 472,305 L 448,298
-          L 425,285 L 412,270 L 412,258 Z
-        "/>
-        <!-- Tasmania -->
-        <path class="land-fill" d="M 478,308 L 490,306 L 496,315 L 488,322 L 476,318 Z"/>
-        <!-- New Zealand -->
-        <path class="land-fill" d="M 562,288 L 572,280 L 580,290 L 572,305 L 560,300 Z"/>
-        <path class="land-fill" d="M 568,308 L 577,302 L 583,312 L 575,322 L 564,318 Z"/>
-
-        <!-- ANTARCTICA (partial bottom strip) -->
-        <path class="land-fill" d="
-          M 0,365 L 60,360 L 120,358 L 180,360 L 240,355 L 300,358
-          L 360,355 L 420,360 L 480,355 L 540,360 L 600,355
-          L 660,360 L 720,358 L 780,360 L 840,358 L 900,360
-          L 900,380 L 0,380 Z
-        "/>
-
-        <!-- ====== SHIP DOTS ====== -->
-        <!-- APT = #e05c12 (orange) -->
-
-        <!-- APT Solara: Mediterranean near Italy (lon~13E, lat~41N) → ~x=124, y=138 -->
-        <g filter="url(#shipGlow)">
-          <circle cx="138" cy="130" r="6" fill="#e05c12" opacity="0.9"/>
-          <circle cx="138" cy="130" r="3" fill="white"/>
-        </g>
-        <text x="144" y="128" class="ship-label" fill="#e05c12">APT Solara</text>
-        <text x="144" y="136" class="map-label">Mediterranean (Italy)</text>
-
-        <!-- APT Ostara: Mediterranean near Greece (lon~23E, lat~38N) → x=138, y=143 -->
-        <g filter="url(#shipGlow)">
-          <circle cx="152" cy="143" r="6" fill="#e05c12" opacity="0.9"/>
-          <circle cx="152" cy="143" r="3" fill="white"/>
-        </g>
-        <text x="158" y="141" class="ship-label" fill="#e05c12">APT Ostara</text>
-        <text x="158" y="149" class="map-label">Mediterranean (Greece)</text>
-
-        <!-- Seabourn Venture (APT partner): Kimberley NW Australia (lon~127E, lat~16S) → x=460, y=265 -->
-        <g filter="url(#shipGlow)">
-          <circle cx="457" cy="258" r="6" fill="#e05c12" opacity="0.9"/>
-          <circle cx="457" cy="258" r="3" fill="white"/>
-        </g>
-        <text x="462" y="255" class="ship-label" fill="#e05c12">Seabourn Venture</text>
-        <text x="462" y="263" class="map-label">Kimberley Coast</text>
-
-        <!-- Seabourn Pursuit: Antarctica → x=330, y=362 (above Antarctica strip) -->
-        <g filter="url(#shipGlow)">
-          <circle cx="330" cy="358" r="6" fill="#e05c12" opacity="0.9"/>
-          <circle cx="330" cy="358" r="3" fill="white"/>
-        </g>
-        <text x="288" y="353" class="ship-label" fill="#e05c12">Seabourn Pursuit</text>
-        <text x="292" y="360" class="map-label">Antarctica</text>
-
-        <!-- Viking = #003DA5 (blue) -->
-
-        <!-- Viking Sky: Fort Lauderdale (lon~-80W, lat~26N) → x=808, y=195 -->
-        <g filter="url(#shipGlow)">
-          <circle cx="720" cy="190" r="6" fill="#003DA5" opacity="0.9"/>
-          <circle cx="720" cy="190" r="3" fill="white"/>
-        </g>
-        <text x="726" y="187" class="ship-label" fill="#003DA5">Viking Sky</text>
-        <text x="726" y="195" class="map-label">Fort Lauderdale</text>
-
-        <!-- Viking Star: Mediterranean / Barcelona (lon~2E, lat~41N) → x=126, y=132 -->
-        <g filter="url(#shipGlow)">
-          <circle cx="116" cy="130" r="6" fill="#003DA5" opacity="0.9"/>
-          <circle cx="116" cy="130" r="3" fill="white"/>
-        </g>
-        <text x="60" y="128" class="ship-label" fill="#003DA5">Viking Star</text>
-        <text x="68" y="136" class="map-label">Barcelona</text>
-
-        <!-- Viking Sea: Northern Europe / Bergen (lon~5E, lat~61N) → x=128, y=88 -->
-        <g filter="url(#shipGlow)">
-          <circle cx="130" cy="88" r="6" fill="#003DA5" opacity="0.9"/>
-          <circle cx="130" cy="88" r="3" fill="white"/>
-        </g>
-        <text x="136" y="86" class="ship-label" fill="#003DA5">Viking Sea</text>
-        <text x="136" y="94" class="map-label">Norway/Bergen</text>
-
-        <!-- Viking Sun: SE Asia / Singapore (lon~104E, lat~1N) → x=370, y=220 -->
-        <g filter="url(#shipGlow)">
-          <circle cx="368" cy="220" r="6" fill="#003DA5" opacity="0.9"/>
-          <circle cx="368" cy="220" r="3" fill="white"/>
-        </g>
-        <text x="374" y="218" class="ship-label" fill="#003DA5">Viking Sun</text>
-        <text x="374" y="226" class="map-label">Singapore</text>
-
-        <!-- Viking Mars: Iceland / Reykjavik (lon~-22W, lat~64N) → x=642, y=75 -->
-        <g filter="url(#shipGlow)">
-          <circle cx="635" cy="75" r="6" fill="#003DA5" opacity="0.9"/>
-          <circle cx="635" cy="75" r="3" fill="white"/>
-        </g>
-        <text x="641" y="72" class="ship-label" fill="#003DA5">Viking Mars</text>
-        <text x="641" y="80" class="map-label">Reykjavik/Iceland</text>
-
-        <!-- Viking Saturn: Caribbean (lon~-75W, lat~18N) → x=712, y=200 -->
-        <g filter="url(#shipGlow)">
-          <circle cx="712" cy="215" r="6" fill="#003DA5" opacity="0.9"/>
-          <circle cx="712" cy="215" r="3" fill="white"/>
-        </g>
-        <text x="648" y="212" class="ship-label" fill="#003DA5">Viking Saturn</text>
-        <text x="652" y="220" class="map-label">Caribbean</text>
-
-        <!-- Scenic = #c8921a (gold) -->
-
-        <!-- Scenic Eclipse: Antarctica / Drake Passage (lon~-65W, lat~-60S) → x=670, y=358 -->
-        <g filter="url(#shipGlow)">
-          <circle cx="672" cy="358" r="6" fill="#c8921a" opacity="0.95"/>
-          <circle cx="672" cy="358" r="3" fill="white"/>
-        </g>
-        <text x="630" y="353" class="ship-label" fill="#c8921a">Scenic Eclipse</text>
-        <text x="638" y="360" class="map-label">Drake Passage</text>
-
-        <!-- Scenic Eclipse II: Europe / Adriatic (lon~16E, lat~43N) → x=152, y=130 -->
-        <g filter="url(#shipGlow)">
-          <circle cx="162" cy="128" r="6" fill="#c8921a" opacity="0.95"/>
-          <circle cx="162" cy="128" r="3" fill="white"/>
-        </g>
-        <text x="168" y="125" class="ship-label" fill="#c8921a">Eclipse II</text>
-        <text x="168" y="133" class="map-label">Adriatic</text>
-
-        <!-- NCL = #006494 (teal) -->
-
-        <!-- Norwegian Spirit: Sydney (lon~151E, lat~-34S) → x=537, y=290 -->
-        <g filter="url(#shipGlow)">
-          <circle cx="535" cy="289" r="6" fill="#006494" opacity="0.9"/>
-          <circle cx="535" cy="289" r="3" fill="white"/>
-        </g>
-        <text x="541" y="287" class="ship-label" fill="#006494">Norwegian Spirit</text>
-        <text x="541" y="295" class="map-label">Sydney (Home Port)</text>
-
-        <!-- Norwegian Sun: Caribbean (lon~-79W, lat~21N) → x=708, y=205 -->
-        <g filter="url(#shipGlow)">
-          <circle cx="705" cy="200" r="6" fill="#006494" opacity="0.9"/>
-          <circle cx="705" cy="200" r="3" fill="white"/>
-        </g>
-        <!-- label overlap – nudge left -->
-        <text x="645" y="197" class="ship-label" fill="#006494">Norwegian Sun</text>
-        <text x="650" y="205" class="map-label">Caribbean</text>
-
-        <!-- Norwegian Luna: Under construction indicator (lon~-81W, lat~26N) → x=718, y=185 -->
-        <g>
-          <circle cx="730" cy="175" r="6" fill="none" stroke="#006494" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.7"/>
-          <text x="736" y="172" class="ship-label" fill="#006494" opacity="0.7">Norwegian Luna</text>
-          <text x="736" y="180" class="map-label">Under Construction 2026</text>
-        </g>
-
-        <!-- Journey Beyond = #1a7d42 (green) — The Ghan, central Australia -->
-        <!-- Alice Springs approx lon~134E, lat~-24S → x=470, y=273 -->
-        <g filter="url(#shipGlow)">
-          <rect x="464" y="268" width="10" height="10" rx="2" fill="#1a7d42" opacity="0.9"/>
-          <rect x="467" y="271" width="4" height="4" fill="white"/>
-        </g>
-        <!-- Rail line icon indicator -->
-        <line x1="469" y1="240" x2="469" y2="268" stroke="#1a7d42" stroke-width="1.5" stroke-dasharray="4,2" opacity="0.6"/>
-        <text x="476" y="272" class="ship-label" fill="#1a7d42">The Ghan</text>
-        <text x="476" y="280" class="map-label">Alice Springs (Rail)</text>
-
-        <!-- Continent labels -->
-        <text x="670" y="135" class="map-label" style="font-size:9px;font-weight:700;opacity:0.5;text-anchor:middle;">NORTH AMERICA</text>
-        <text x="655" y="265" class="map-label" style="font-size:9px;font-weight:700;opacity:0.5;text-anchor:middle;">SOUTH AMERICA</text>
-        <text x="144" y="175" class="map-label" style="font-size:9px;font-weight:700;opacity:0.5;text-anchor:middle;">AFRICA</text>
-        <text x="300" y="108" class="map-label" style="font-size:9px;font-weight:700;opacity:0.5;text-anchor:middle;">ASIA</text>
-        <text x="145" y="98" class="map-label" style="font-size:9px;font-weight:700;opacity:0.5;text-anchor:middle;">EUROPE</text>
-        <text x="475" y="272" class="map-label" style="font-size:9px;font-weight:700;opacity:0.5;text-anchor:middle;"></text>
-        <text x="476" y="368" class="map-label" style="font-size:8px;font-weight:700;opacity:0.4;text-anchor:middle;">ANTARCTICA</text>
-      </svg>
-
-      <!-- Map Legend -->
-      <div style="margin-top:var(--space-4);display:flex;flex-wrap:wrap;gap:var(--space-4);justify-content:center;padding-top:var(--space-3);border-top:1px solid var(--color-divider);">
-        <div style="display:flex;align-items:center;gap:var(--space-2);">
-          <div style="width:12px;height:12px;border-radius:50%;background:#e05c12;box-shadow:0 0 6px #e05c1280;"></div>
-          <span style="font-size:var(--text-xs);color:var(--color-text-muted);font-weight:600;">APT Luxury Travel</span>
-          <span style="font-size:10px;color:var(--color-text-faint);">4 ships</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:var(--space-2);">
-          <div style="width:12px;height:12px;border-radius:50%;background:#003DA5;box-shadow:0 0 6px #003DA580;"></div>
-          <span style="font-size:var(--text-xs);color:var(--color-text-muted);font-weight:600;">Viking Cruises</span>
-          <span style="font-size:10px;color:var(--color-text-faint);">6 ships</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:var(--space-2);">
-          <div style="width:12px;height:12px;border-radius:50%;background:#c8921a;box-shadow:0 0 6px #c8921a80;"></div>
-          <span style="font-size:var(--text-xs);color:var(--color-text-muted);font-weight:600;">Scenic Luxury</span>
-          <span style="font-size:10px;color:var(--color-text-faint);">2 ships</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:var(--space-2);">
-          <div style="width:12px;height:12px;border-radius:50%;background:#006494;box-shadow:0 0 6px #00649480;"></div>
-          <span style="font-size:var(--text-xs);color:var(--color-text-muted);font-weight:600;">Norwegian Cruise Line</span>
-          <span style="font-size:10px;color:var(--color-text-faint);">2 active + 1 building</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:var(--space-2);">
-          <div style="width:12px;height:12px;border-radius:4px;background:#1a7d42;box-shadow:0 0 6px #1a7d4280;"></div>
-          <span style="font-size:var(--text-xs);color:var(--color-text-muted);font-weight:600;">Journey Beyond</span>
-          <span style="font-size:10px;color:var(--color-text-faint);">Luxury Rail (AU)</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:var(--space-2);">
-          <div style="width:12px;height:12px;border-radius:50%;background:none;border:1.5px dashed #006494;"></div>
-          <span style="font-size:10px;color:var(--color-text-faint);">Under construction</span>
-        </div>
-      </div>
-
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Continent / Region</th>
+            <th>APT Vessels</th>
+            <th>Viking Vessels</th>
+            <th>Scenic Vessels</th>
+            <th>NCL Vessels</th>
+            <th>Peak Season</th>
+            <th>RACV Opportunity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Mediterranean / Europe</strong></td>
+            <td><span class="tag primary">APT Solara</span> <span class="tag primary">APT Ostara</span></td>
+            <td><span class="tag blue">Viking Star</span> <span class="tag blue">Viking Sea</span> <span style="color:var(--color-text-faint);font-size:10px;">+6 more</span></td>
+            <td><span class="tag primary">Scenic Eclipse II</span></td>
+            <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+            <td><span class="tag green">Apr &ndash; Oct</span></td>
+            <td style="font-size:10px;color:var(--color-text-muted);">Highest demand. Earlybird push for RACV members. APT $10K/couple saving.</td>
+          </tr>
+          <tr>
+            <td><strong>Northern Europe / Scandinavia</strong></td>
+            <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+            <td><span class="tag blue">Viking Sky</span> <span class="tag blue">Viking Mars</span></td>
+            <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+            <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+            <td><span class="tag green">Jun &ndash; Aug</span></td>
+            <td style="font-size:10px;color:var(--color-text-muted);">Viking Fly Free + Nordic &ldquo;coolcation&rdquo; trend.</td>
+          </tr>
+          <tr>
+            <td><strong>Australia / NZ / Pacific</strong></td>
+            <td><span class="tag primary">Seabourn Venture</span> <span style="font-size:10px;color:var(--color-text-faint);">(Kimberley)</span></td>
+            <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+            <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+            <td><span class="tag amber">Norwegian Spirit</span> <span style="font-size:10px;color:var(--color-text-faint);">(Sydney)</span></td>
+            <td><span class="tag primary">Nov &ndash; Mar</span></td>
+            <td style="font-size:10px;color:var(--color-text-muted);">Domestic sailings. NCL Free at Sea. APT Kimberley $7.4K saving.</td>
+          </tr>
+          <tr>
+            <td><strong>Antarctica</strong></td>
+            <td><span class="tag primary">Seabourn Pursuit</span></td>
+            <td><span class="tag blue">Viking Polaris</span></td>
+            <td><span class="tag primary">Scenic Eclipse</span></td>
+            <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+            <td><span class="tag primary">Nov &ndash; Mar</span></td>
+            <td style="font-size:10px;color:var(--color-text-muted);">Expedition booming +70%. Scenic helicopter + submarine USP.</td>
+          </tr>
+          <tr>
+            <td><strong>Asia / Indian Ocean</strong></td>
+            <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+            <td><span class="tag blue">Viking Sun</span> <span class="tag blue">Viking Orion</span></td>
+            <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+            <td><span class="tag amber">Norwegian Spirit</span> <span style="font-size:10px;color:var(--color-text-faint);">(repositioning)</span></td>
+            <td><span class="tag amber">Oct &ndash; Apr</span></td>
+            <td style="font-size:10px;color:var(--color-text-muted);">SE Asia rationing risk. Monitor fuel impact on itineraries.</td>
+          </tr>
+          <tr>
+            <td><strong>Caribbean / Americas</strong></td>
+            <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+            <td><span class="tag blue">Viking Saturn</span> <span class="tag blue">Viking Sky</span> <span style="font-size:10px;color:var(--color-text-faint);">(pre-world)</span></td>
+            <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+            <td><span class="tag amber">Norwegian Sun</span> <span class="tag amber">Norwegian Joy</span></td>
+            <td><span class="tag primary">Nov &ndash; Apr</span></td>
+            <td style="font-size:10px;color:var(--color-text-muted);">NCL 50% off. Viking world cruise from Fort Lauderdale.</td>
+          </tr>
+          <tr>
+            <td><strong>Middle East / Africa</strong></td>
+            <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+            <td><span style="font-size:10px;color:var(--color-text-muted);">World cruise segments</span></td>
+            <td><span style="font-size:10px;color:var(--color-text-muted);">World cruise segments</span></td>
+            <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+            <td><span class="tag red">Variable</span></td>
+            <td style="font-size:10px;color:var(--color-text-muted);">Hormuz crisis impact. Rerouting via Suez alternatives.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+</div>
 
-  <!-- ===================== SECTION 8: WATCHOUTS ===================== -->
-  <div class="section-gap">
+<div class="section-gap">
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Key Vessel Schedule &mdash; Monthly Deployment 2026</span>
+      <span class="card-badge gold">8 Vessels Tracked</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="min-width:160px;">Vessel</th>
+            <th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th>
+            <th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>APT Solara</strong> <span class="tag primary" style="margin-left:4px;">APT</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Repos.</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Repos.</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Repos.</span></td>
+            <td><span class="tag green" style="font-size:9px;">Med</span></td>
+            <td><span class="tag green" style="font-size:9px;">Med</span></td>
+            <td><span class="tag green" style="font-size:9px;">Med</span></td>
+            <td><span class="tag green" style="font-size:9px;">Med</span></td>
+            <td><span class="tag green" style="font-size:9px;">Med</span></td>
+            <td><span class="tag green" style="font-size:9px;">Med</span></td>
+            <td><span class="tag green" style="font-size:9px;">Med</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Repos.</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Repos.</span></td>
+          </tr>
+          <tr>
+            <td><strong>Seabourn Venture</strong> <span class="tag primary" style="margin-left:4px;">APT</span></td>
+            <td><span class="tag primary" style="font-size:9px;">Antarctica</span></td>
+            <td><span class="tag primary" style="font-size:9px;">Antarctica</span></td>
+            <td><span class="tag primary" style="font-size:9px;">Antarctica</span></td>
+            <td><span style="color:var(--color-text-faint);font-size:10px;">&mdash;</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Kimberley</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Kimberley</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Kimberley</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Kimberley</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Kimberley</span></td>
+            <td><span style="color:var(--color-text-faint);font-size:10px;">&mdash;</span></td>
+            <td><span class="tag primary" style="font-size:9px;">Antarctica</span></td>
+            <td><span class="tag primary" style="font-size:9px;">Antarctica</span></td>
+          </tr>
+          <tr>
+            <td><strong>Viking Star</strong> <span class="tag blue" style="margin-left:4px;">Viking</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Repos.</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Repos.</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Repos.</span></td>
+            <td><span class="tag green" style="font-size:9px;">Med</span></td>
+            <td><span class="tag green" style="font-size:9px;">Med</span></td>
+            <td><span class="tag green" style="font-size:9px;">Med</span></td>
+            <td><span class="tag green" style="font-size:9px;">Med</span></td>
+            <td><span class="tag green" style="font-size:9px;">Med</span></td>
+            <td><span class="tag green" style="font-size:9px;">Med</span></td>
+            <td><span class="tag green" style="font-size:9px;">Med</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Repos.</span></td>
+            <td><span style="color:var(--color-text-faint);font-size:10px;">&mdash;</span></td>
+          </tr>
+          <tr>
+            <td><strong>Viking Sky</strong> <span class="tag blue" style="margin-left:4px;">Viking</span></td>
+            <td><span class="tag primary" style="font-size:9px;">Caribbean</span></td>
+            <td><span class="tag primary" style="font-size:9px;">Caribbean</span></td>
+            <td><span class="tag primary" style="font-size:9px;">Caribbean</span></td>
+            <td><span class="tag primary" style="font-size:9px;">Caribbean</span></td>
+            <td><span class="tag green" style="font-size:9px;">N.Europe</span></td>
+            <td><span class="tag green" style="font-size:9px;">N.Europe</span></td>
+            <td><span class="tag green" style="font-size:9px;">N.Europe</span></td>
+            <td><span class="tag green" style="font-size:9px;">N.Europe</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Repos.</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Repos.</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Repos.</span></td>
+            <td><span class="tag gold" style="font-size:9px;">World Cruise</span></td>
+          </tr>
+          <tr>
+            <td><strong>Scenic Eclipse</strong> <span class="tag primary" style="margin-left:4px;">Scenic</span></td>
+            <td><span class="tag primary" style="font-size:9px;">Antarctica</span></td>
+            <td><span class="tag primary" style="font-size:9px;">Antarctica</span></td>
+            <td><span class="tag primary" style="font-size:9px;">Antarctica</span></td>
+            <td><span style="color:var(--color-text-faint);font-size:10px;">&mdash;</span></td>
+            <td><span style="color:var(--color-text-faint);font-size:10px;">&mdash;</span></td>
+            <td><span class="tag green" style="font-size:9px;">Arctic</span></td>
+            <td><span class="tag green" style="font-size:9px;">Arctic</span></td>
+            <td><span class="tag green" style="font-size:9px;">Arctic</span></td>
+            <td><span class="tag blue" style="font-size:9px;">Europe</span></td>
+            <td><span class="tag blue" style="font-size:9px;">Europe</span></td>
+            <td><span class="tag primary" style="font-size:9px;">Antarctica</span></td>
+            <td><span class="tag primary" style="font-size:9px;">Antarctica</span></td>
+          </tr>
+          <tr>
+            <td><strong>Norwegian Spirit</strong> <span class="tag amber" style="margin-left:4px;">NCL</span></td>
+            <td><span class="tag green" style="font-size:9px;">AU/NZ</span></td>
+            <td><span class="tag green" style="font-size:9px;">AU/NZ</span></td>
+            <td><span class="tag green" style="font-size:9px;">AU/NZ</span></td>
+            <td><span class="tag primary" style="font-size:9px;">S.Pacific</span></td>
+            <td><span style="color:var(--color-text-faint);font-size:10px;">&mdash;</span></td>
+            <td><span style="color:var(--color-text-faint);font-size:10px;">&mdash;</span></td>
+            <td><span style="color:var(--color-text-faint);font-size:10px;">&mdash;</span></td>
+            <td><span style="color:var(--color-text-faint);font-size:10px;">&mdash;</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Asia</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Asia</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Asia</span></td>
+            <td><span class="tag green" style="font-size:9px;">AU/NZ</span></td>
+          </tr>
+          <tr>
+            <td><strong>Norwegian Luna</strong> <span class="tag amber" style="margin-left:4px;">NCL</span></td>
+            <td colspan="6" style="text-align:center;"><span class="tag red" style="font-size:9px;">Under Construction &mdash; Delivery H2 2026</span></td>
+            <td><span class="tag red" style="font-size:9px;">Build</span></td>
+            <td><span class="tag red" style="font-size:9px;">Build</span></td>
+            <td><span class="tag red" style="font-size:9px;">Build</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Delivery</span></td>
+            <td><span class="tag green" style="font-size:9px;">TBC</span></td>
+            <td><span class="tag green" style="font-size:9px;">TBC</span></td>
+          </tr>
+          <tr>
+            <td><strong>The Ghan (Journey Beyond)</strong> <span class="tag gold" style="margin-left:4px;">Rail</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Central AU</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Central AU</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Central AU</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Central AU</span></td>
+            <td><span class="tag gold" style="font-size:9px;">⭑ Peak</span></td>
+            <td><span class="tag gold" style="font-size:9px;">⭑ Peak</span></td>
+            <td><span class="tag gold" style="font-size:9px;">⭑ Peak</span></td>
+            <td><span class="tag gold" style="font-size:9px;">⭑ Peak</span></td>
+            <td><span class="tag gold" style="font-size:9px;">⭑ Peak</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Central AU</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Central AU</span></td>
+            <td><span class="tag amber" style="font-size:9px;">Central AU</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top:var(--space-3);display:flex;flex-wrap:wrap;gap:var(--space-2);align-items:center;">
+      <span style="font-size:10px;color:var(--color-text-faint);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;">Legend:</span>
+      <span class="tag green" style="font-size:9px;">Mediterranean / N.Europe / AU-NZ</span>
+      <span class="tag primary" style="font-size:9px;">Antarctica / Caribbean / S.Pacific</span>
+      <span class="tag amber" style="font-size:9px;">Kimberley / Asia / Repos.</span>
+      <span class="tag gold" style="font-size:9px;">Peak Season / World Cruise</span>
+      <span class="tag red" style="font-size:9px;">Under Construction / Variable</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     END CRUISE MAP REPLACEMENT
+     ============================================================ -->
+
+
+<!-- ============================================================
+     SECTION 1: GROUP TOURING  (id="page-touring")
+     ============================================================ -->
+
+    <div class="section-gap">
     <div class="card-header" style="margin-bottom:var(--space-3);">
       <span class="card-title">RACV Cruise Sales Watchouts</span>
       <span class="card-badge red">ACTION REQUIRED</span>
@@ -5662,6 +5590,1820 @@
 </section>
 
 
+
+    <section class="page" id="page-touring">
+
+  <!-- PAGE HEADER -->
+  <div class="page-header section-gap">
+    <div style="display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap;">
+      <div>
+        <h1 style="display:flex;align-items:center;gap:var(--space-3);">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-label="Group touring icon">
+            <circle cx="7" cy="7" r="2.5" stroke="var(--color-primary)" stroke-width="1.6"/>
+            <circle cx="15" cy="7" r="2.5" stroke="var(--color-primary)" stroke-width="1.6"/>
+            <path d="M3 17c0-2.21 1.79-4 4-4s4 1.79 4 4" stroke="var(--color-primary)" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M11 17c0-2.21 1.79-4 4-4s4 1.79 4 4" stroke="var(--color-primary)" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          Group Touring Intelligence
+        </h1>
+        <p>RACV group tour partner analysis, promotions, competitive positioning and recommendations &mdash; April 2026</p>
+      </div>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:var(--space-2);">
+        <span class="tag primary">April 2026</span>
+        <span class="tag green">4 Tour Partners</span>
+        <span class="tag gold">Live Promotions</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARKET KPIs -->
+  <div class="section-gap">
+    <div class="card-header" style="margin-bottom:var(--space-3);">
+      <span class="card-title">AU Group Tour Market Indicators</span>
+      <span class="card-badge blue">ATIA / Toolbox Consulting 2026</span>
+    </div>
+    <div class="grid-4">
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">AU Outbound Holiday Trips</span>
+          <span class="card-badge green">STRONG</span>
+        </div>
+        <div class="kpi-value num">7.4M</div>
+        <div class="kpi-label">Holiday-purpose outbound trips (60% of 12.4M total)</div>
+        <div class="kpi-delta up">▲ Sustained post-pandemic recovery</div>
+        <div class="kpi-sub">Outbound leisure travel majority</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.atia.com.au/" target="_blank" style="color:var(--color-primary);text-decoration:underline;">ATIA 2026</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Average Trip Budget</span>
+          <span class="card-badge green">GROWING</span>
+        </div>
+        <div class="kpi-value num">$9,800</div>
+        <div class="kpi-label">Per trip average spend</div>
+        <div class="kpi-delta up">▲ +15% vs pre-pandemic</div>
+        <div class="kpi-sub">Premiumisation driving higher budgets</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://toolboxconsulting.com.au/" target="_blank" style="color:var(--color-primary);text-decoration:underline;">Toolbox Consulting 2026</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Japan Growth</span>
+          <span class="card-badge gold">TOP TREND</span>
+        </div>
+        <div class="kpi-value num">+24.9%</div>
+        <div class="kpi-label">Year-on-year outbound growth to Japan</div>
+        <div class="kpi-delta up">▲ #1 trending outbound destination</div>
+        <div class="kpi-sub">Yen weakness driving demand</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.atia.com.au/" target="_blank" style="color:var(--color-primary);text-decoration:underline;">ATIA 2026</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Small Group Trend</span>
+          <span class="card-badge green">BOOMING</span>
+        </div>
+        <div class="kpi-value num">+166%</div>
+        <div class="kpi-label">Off-season Italy bookings growth</div>
+        <div class="kpi-delta up">▲ Intrepid Travel data</div>
+        <div class="kpi-sub">Small-group off-peak surging</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://travelinyourown.com.au/" target="_blank" style="color:var(--color-primary);text-decoration:underline;">Travel in Your Own Way 2025</a></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PARTNER TRAFFIC LIGHTS -->
+  <div class="section-gap">
+    <div class="card-header" style="margin-bottom:var(--space-3);">
+      <span class="card-title">RACV Tour Partner Assessment</span>
+      <span class="card-badge blue">5 Signal Dimensions</span>
+    </div>
+
+    <!-- INTREPID -->
+    <div class="card section-gap">
+      <div class="card-header">
+        <div style="display:flex;align-items:center;gap:var(--space-3);">
+          <div style="width:36px;height:36px;background:#e8230a;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;flex-shrink:0;">IT</div>
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;color:var(--color-text);">Intrepid Travel</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">Small group adventure &bull; B Corp certified &bull; 35&ndash;55 demographic</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:var(--space-2);">
+          <span class="tag green">B Corp</span>
+          <span class="tag green">Top Performer</span>
+        </div>
+      </div>
+      <div class="insight-chip">
+        <span class="insight-icon">🏷️</span>
+        <span class="insight-text"><strong>Current Promo:</strong> Save up to $1,294 on Australia adventures Apr&ndash;Dec 2026. Destinations: SE Asia, Japan, Europe, Australia, South America.</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-3);margin-top:var(--space-3);">
+        <div class="tl-card">
+          <div class="tl-light green"></div>
+          <div class="tl-content">
+            <div class="tl-label">Deal Value</div>
+            <div class="tl-value">$1,294 saving</div>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light green"></div>
+          <div class="tl-content">
+            <div class="tl-label">Brand Fit</div>
+            <div class="tl-value">B Corp alignment</div>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light green"></div>
+          <div class="tl-content">
+            <div class="tl-label">Demand</div>
+            <div class="tl-value">Japan / Vietnam booming</div>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light green"></div>
+          <div class="tl-content">
+            <div class="tl-label">Member Value</div>
+            <div class="tl-value">Strong unique offer</div>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light green"></div>
+          <div class="tl-content">
+            <div class="tl-label">Competition</div>
+            <div class="tl-value">Only B Corp partner</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:var(--space-3);font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.racv.com.au/travel" target="_blank" style="color:var(--color-primary);text-decoration:underline;">RACV Travel page</a>, <a href="https://www.intrepidtravel.com/au" target="_blank" style="color:var(--color-primary);text-decoration:underline;">Intrepid website</a></div>
+    </div>
+
+    <!-- APT TOURING -->
+    <div class="card section-gap">
+      <div class="card-header">
+        <div style="display:flex;align-items:center;gap:var(--space-3);">
+          <div style="width:36px;height:36px;background:#003DA5;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;flex-shrink:0;">APT</div>
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;color:var(--color-text);">APT Touring</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">Luxury small group &bull; Escorted tours &bull; 55+ demographic</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:var(--space-2);">
+          <span class="tag gold">Luxury</span>
+          <span class="tag green">Top Performer</span>
+        </div>
+      </div>
+      <div class="insight-chip">
+        <span class="insight-icon">🏷️</span>
+        <span class="insight-text"><strong>Current Promo:</strong> Last Chance 2026 Sale &mdash; save up to $7,000/couple on Europe, Vietnam, Kimberley and Japan tours.</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-3);margin-top:var(--space-3);">
+        <div class="tl-card">
+          <div class="tl-light green"></div>
+          <div class="tl-content">
+            <div class="tl-label">Deal Value</div>
+            <div class="tl-value">$7,000/couple saving</div>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light green"></div>
+          <div class="tl-content">
+            <div class="tl-label">Brand Fit</div>
+            <div class="tl-value">Luxury = RACV premium</div>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light green"></div>
+          <div class="tl-content">
+            <div class="tl-label">Demand</div>
+            <div class="tl-value">Asia + Europe strong</div>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light green"></div>
+          <div class="tl-content">
+            <div class="tl-label">Member Value</div>
+            <div class="tl-value">Excellent savings</div>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light green"></div>
+          <div class="tl-content">
+            <div class="tl-label">Competition</div>
+            <div class="tl-value">Premium niche secured</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:var(--space-3);font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.travelweekly.com.au/" target="_blank" style="color:var(--color-primary);text-decoration:underline;">Travel Weekly AU</a>, <a href="https://www.aptouring.com.au/" target="_blank" style="color:var(--color-primary);text-decoration:underline;">APT website</a></div>
+    </div>
+
+    <!-- COSMOS TOURS -->
+    <div class="card section-gap">
+      <div class="card-header">
+        <div style="display:flex;align-items:center;gap:var(--space-3);">
+          <div style="width:36px;height:36px;background:#6b7280;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;flex-shrink:0;">CO</div>
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;color:var(--color-text);">Cosmos Tours</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">Budget-friendly escorted &bull; 40&ndash;65 demographic</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:var(--space-2);">
+          <span class="tag amber">Watch</span>
+          <span class="tag amber">Mixed Signals</span>
+        </div>
+      </div>
+      <div class="insight-chip">
+        <span class="insight-icon">🏷️</span>
+        <span class="insight-text"><strong>Current Promo:</strong> Europe Earlybird &mdash; save $500/couple, singles waiver included. Destinations: Italy, Spain, Greece, UK, Egypt, USA.</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-3);margin-top:var(--space-3);">
+        <div class="tl-card">
+          <div class="tl-light amber"></div>
+          <div class="tl-content">
+            <div class="tl-label">Deal Value</div>
+            <div class="tl-value">Modest $500 saving</div>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light amber"></div>
+          <div class="tl-content">
+            <div class="tl-label">Brand Fit</div>
+            <div class="tl-value">Budget positioning</div>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light green"></div>
+          <div class="tl-content">
+            <div class="tl-label">Demand</div>
+            <div class="tl-value">Europe strong</div>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light amber"></div>
+          <div class="tl-content">
+            <div class="tl-label">Member Value</div>
+            <div class="tl-value">Singles waiver helps</div>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light amber"></div>
+          <div class="tl-content">
+            <div class="tl-label">Competition</div>
+            <div class="tl-value">Trafalgar / Globus risk</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:var(--space-3);font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.racv.com.au/travel" target="_blank" style="color:var(--color-primary);text-decoration:underline;">RACV Travel page</a></div>
+    </div>
+
+    <!-- WENDY WU -->
+    <div class="card section-gap">
+      <div class="card-header">
+        <div style="display:flex;align-items:center;gap:var(--space-3);">
+          <div style="width:36px;height:36px;background:#dc2626;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;flex-shrink:0;">WW</div>
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;color:var(--color-text);">Wendy Wu Tours</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">China, Japan, SE Asia specialist &bull; Small group departures</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:var(--space-2);">
+          <span class="tag amber">Monitor</span>
+          <span class="tag green">Asia Specialist</span>
+        </div>
+      </div>
+      <div class="insight-chip">
+        <span class="insight-icon">🏷️</span>
+        <span class="insight-text"><strong>Current Promo:</strong> Various early payment discounts, small group departures. Destinations: China, Japan, Vietnam, Cambodia, India, Sri Lanka.</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-3);margin-top:var(--space-3);">
+        <div class="tl-card">
+          <div class="tl-light amber"></div>
+          <div class="tl-content">
+            <div class="tl-label">Deal Value</div>
+            <div class="tl-value">Varied discounts</div>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light green"></div>
+          <div class="tl-content">
+            <div class="tl-label">Brand Fit</div>
+            <div class="tl-value">Specialist knowledge</div>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light green"></div>
+          <div class="tl-content">
+            <div class="tl-label">Demand</div>
+            <div class="tl-value">Asia trending strongly</div>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light amber"></div>
+          <div class="tl-content">
+            <div class="tl-label">Member Value</div>
+            <div class="tl-value">Niche appeal</div>
+          </div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light amber"></div>
+          <div class="tl-content">
+            <div class="tl-label">Competition</div>
+            <div class="tl-value">Intrepid overlap Asia</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:var(--space-3);font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.racv.com.au/travel/travel-expo" target="_blank" style="color:var(--color-primary);text-decoration:underline;">RACV Travel Expo Feb 2026</a></div>
+    </div>
+  </div>
+
+  <!-- SWOT -->
+  <div class="section-gap">
+    <div class="card-header" style="margin-bottom:var(--space-3);">
+      <span class="card-title">RACV Group Touring SWOT Analysis</span>
+      <span class="card-badge blue">Strategic 2026</span>
+    </div>
+    <div class="grid-2">
+      <div class="card" style="border-top:3px solid var(--color-green);">
+        <div class="card-header">
+          <span class="card-title">Strengths</span>
+          <span class="card-badge green">S</span>
+        </div>
+        <div class="insight-chip"><span class="insight-icon">✓</span><span class="insight-text"><strong>Trusted brand:</strong> RACV member loyalty and 1.9M+ member base drives high conversion</span></div>
+        <div class="insight-chip"><span class="insight-icon">✓</span><span class="insight-text"><strong>Premium partnerships:</strong> APT luxury alignment differentiates from online aggregators</span></div>
+        <div class="insight-chip"><span class="insight-icon">✓</span><span class="insight-text"><strong>B Corp partner:</strong> Intrepid exclusive B Corp alignment appeals to sustainability-conscious 35&ndash;55 cohort</span></div>
+        <div class="insight-chip"><span class="insight-icon">✓</span><span class="insight-text"><strong>Asia specialist coverage:</strong> Wendy Wu + Intrepid cover booming Japan/Vietnam demand</span></div>
+      </div>
+      <div class="card" style="border-top:3px solid var(--color-red);">
+        <div class="card-header">
+          <span class="card-title">Weaknesses</span>
+          <span class="card-badge red">W</span>
+        </div>
+        <div class="insight-chip"><span class="insight-icon">⚠</span><span class="insight-text"><strong>Budget gap:</strong> No strong budget group touring option for price-sensitive members</span></div>
+        <div class="insight-chip"><span class="insight-icon">⚠</span><span class="insight-text"><strong>Asia overlap:</strong> Intrepid and Wendy Wu compete for the same Asia-touring member segment</span></div>
+        <div class="insight-chip"><span class="insight-icon">⚠</span><span class="insight-text"><strong>Self-drive gap:</strong> Limited self-guided tour options for independent 45&ndash;60 travellers</span></div>
+        <div class="insight-chip"><span class="insight-icon">⚠</span><span class="insight-text"><strong>Solo traveller offer:</strong> Singles supplement waivers patchy across partner portfolio</span></div>
+      </div>
+      <div class="card" style="border-top:3px solid var(--color-primary);">
+        <div class="card-header">
+          <span class="card-title">Opportunities</span>
+          <span class="card-badge blue">O</span>
+        </div>
+        <div class="insight-chip"><span class="insight-icon">▲</span><span class="insight-text"><strong>Japan demand surge:</strong> +24.9% YoY growth &mdash; targeted Japan tour campaigns to RACV members</span></div>
+        <div class="insight-chip"><span class="insight-icon">▲</span><span class="insight-text"><strong>Off-season small groups:</strong> +166% Italy off-season growth signals appetite for shoulder-season itineraries</span></div>
+        <div class="insight-chip"><span class="insight-icon">▲</span><span class="insight-text"><strong>Wellness touring:</strong> Add wellness-focused itineraries (yoga retreats, spa towns, thermal baths)</span></div>
+        <div class="insight-chip"><span class="insight-icon">▲</span><span class="insight-text"><strong>Bundled RACV packages:</strong> Combine group tour + travel insurance + resort pre-stay for ecosystem value</span></div>
+      </div>
+      <div class="card" style="border-top:3px solid var(--color-amber);">
+        <div class="card-header">
+          <span class="card-title">Threats</span>
+          <span class="card-badge amber">T</span>
+        </div>
+        <div class="insight-chip"><span class="insight-icon">▼</span><span class="insight-text"><strong>Direct booking growth:</strong> Partners bypassing agents with direct-to-consumer digital marketing</span></div>
+        <div class="insight-chip"><span class="insight-icon">▼</span><span class="insight-text"><strong>AI trip planning:</strong> AI-generated itineraries reducing need for agent-curated group tours</span></div>
+        <div class="insight-chip"><span class="insight-icon">▼</span><span class="insight-text"><strong>Overtourism backlash:</strong> Popular group destinations (Bali, Amalfi) introducing limits on tours</span></div>
+        <div class="insight-chip"><span class="insight-icon">▼</span><span class="insight-text"><strong>Cost inflation:</strong> Fuel, accommodation and guide costs squeezing tour margins and member value</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROMOTIONS TABLE -->
+  <div class="section-gap">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Active Touring Promotions &mdash; April 2026</span>
+        <span class="card-badge green">4 Live Deals</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Partner</th>
+              <th>Promotion</th>
+              <th>Saving</th>
+              <th>Destination</th>
+              <th>Expiry</th>
+              <th>RACV Stackable</th>
+              <th>Recommended Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Intrepid Travel</strong></td>
+              <td>Australia Adventures Sale</td>
+              <td><span class="tag green">Up to $1,294</span></td>
+              <td>Australia, SE Asia, Japan, Europe</td>
+              <td>Dec 2026 (travel by)</td>
+              <td><span class="tag green">Yes &mdash; TI + Fuel</span></td>
+              <td style="font-size:10px;">Feature in Apr newsletter. Social push for Japan/Vietnam.</td>
+            </tr>
+            <tr>
+              <td><strong>APT Touring</strong></td>
+              <td>Last Chance 2026 Sale</td>
+              <td><span class="tag green">Up to $7,000/couple</span></td>
+              <td>Europe, Vietnam, Kimberley, Japan</td>
+              <td>Limited 2026 departures</td>
+              <td><span class="tag green">Yes &mdash; TI + Resort</span></td>
+              <td style="font-size:10px;">Urgency messaging. Member email campaign. Limited seats.</td>
+            </tr>
+            <tr>
+              <td><strong>Cosmos Tours</strong></td>
+              <td>Europe Earlybird + Singles Waiver</td>
+              <td><span class="tag amber">$500/couple + waiver</span></td>
+              <td>Italy, Spain, Greece, UK, Egypt</td>
+              <td>30 June 2026</td>
+              <td><span class="tag amber">Partial &mdash; TI only</span></td>
+              <td style="font-size:10px;">Target solo travellers. Singles waiver is key USP.</td>
+            </tr>
+            <tr>
+              <td><strong>Wendy Wu Tours</strong></td>
+              <td>Early Payment Discounts</td>
+              <td><span class="tag amber">Varied by departure</span></td>
+              <td>China, Japan, Vietnam, India</td>
+              <td>Rolling &mdash; check dates</td>
+              <td><span class="tag amber">Partial &mdash; TI</span></td>
+              <td style="font-size:10px;">Leverage Japan surge. Promote small group Asia specialist edge.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESTINATION DEMAND HEAT MAP -->
+  <div class="section-gap">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Destination Demand Analysis &mdash; Group Touring</span>
+        <span class="card-badge gold">April 2026</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Destination</th>
+              <th>Search Trend</th>
+              <th>YoY Growth</th>
+              <th>RACV Partner Coverage</th>
+              <th>Gap Analysis</th>
+              <th>Recommended Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Japan</strong></td>
+              <td><span class="tag green">🔥 Very High</span></td>
+              <td><span class="tag green">+24.9%</span></td>
+              <td>Intrepid, APT, Wendy Wu</td>
+              <td><span class="tag green">Full coverage</span></td>
+              <td style="font-size:10px;">Lead all Japan campaigns. Feature yen savings message.</td>
+            </tr>
+            <tr>
+              <td><strong>Vietnam</strong></td>
+              <td><span class="tag green">🔥 High</span></td>
+              <td><span class="tag green">+18%</span></td>
+              <td>Intrepid, APT, Wendy Wu</td>
+              <td><span class="tag green">Full coverage</span></td>
+              <td style="font-size:10px;">APT Mekong river + Intrepid small group combination pitch.</td>
+            </tr>
+            <tr>
+              <td><strong>Europe (Mediterranean)</strong></td>
+              <td><span class="tag green">High</span></td>
+              <td><span class="tag green">+12%</span></td>
+              <td>APT, Cosmos</td>
+              <td><span class="tag amber">Mid-range gap</span></td>
+              <td style="font-size:10px;">Add mid-range partner (Trafalgar/Insight) or push Cosmos harder.</td>
+            </tr>
+            <tr>
+              <td><strong>Bali</strong></td>
+              <td><span class="tag amber">Medium-High</span></td>
+              <td><span class="tag amber">+8%</span></td>
+              <td>Intrepid</td>
+              <td><span class="tag amber">Partial coverage</span></td>
+              <td style="font-size:10px;">Overtourism risk &mdash; monitor. Promote shoulder season departures.</td>
+            </tr>
+            <tr>
+              <td><strong>United Kingdom</strong></td>
+              <td><span class="tag amber">Medium</span></td>
+              <td><span class="tag amber">+6%</span></td>
+              <td>Cosmos, APT</td>
+              <td><span class="tag green">Covered</span></td>
+              <td style="font-size:10px;">Position as cultural heritage escape. Self-drive add-on opportunity.</td>
+            </tr>
+            <tr>
+              <td><strong>New Zealand</strong></td>
+              <td><span class="tag amber">Medium</span></td>
+              <td><span class="tag amber">+5%</span></td>
+              <td>Intrepid (limited)</td>
+              <td><span class="tag red">Gap &mdash; no premium NZ tour partner</span></td>
+              <td style="font-size:10px;"><strong>Opportunity:</strong> Partner with Scenic or APT for NZ escorted tours.</td>
+            </tr>
+            <tr>
+              <td><strong>India</strong></td>
+              <td><span class="tag amber">Medium</span></td>
+              <td><span class="tag green">+15%</span></td>
+              <td>Wendy Wu, Intrepid</td>
+              <td><span class="tag green">Covered</span></td>
+              <td style="font-size:10px;">Golden Triangle + wellness Rajasthan positioning. Growing interest.</td>
+            </tr>
+            <tr>
+              <td><strong>Nordic / Scandinavia</strong></td>
+              <td><span class="tag amber">Medium</span></td>
+              <td><span class="tag green">+11% (coolcations)</span></td>
+              <td>Limited &mdash; Viking cruise only</td>
+              <td><span class="tag red">Land tour gap</span></td>
+              <td style="font-size:10px;"><strong>Opportunity:</strong> Nordic land tour partner. Complement Viking cruise.</td>
+            </tr>
+            <tr>
+              <td><strong>USA</strong></td>
+              <td><span class="tag red">Declining</span></td>
+              <td><span class="tag red">&minus;8% (political risk)</span></td>
+              <td>Cosmos</td>
+              <td><span class="tag amber">Monitor situation</span></td>
+              <td style="font-size:10px;">Reduce USA push. Redirect USA-booked members to Canada/UK alternatives.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- WATCHOUTS -->
+  <div class="section-gap">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Watchouts &amp; RACV Actions</span>
+        <span class="card-badge red">5 Alerts</span>
+      </div>
+      <div class="tl-card section-gap">
+        <div class="tl-light amber"></div>
+        <div class="tl-content">
+          <div class="tl-label">Japan Capacity Crunch</div>
+          <div class="tl-value">+24.9% demand surge risks sold-out departures by Q3. <strong>Action:</strong> Secure group allocation hold agreements with APT, Intrepid, Wendy Wu before peak booking season.</div>
+        </div>
+      </div>
+      <div class="tl-card section-gap">
+        <div class="tl-light red"></div>
+        <div class="tl-content">
+          <div class="tl-label">USA Demand Collapse</div>
+          <div class="tl-value">Political headwinds driving &minus;8% YoY decline. <strong>Action:</strong> Pause USA-first content. Redirect budget to Japan/Europe/Nordic destinations.</div>
+        </div>
+      </div>
+      <div class="tl-card section-gap">
+        <div class="tl-light amber"></div>
+        <div class="tl-content">
+          <div class="tl-label">Partner Direct-to-Consumer Risk</div>
+          <div class="tl-value">Intrepid and Wendy Wu increasing direct digital ad spend. <strong>Action:</strong> Negotiate RACV-exclusive deals or member-only pricing that cannot be matched direct.</div>
+        </div>
+      </div>
+      <div class="tl-card section-gap">
+        <div class="tl-light amber"></div>
+        <div class="tl-content">
+          <div class="tl-label">NZ &amp; Nordic Land Tour Gap</div>
+          <div class="tl-value">Strong search trends with no RACV land tour partner coverage. <strong>Action:</strong> Evaluate Scenic, Globus or Insight Vacations for NZ and Nordic land product.</div>
+        </div>
+      </div>
+      <div class="tl-card">
+        <div class="tl-light green"></div>
+        <div class="tl-content">
+          <div class="tl-label">Small Group + Wellness Opportunity</div>
+          <div class="tl-value">Off-season small group Italy +166%. Wellness travel premium +30%. <strong>Action:</strong> Commission Intrepid wellness-focused itineraries. Launch RACV Wellness Touring sub-brand.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     SECTION 2: ATTRACTIONS & EXPERIENCES  (id="page-attractions")
+     ============================================================ -->
+
+<section class="page" id="page-attractions">
+
+  <!-- PAGE HEADER -->
+  <div class="page-header section-gap">
+    <div style="display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap;">
+      <div>
+        <h1 style="display:flex;align-items:center;gap:var(--space-3);">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-label="Attractions icon">
+            <polygon points="11,2 13.5,8 20,8.5 15,13 16.5,20 11,16.5 5.5,20 7,13 2,8.5 8.5,8" stroke="var(--color-primary)" stroke-width="1.6" stroke-linejoin="round" fill="none"/>
+          </svg>
+          Attractions &amp; Experiences Intelligence
+        </h1>
+        <p>RACV attractions and experience partners &mdash; promotions, trends, competitive landscape &mdash; April 2026</p>
+      </div>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:var(--space-2);">
+        <span class="tag primary">April 2026</span>
+        <span class="tag green">6 Partners</span>
+        <span class="tag gold">Experience Economy Boom</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="section-gap">
+    <div class="card-header" style="margin-bottom:var(--space-3);">
+      <span class="card-title">Experience Economy Indicators</span>
+      <span class="card-badge blue">Accor / IBISWorld / Globetrender 2026</span>
+    </div>
+    <div class="grid-4">
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Experience Priority</span>
+          <span class="card-badge green">VERY HIGH</span>
+        </div>
+        <div class="kpi-value num">89%</div>
+        <div class="kpi-label">Say live events make travel worthwhile</div>
+        <div class="kpi-delta up">▲ Experiences over possessions</div>
+        <div class="kpi-sub">Emotional ROI driving decisions</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.accor.com/" target="_blank" style="color:var(--color-primary);text-decoration:underline;">Accor / Globetrender 2026</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">AU Tourism Industry</span>
+          <span class="card-badge green">MASSIVE</span>
+        </div>
+        <div class="kpi-value num">$213.2B</div>
+        <div class="kpi-label">Australian tourism industry size 2026</div>
+        <div class="kpi-delta up">▲ Growing year-on-year</div>
+        <div class="kpi-sub">Experiences = fastest growing segment</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.ibisworld.com/au/" target="_blank" style="color:var(--color-primary);text-decoration:underline;">IBISWorld 2026</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">VIC Attractions Covered</span>
+          <span class="card-badge primary">KEY PARTNERS</span>
+        </div>
+        <div class="kpi-value num">6</div>
+        <div class="kpi-label">Active RACV attraction partners</div>
+        <div class="kpi-delta flat">— Dreamworld, Skydeck, Phillip Island,<br>Great Ocean Road, Yarra Valley, Hanrob</div>
+        <div class="kpi-sub">VIC + QLD coverage</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.racv.com.au/travel" target="_blank" style="color:var(--color-primary);text-decoration:underline;">RACV Travel 2026</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Member Savings</span>
+          <span class="card-badge gold">UP TO 25% OFF</span>
+        </div>
+        <div class="kpi-value num">25%</div>
+        <div class="kpi-label">Off selected attractions for members</div>
+        <div class="kpi-delta up">▲ Stronger than AA/NRMA offer</div>
+        <div class="kpi-sub">Stackable with VIC free public transport</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.racv.com.au/travel/travel-offers" target="_blank" style="color:var(--color-primary);text-decoration:underline;">RACV Travel Offers 2026</a></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PARTNER TRAFFIC LIGHTS -->
+  <div class="section-gap">
+    <div class="card-header" style="margin-bottom:var(--space-3);">
+      <span class="card-title">Attractions Partner Assessment</span>
+      <span class="card-badge blue">6 Partners</span>
+    </div>
+
+    <div class="grid-3">
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;">Dreamworld</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">QLD family theme park</div>
+          </div>
+          <span class="tag green">Strong</span>
+        </div>
+        <div class="insight-chip" style="margin-bottom:var(--space-2);">
+          <span class="insight-icon">🎢</span>
+          <span class="insight-text">$116.10 2-day pass, QLD family pack. High family demand in school holidays.</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Deal Value</div><div class="tl-value">$116.10 2-day</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Demand</div><div class="tl-value">School holidays peak</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Member Value</div><div class="tl-value">Unique family offer</div></div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;">Melbourne Skydeck</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">CBD observation deck</div>
+          </div>
+          <span class="tag amber">Watch</span>
+        </div>
+        <div class="insight-chip" style="margin-bottom:var(--space-2);">
+          <span class="insight-icon">🏙️</span>
+          <span class="insight-text">Buy 1 Get 1 Mon&ndash;Fri offer. Weekday-only restriction limits overall uptake.</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Deal Value</div><div class="tl-value">BOGO weekdays</div></div></div>
+          <div class="tl-card"><div class="tl-light amber"></div><div class="tl-content"><div class="tl-label">Uptake Risk</div><div class="tl-value">Weekday-only limit</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Tourism Role</div><div class="tl-value">Melbourne icon</div></div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;">Phillip Island Nature Parks</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">Penguin Parade &amp; wildlife</div>
+          </div>
+          <span class="tag green">Strong</span>
+        </div>
+        <div class="insight-chip" style="margin-bottom:var(--space-2);">
+          <span class="insight-icon">🐧</span>
+          <span class="insight-text">Penguin Parade nightly event, wildlife attractions. Strong domestic and international visitor appeal year-round.</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Demand</div><div class="tl-value">Year-round strong</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Brand Fit</div><div class="tl-value">VIC icon partner</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Package Fit</div><div class="tl-value">Combines with Inverloch</div></div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;">Great Ocean Road Experiences</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">12 Apostles &bull; Otway Rainforest</div>
+          </div>
+          <span class="tag green">Strong</span>
+        </div>
+        <div class="insight-chip" style="margin-bottom:var(--space-2);">
+          <span class="insight-icon">🌊</span>
+          <span class="insight-text">12 Apostles iconic, Otway Rainforest treetop walk. Connects with RACV Torquay Resort for package bundling.</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Demand</div><div class="tl-value">High &mdash; domestic + intl</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Package Fit</div><div class="tl-value">Links Torquay Resort</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Member Value</div><div class="tl-value">Exclusive GOR passes</div></div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;">Yarra Valley Wineries &amp; Dining</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">Connected to RACV Healesville</div>
+          </div>
+          <span class="tag green">Strong</span>
+        </div>
+        <div class="insight-chip" style="margin-bottom:var(--space-2);">
+          <span class="insight-icon">🍷</span>
+          <span class="insight-text">Integrated with RACV Healesville Country Club &amp; Resort. Wine tourism + wellness positioning.</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Integration</div><div class="tl-value">Healesville Resort link</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Trend Fit</div><div class="tl-value">Wellness + wine boom</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Package Fit</div><div class="tl-value">Wellness Retreat bundle</div></div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;">Hanrob Pet Hotel</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">Pet boarding &mdash; travel enabler</div>
+          </div>
+          <span class="tag amber">Niche</span>
+        </div>
+        <div class="insight-chip" style="margin-bottom:var(--space-2);">
+          <span class="insight-icon">🐾</span>
+          <span class="insight-text">Pet boarding removes travel barrier for pet owners. Niche but high loyalty &mdash; ~40% of AU households have pets.</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Unique Value</div><div class="tl-value">Removes pet barrier</div></div></div>
+          <div class="tl-card"><div class="tl-light amber"></div><div class="tl-content"><div class="tl-label">Scale</div><div class="tl-value">Niche segment</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Loyalty Driver</div><div class="tl-value">High repeat usage</div></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TRENDS -->
+  <div class="section-gap">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Trends Impacting Attractions</span>
+        <span class="card-badge gold">5 Key Shifts</span>
+      </div>
+      <div class="grid-2">
+        <div>
+          <div class="insight-chip">
+            <span class="insight-icon">🎭</span>
+            <span class="insight-text"><strong>Experiential travel boom:</strong> 89% of Australians say live events make travel worthwhile. Shift from sightseeing to doing &mdash; cooking classes, wildlife encounters, artisan workshops.</span>
+          </div>
+          <div class="insight-chip">
+            <span class="insight-icon">🎬</span>
+            <span class="insight-text"><strong>Set-jetting:</strong> TV/film locations driving attraction visits (Bridgerton UK, Shogun Japan). Align content with streaming trends for attractions near filming locations.</span>
+          </div>
+          <div class="insight-chip">
+            <span class="insight-icon">🧘</span>
+            <span class="insight-text"><strong>Wellness experiences:</strong> Spa, thermal, mindfulness and nature-based experiences commanding 30%+ premium (Simon-Kucher). Yarra Valley and Cape Schanck well-positioned.</span>
+          </div>
+        </div>
+        <div>
+          <div class="insight-chip">
+            <span class="insight-icon">🗺️</span>
+            <span class="insight-text"><strong>Regional dispersal:</strong> Travellers moving beyond CBD to regional VIC. Great Ocean Road, Yarra Valley and Phillip Island benefit. Boomtown data shows +$286 regional spend premium.</span>
+          </div>
+          <div class="insight-chip">
+            <span class="insight-icon">🚃</span>
+            <span class="insight-text"><strong>VIC free public transport April 2026:</strong> Melbourne CBD attraction accessibility improves. Melbourne Skydeck and CBD experiences gain footfall without the weekday restriction impact.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPETITIVE COMPARISON -->
+  <div class="section-gap">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Attraction Partner Competitive Comparison</span>
+        <span class="card-badge blue">RACV vs NRMA vs RACQ</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>RACV</th>
+              <th>NRMA</th>
+              <th>RACQ</th>
+              <th>RACV Advantage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Theme Parks</strong></td>
+              <td><span class="tag green">Dreamworld (QLD)</span></td>
+              <td><span class="tag amber">Luna Park Sydney</span></td>
+              <td><span class="tag green">Warner Bros. + Sea World</span></td>
+              <td style="font-size:10px;">Dreamworld 2-day pass value strongest. RACQ covers more QLD parks &mdash; monitor.</td>
+            </tr>
+            <tr>
+              <td><strong>Observation Decks</strong></td>
+              <td><span class="tag green">Melbourne Skydeck BOGO</span></td>
+              <td><span class="tag amber">Sydney Tower discount</span></td>
+              <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+              <td style="font-size:10px;">RACV BOGO offer stronger than NRMA 10% off. Extend to weekends.</td>
+            </tr>
+            <tr>
+              <td><strong>Wildlife / Nature</strong></td>
+              <td><span class="tag green">Phillip Island &bull; Great Ocean Road</span></td>
+              <td><span class="tag amber">Taronga Zoo discount</span></td>
+              <td><span class="tag amber">Lone Pine Koala</span></td>
+              <td style="font-size:10px;">RACV nature portfolio strongest in VIC. Unique iconic experiences.</td>
+            </tr>
+            <tr>
+              <td><strong>Wine &amp; Dining</strong></td>
+              <td><span class="tag green">Yarra Valley integrated</span></td>
+              <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+              <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+              <td style="font-size:10px;"><strong>Unique:</strong> No competitor offers integrated winery + resort experience.</td>
+            </tr>
+            <tr>
+              <td><strong>Pet Travel</strong></td>
+              <td><span class="tag green">Hanrob Pet Hotel</span></td>
+              <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+              <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+              <td style="font-size:10px;"><strong>Unique:</strong> Only motoring club with pet boarding partner. Loyalty differentiator.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- WATCHOUTS -->
+  <div class="section-gap">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Watchouts &amp; RACV Actions</span>
+        <span class="card-badge amber">4 Alerts</span>
+      </div>
+      <div class="tl-card section-gap">
+        <div class="tl-light amber"></div>
+        <div class="tl-content">
+          <div class="tl-label">Skydeck Weekday Restriction</div>
+          <div class="tl-value">BOGO weekday-only limits appeal for working-age members. <strong>Action:</strong> Negotiate weekend extension or add weekend 20% off alternative.</div>
+        </div>
+      </div>
+      <div class="tl-card section-gap">
+        <div class="tl-light red"></div>
+        <div class="tl-content">
+          <div class="tl-label">QLD Competition (RACQ vs RACV)</div>
+          <div class="tl-value">RACQ has Warner Bros. + Sea World + Movie World &mdash; broader QLD theme park coverage than RACV Dreamworld-only. <strong>Action:</strong> Expand QLD attraction portfolio or add Gold Coast theme park bundle.</div>
+        </div>
+      </div>
+      <div class="tl-card section-gap">
+        <div class="tl-light amber"></div>
+        <div class="tl-content">
+          <div class="tl-label">Overtourism at Peak Sites</div>
+          <div class="tl-value">12 Apostles and Penguin Parade face overcrowding. <strong>Action:</strong> Promote off-peak and shoulder-season visits. Develop timed RACV member access slots.</div>
+        </div>
+      </div>
+      <div class="tl-card">
+        <div class="tl-light green"></div>
+        <div class="tl-content">
+          <div class="tl-label">VIC Free Public Transport Opportunity</div>
+          <div class="tl-value">April 2026 Melbourne free PT improves CBD attraction accessibility. <strong>Action:</strong> Bundle Melbourne Skydeck + Federation Square + Queen Vic Market in a &ldquo;Melbourne Day Pass&rdquo; member offer.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     SECTION 3: HOTELS  (id="page-hotels")
+     ============================================================ -->
+
+<section class="page" id="page-hotels">
+
+  <!-- PAGE HEADER -->
+  <div class="page-header section-gap">
+    <div style="display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap;">
+      <div>
+        <h1 style="display:flex;align-items:center;gap:var(--space-3);">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-label="Hotel icon">
+            <rect x="3" y="8" width="16" height="12" rx="1.5" stroke="var(--color-primary)" stroke-width="1.6"/>
+            <path d="M7 20v-5h8v5" stroke="var(--color-primary)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 8l8-6 8 6" stroke="var(--color-primary)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="9" y="11" width="4" height="4" rx="0.5" stroke="var(--color-primary)" stroke-width="1.2"/>
+          </svg>
+          Hotel Partners Intelligence
+        </h1>
+        <p>RACV hotel partner analysis, accommodation trends, competitive positioning and member value &mdash; April 2026</p>
+      </div>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:var(--space-2);">
+        <span class="tag primary">April 2026</span>
+        <span class="tag green">6 Own Resorts</span>
+        <span class="tag gold">Accommodation-First Trend</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="section-gap">
+    <div class="card-header" style="margin-bottom:var(--space-3);">
+      <span class="card-title">Hotel &amp; Accommodation Market Indicators</span>
+      <span class="card-badge blue">Webjet / Visit Victoria / Boomtown 2026</span>
+    </div>
+    <div class="grid-4">
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Accommodation Priority</span>
+          <span class="card-badge green">KEY SHIFT</span>
+        </div>
+        <div class="kpi-value num">27%</div>
+        <div class="kpi-label">Prioritise accommodation upgrade over flights</div>
+        <div class="kpi-delta up">▲ Accommodation-first booking behaviour</div>
+        <div class="kpi-sub">Flight price sensitivity shifting to stay quality</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.webjet.com.au/" target="_blank" style="color:var(--color-primary);text-decoration:underline;">Webjet Travel Trends 2026</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Melbourne #1 Interstate</span>
+          <span class="card-badge gold">LEADER</span>
+        </div>
+        <div class="kpi-value num">#1</div>
+        <div class="kpi-label">Interstate overnight leisure destination</div>
+        <div class="kpi-delta up">▲ Consistently top-ranked</div>
+        <div class="kpi-sub">Strong inbound demand for RACV VIC properties</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.visitvictoria.com/" target="_blank" style="color:var(--color-primary);text-decoration:underline;">Visit Victoria 2026</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Regional Stay Premium</span>
+          <span class="card-badge green">SIGNIFICANT</span>
+        </div>
+        <div class="kpi-value num">+$286</div>
+        <div class="kpi-label">Regional travellers spend more per holiday</div>
+        <div class="kpi-delta up">▲ vs metropolitan same-day visits</div>
+        <div class="kpi-sub">Overnight + regional = higher yield per booking</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://boomtown.org.au/" target="_blank" style="color:var(--color-primary);text-decoration:underline;">Boomtown Regional 2026</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Hotel Ad Spend</span>
+          <span class="card-badge amber">COMPETITIVE</span>
+        </div>
+        <div class="kpi-value num">↑ High</div>
+        <div class="kpi-label">Hotel advertising spend in AU travel sector</div>
+        <div class="kpi-delta up">▲ Significant growth vs 2024</div>
+        <div class="kpi-sub">Booking.com &amp; Expedia dominating spend</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.nielsen.com/au/" target="_blank" style="color:var(--color-primary);text-decoration:underline;">Nielsen AU 2026</a></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PARTNER TRAFFIC LIGHTS -->
+  <div class="section-gap">
+    <div class="card-header" style="margin-bottom:var(--space-3);">
+      <span class="card-title">Hotel Partner Assessment</span>
+      <span class="card-badge blue">3 Key Partners</span>
+    </div>
+
+    <!-- RACV RESORTS -->
+    <div class="card section-gap">
+      <div class="card-header">
+        <div style="display:flex;align-items:center;gap:var(--space-3);">
+          <div style="width:36px;height:36px;background:#003DA5;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;flex-shrink:0;">RR</div>
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;color:var(--color-text);">RACV Resorts (Own Properties)</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">6 resorts &bull; Torquay, Healesville, Cape Schanck, Royal Pines, Cobram, Inverloch &bull; Member 30% off</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:var(--space-2);">
+          <span class="tag green">Crown Jewel</span>
+          <span class="tag gold">Own Asset</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-3);margin-top:var(--space-3);">
+        <div class="tl-card">
+          <div class="tl-light green"></div>
+          <div class="tl-content"><div class="tl-label">Member Rate</div><div class="tl-value">30% off rack rate</div></div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light green"></div>
+          <div class="tl-content"><div class="tl-label">Brand Fit</div><div class="tl-value">RACV own asset</div></div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light green"></div>
+          <div class="tl-content"><div class="tl-label">Demand</div><div class="tl-value">Regional + resort boom</div></div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light green"></div>
+          <div class="tl-content"><div class="tl-label">Package Potential</div><div class="tl-value">Bundling core anchor</div></div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-light green"></div>
+          <div class="tl-content"><div class="tl-label">Margin</div><div class="tl-value">Highest &mdash; own asset</div></div>
+        </div>
+      </div>
+      <div style="margin-top:var(--space-3);">
+        <div class="card-header" style="margin-bottom:var(--space-2);">
+          <span class="card-title">Resort Coverage</span>
+        </div>
+        <div class="grid-3">
+          <div style="font-size:10px;padding:var(--space-2);background:var(--color-surface-2);border-radius:var(--radius-md);border:1px solid var(--color-divider);">
+            <strong style="color:var(--color-primary);">Cape Schanck</strong><br>
+            <span style="color:var(--color-text-muted);">Mornington Peninsula &bull; Golf &bull; Coastal &bull; Spa</span>
+          </div>
+          <div style="font-size:10px;padding:var(--space-2);background:var(--color-surface-2);border-radius:var(--radius-md);border:1px solid var(--color-divider);">
+            <strong style="color:var(--color-primary);">Torquay</strong><br>
+            <span style="color:var(--color-text-muted);">Great Ocean Road gateway &bull; Surf &bull; Golf &bull; Families</span>
+          </div>
+          <div style="font-size:10px;padding:var(--space-2);background:var(--color-surface-2);border-radius:var(--radius-md);border:1px solid var(--color-divider);">
+            <strong style="color:var(--color-primary);">Healesville</strong><br>
+            <span style="color:var(--color-text-muted);">Yarra Valley &bull; Wine &bull; Wellness &bull; Nature</span>
+          </div>
+          <div style="font-size:10px;padding:var(--space-2);background:var(--color-surface-2);border-radius:var(--radius-md);border:1px solid var(--color-divider);">
+            <strong style="color:var(--color-primary);">Royal Pines (QLD)</strong><br>
+            <span style="color:var(--color-text-muted);">Gold Coast &bull; Golf &bull; Conference &bull; Events</span>
+          </div>
+          <div style="font-size:10px;padding:var(--space-2);background:var(--color-surface-2);border-radius:var(--radius-md);border:1px solid var(--color-divider);">
+            <strong style="color:var(--color-primary);">Cobram</strong><br>
+            <span style="color:var(--color-text-muted);">Murray River &bull; Family &bull; Beach resort inland</span>
+          </div>
+          <div style="font-size:10px;padding:var(--space-2);background:var(--color-surface-2);border-radius:var(--radius-md);border:1px solid var(--color-divider);">
+            <strong style="color:var(--color-primary);">Inverloch</strong><br>
+            <span style="color:var(--color-text-muted);">Bass Coast &bull; Surf beach &bull; Family getaway</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERTZ -->
+    <div class="card section-gap">
+      <div class="card-header">
+        <div style="display:flex;align-items:center;gap:var(--space-3);">
+          <div style="width:36px;height:36px;background:#f0c050;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#111;flex-shrink:0;">HZ</div>
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;color:var(--color-text);">Hertz Car Rental</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">Cross-sell with hotel stays &bull; Member rates &bull; Airport &amp; city locations</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:var(--space-2);">
+          <span class="tag amber">Cross-sell</span>
+          <span class="tag amber">Monitor</span>
+        </div>
+      </div>
+      <div class="insight-chip">
+        <span class="insight-icon">🚗</span>
+        <span class="insight-text"><strong>Opportunity:</strong> Hotel + car rental bundle for regional VIC trips. Regional travellers spend $286 more per holiday &mdash; driving is primary mode for RACV members.</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-3);margin-top:var(--space-3);">
+        <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Member Rate</div><div class="tl-value">Preferred rates</div></div></div>
+        <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Cross-sell Fit</div><div class="tl-value">Hotels + drives</div></div></div>
+        <div class="tl-card"><div class="tl-light amber"></div><div class="tl-content"><div class="tl-label">Competition</div><div class="tl-value">Budget / Avis compete</div></div></div>
+        <div class="tl-card"><div class="tl-light amber"></div><div class="tl-content"><div class="tl-label">EV Transition</div><div class="tl-value">Fleet transition risk</div></div></div>
+        <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">RACV Synergy</div><div class="tl-value">Roadside assist cross</div></div></div>
+      </div>
+    </div>
+
+    <!-- PARTNER HOTELS -->
+    <div class="card section-gap">
+      <div class="card-header">
+        <div style="display:flex;align-items:center;gap:var(--space-3);">
+          <div style="width:36px;height:36px;background:#6366f1;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;flex-shrink:0;">PH</div>
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;color:var(--color-text);">Partner Hotels via RACV Travel</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">Chain and independent properties &bull; AU + international &bull; RACV negotiated rates</div>
+          </div>
+        </div>
+        <span class="tag amber">Develop</span>
+      </div>
+      <div class="insight-chip">
+        <span class="insight-icon">🏨</span>
+        <span class="insight-text">RACV negotiated rates across chain hotels. Opportunity to build preferred hotel program with clearer member value proposition vs Booking.com and Expedia.</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-3);margin-top:var(--space-3);">
+        <div class="tl-card"><div class="tl-light amber"></div><div class="tl-content"><div class="tl-label">Differentiation</div><div class="tl-value">Needs sharpening</div></div></div>
+        <div class="tl-card"><div class="tl-light amber"></div><div class="tl-content"><div class="tl-label">vs OTAs</div><div class="tl-value">Rate parity risk</div></div></div>
+        <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Breadth</div><div class="tl-value">Wide geographic reach</div></div></div>
+        <div class="tl-card"><div class="tl-light amber"></div><div class="tl-content"><div class="tl-label">Member Value</div><div class="tl-value">Inconsistent</div></div></div>
+        <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Bundle Potential</div><div class="tl-value">High with TI + car</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPETITOR LANDSCAPE -->
+  <div class="section-gap">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Hotel Offering Competitive Landscape</span>
+        <span class="card-badge blue">RACV vs Key Competitors</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>RACV</th>
+              <th>Flight Centre Hotels</th>
+              <th>Booking.com / Expedia</th>
+              <th>Luxury Escapes</th>
+              <th>Airbnb</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Own Properties</strong></td>
+              <td><span class="tag green">6 resorts &mdash; unique</span></td>
+              <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+              <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+              <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+              <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+            </tr>
+            <tr>
+              <td><strong>Inventory Breadth</strong></td>
+              <td><span class="tag amber">Moderate</span></td>
+              <td><span class="tag green">Very wide</span></td>
+              <td><span class="tag green">Massive &mdash; 1M+ props</span></td>
+              <td><span class="tag amber">Curated luxury</span></td>
+              <td><span class="tag green">3M+ listings</span></td>
+            </tr>
+            <tr>
+              <td><strong>Member Pricing</strong></td>
+              <td><span class="tag green">30% off own resorts</span></td>
+              <td><span class="tag amber">Loyalty points only</span></td>
+              <td><span class="tag amber">Genius tier only</span></td>
+              <td><span class="tag amber">Flash sales</span></td>
+              <td><span class="tag amber">No membership</span></td>
+            </tr>
+            <tr>
+              <td><strong>Trust / Brand</strong></td>
+              <td><span class="tag green">Very high (RACV brand)</span></td>
+              <td><span class="tag green">High</span></td>
+              <td><span class="tag amber">Moderate</span></td>
+              <td><span class="tag amber">Moderate</span></td>
+              <td><span class="tag amber">Variable</span></td>
+            </tr>
+            <tr>
+              <td><strong>Package Bundling</strong></td>
+              <td><span class="tag green">TI + Resort + Fuel</span></td>
+              <td><span class="tag green">Flight + hotel</span></td>
+              <td><span class="tag amber">Flight + hotel only</span></td>
+              <td><span class="tag amber">Hotel + activities</span></td>
+              <td><span class="tag red">Limited</span></td>
+            </tr>
+            <tr>
+              <td><strong>Price Competitiveness</strong></td>
+              <td><span class="tag amber">Own props best; others moderate</span></td>
+              <td><span class="tag amber">Best price guarantee</span></td>
+              <td><span class="tag green">Very competitive</span></td>
+              <td><span class="tag green">Deep flash discounts</span></td>
+              <td><span class="tag green">Often lowest price</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY TRENDS -->
+  <div class="section-gap">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Hotel &amp; Accommodation Key Trends</span>
+        <span class="card-badge gold">5 Strategic Shifts</span>
+      </div>
+      <div class="grid-2">
+        <div>
+          <div class="insight-chip">
+            <span class="insight-icon">🏨</span>
+            <span class="insight-text"><strong>Accommodation-first travellers:</strong> 27% now choose destination based on accommodation. RACV resorts should lead travel inspirational content, not just support booking.</span>
+          </div>
+          <div class="insight-chip">
+            <span class="insight-icon">💼</span>
+            <span class="insight-text"><strong>Bleisure (business + leisure):</strong> Extended post-conference stays growing. RACV Royal Pines QLD positioned well for conference + leisure combination bookings.</span>
+          </div>
+          <div class="insight-chip">
+            <span class="insight-icon">📅</span>
+            <span class="insight-text"><strong>Extended stays:</strong> Average stay length increasing 20% post-pandemic. Weekly rate packages for RACV resorts with member discounts could capture this trend.</span>
+          </div>
+        </div>
+        <div>
+          <div class="insight-chip">
+            <span class="insight-icon">🌿</span>
+            <span class="insight-text"><strong>Regional short breaks:</strong> Fuel cost concerns driving proximal travel. RACV resorts within 2 hours of Melbourne (Torquay, Healesville, Cape Schanck, Inverloch) perfectly positioned.</span>
+          </div>
+          <div class="insight-chip">
+            <span class="insight-icon">🧖</span>
+            <span class="insight-text"><strong>Wellness accommodation premium:</strong> +30% price premium accepted for wellness-positioned properties (Simon-Kucher). RACV One Spa at Healesville and Cape Schanck are strategic assets.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SWOT -->
+  <div class="section-gap">
+    <div class="card-header" style="margin-bottom:var(--space-3);">
+      <span class="card-title">RACV Hotel Positioning SWOT</span>
+      <span class="card-badge blue">2026</span>
+    </div>
+    <div class="grid-2">
+      <div class="card" style="border-top:3px solid var(--color-green);">
+        <div class="card-header"><span class="card-title">Strengths</span><span class="card-badge green">S</span></div>
+        <div class="insight-chip"><span class="insight-icon">✓</span><span class="insight-text"><strong>Own resort portfolio:</strong> 6 properties, no OTA commission, full brand control and highest margin</span></div>
+        <div class="insight-chip"><span class="insight-icon">✓</span><span class="insight-text"><strong>Member discount:</strong> 30% off creates genuine loyalty hook vs Booking.com Genius 10%</span></div>
+        <div class="insight-chip"><span class="insight-icon">✓</span><span class="insight-text"><strong>VIC dominance:</strong> Melbourne #1 interstate leisure destination &mdash; RACV resorts capture that demand</span></div>
+        <div class="insight-chip"><span class="insight-icon">✓</span><span class="insight-text"><strong>Wellness assets:</strong> One Spa at Healesville and Cape Schanck commands +30% premium positioning</span></div>
+      </div>
+      <div class="card" style="border-top:3px solid var(--color-red);">
+        <div class="card-header"><span class="card-title">Weaknesses</span><span class="card-badge red">W</span></div>
+        <div class="insight-chip"><span class="insight-icon">⚠</span><span class="insight-text"><strong>Limited inventory:</strong> Only 6 resorts &mdash; interstate and international hotel coverage is weak</span></div>
+        <div class="insight-chip"><span class="insight-icon">⚠</span><span class="insight-text"><strong>OTA dependency:</strong> Partner hotel rates often match or exceed OTA pricing, reducing member value</span></div>
+        <div class="insight-chip"><span class="insight-icon">⚠</span><span class="insight-text"><strong>Digital UX gap:</strong> RACV booking experience trails Booking.com and Luxury Escapes on UX quality</span></div>
+        <div class="insight-chip"><span class="insight-icon">⚠</span><span class="insight-text"><strong>Urban hotel gap:</strong> No RACV-owned Melbourne CBD hotel &mdash; limits pre/post travel package potential</span></div>
+      </div>
+      <div class="card" style="border-top:3px solid var(--color-primary);">
+        <div class="card-header"><span class="card-title">Opportunities</span><span class="card-badge blue">O</span></div>
+        <div class="insight-chip"><span class="insight-icon">▲</span><span class="insight-text"><strong>Package ecosystem:</strong> Resort + TI + Fuel + Attraction bundle = unmatched member value proposition</span></div>
+        <div class="insight-chip"><span class="insight-icon">▲</span><span class="insight-text"><strong>Wellness positioning:</strong> Lean into +30% wellness premium with targeted Healesville and Cape Schanck marketing</span></div>
+        <div class="insight-chip"><span class="insight-icon">▲</span><span class="insight-text"><strong>Extended stay packages:</strong> Weekly deals for remote workers &mdash; bleisure at Healesville or Torquay</span></div>
+        <div class="insight-chip"><span class="insight-icon">▲</span><span class="insight-text"><strong>Pre/post cruise:</strong> Cape Schanck and City Club as Melbourne pre-cruise accommodation for APT/Viking passengers</span></div>
+      </div>
+      <div class="card" style="border-top:3px solid var(--color-amber);">
+        <div class="card-header"><span class="card-title">Threats</span><span class="card-badge amber">T</span></div>
+        <div class="insight-chip"><span class="insight-icon">▼</span><span class="insight-text"><strong>Luxury Escapes flash sales:</strong> Deep discounts on premium properties undercut RACV member pricing perception</span></div>
+        <div class="insight-chip"><span class="insight-icon">▼</span><span class="insight-text"><strong>Airbnb regional competition:</strong> Unique regional stays on Airbnb compete with RACV resort mid-tier rooms</span></div>
+        <div class="insight-chip"><span class="insight-icon">▼</span><span class="insight-text"><strong>OTA dominance:</strong> Booking.com ad spend growing &mdash; RACV hotel SEO and brand visibility at risk</span></div>
+        <div class="insight-chip"><span class="insight-icon">▼</span><span class="insight-text"><strong>Wage cost inflation:</strong> Hospitality labour costs squeezing resort margins despite growing demand</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WATCHOUTS -->
+  <div class="section-gap">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Watchouts &amp; RACV Actions</span>
+        <span class="card-badge amber">4 Alerts</span>
+      </div>
+      <div class="tl-card section-gap">
+        <div class="tl-light red"></div>
+        <div class="tl-content">
+          <div class="tl-label">OTA Rate Parity Erosion</div>
+          <div class="tl-value">Booking.com matching or undercutting RACV partner hotel rates removes member value. <strong>Action:</strong> Audit all partner hotel rates. Negotiate exclusive member rates not available on OTAs.</div>
+        </div>
+      </div>
+      <div class="tl-card section-gap">
+        <div class="tl-light amber"></div>
+        <div class="tl-content">
+          <div class="tl-label">Luxury Escapes Flash Sale Competition</div>
+          <div class="tl-value">Flash sales on comparable properties create price comparison pressure. <strong>Action:</strong> Counter with value-add packages (breakfast + spa + fuel) rather than pure price competition.</div>
+        </div>
+      </div>
+      <div class="tl-card section-gap">
+        <div class="tl-light green"></div>
+        <div class="tl-content">
+          <div class="tl-label">Wellness Premium Opportunity</div>
+          <div class="tl-value">+30% wellness accommodation premium validated by Simon-Kucher. <strong>Action:</strong> Reposition Healesville and Cape Schanck as RACV Wellness Retreats with premium package pricing.</div>
+        </div>
+      </div>
+      <div class="tl-card">
+        <div class="tl-light amber"></div>
+        <div class="tl-content">
+          <div class="tl-label">No CBD Melbourne Property</div>
+          <div class="tl-value">RACV City Club is not a hotel &mdash; missing pre/post cruise Melbourne stay. <strong>Action:</strong> Negotiate preferred rate with one quality Melbourne CBD hotel for cruise + stay bundle.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     SECTION 4: HOTEL PACKAGES  (id="page-packages")
+     ============================================================ -->
+
+<section class="page" id="page-packages">
+
+  <!-- PAGE HEADER -->
+  <div class="page-header section-gap">
+    <div style="display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap;">
+      <div>
+        <h1 style="display:flex;align-items:center;gap:var(--space-3);">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-label="Packages icon">
+            <rect x="2" y="8" width="18" height="12" rx="1.5" stroke="var(--color-primary)" stroke-width="1.6"/>
+            <path d="M2 12h18" stroke="var(--color-primary)" stroke-width="1.4"/>
+            <path d="M8 8V5a3 3 0 0 1 6 0v3" stroke="var(--color-primary)" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          Hotel Packages &amp; Bundled Offers Intelligence
+        </h1>
+        <p>RACV bundled package strategy, concept packages, pricing framework and competitive positioning &mdash; April 2026</p>
+      </div>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:var(--space-2);">
+        <span class="tag primary">April 2026</span>
+        <span class="tag green">5 Package Concepts</span>
+        <span class="tag gold">Bundling Strategy</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="section-gap">
+    <div class="card-header" style="margin-bottom:var(--space-3);">
+      <span class="card-title">Bundled Package Market Indicators</span>
+      <span class="card-badge blue">Webjet / TTF / Simon-Kucher 2026</span>
+    </div>
+    <div class="grid-4">
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Travel Intent</span>
+          <span class="card-badge green">STRONG</span>
+        </div>
+        <div class="kpi-value num">45%</div>
+        <div class="kpi-label">Australians plan more travel in 2026</div>
+        <div class="kpi-delta up">▲ Avg 4 trips per traveller planned</div>
+        <div class="kpi-sub">High frequency = high package potential</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.webjet.com.au/" target="_blank" style="color:var(--color-primary);text-decoration:underline;">Webjet Travel Trends 2026</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Package Value Belief</span>
+          <span class="card-badge green">VALIDATED</span>
+        </div>
+        <div class="kpi-value num">53%</div>
+        <div class="kpi-label">Believe bundled packages offer better value</div>
+        <div class="kpi-delta up">▲ Cruise and package perception strongest</div>
+        <div class="kpi-sub">More than half prefer bundled over DIY</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://ttf.org.au/" target="_blank" style="color:var(--color-primary);text-decoration:underline;">TTF Australia 2026</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">RACV Bundle Ecosystem</span>
+          <span class="card-badge gold">UNIQUE</span>
+        </div>
+        <div class="kpi-value num">4+</div>
+        <div class="kpi-label">Components: Resort + TI + Fuel + Attraction</div>
+        <div class="kpi-delta up">▲ No competitor can match complete bundle</div>
+        <div class="kpi-sub">Own assets + services = unmatched stack</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.racv.com.au/" target="_blank" style="color:var(--color-primary);text-decoration:underline;">RACV Services Portfolio</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Domestic Short Break</span>
+          <span class="card-badge green">GROWING</span>
+        </div>
+        <div class="kpi-value num">↑ Fast</div>
+        <div class="kpi-label">Domestic short-break market growth</div>
+        <div class="kpi-delta up">▲ Fuel cost driving proximal travel</div>
+        <div class="kpi-sub">2-hr radius from Melbourne &mdash; ideal for RACV</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://boomtown.org.au/" target="_blank" style="color:var(--color-primary);text-decoration:underline;">Boomtown / Tourism AU 2026</a></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PACKAGE CONCEPT CARDS -->
+  <div class="section-gap">
+    <div class="card-header" style="margin-bottom:var(--space-3);">
+      <span class="card-title">RACV Package Concepts</span>
+      <span class="card-badge gold">5 Concepts</span>
+    </div>
+    <div class="grid-3">
+
+      <!-- Victorian Escape -->
+      <div class="card" style="border-top:4px solid var(--color-primary);">
+        <div class="card-header">
+          <span class="card-title">RACV Victorian Escape</span>
+          <span class="card-badge primary">Flagship</span>
+        </div>
+        <div style="font-size:var(--text-xs);font-weight:700;color:var(--color-text);margin-bottom:var(--space-2);">"Everything Victoria in One Package"</div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);margin-bottom:var(--space-3);">
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-primary-highlight);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-primary);">1</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">Resort Stay:</strong> Torquay, Healesville or Cape Schanck (2&ndash;3 nights)</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-primary-highlight);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-primary);">2</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">Attraction:</strong> Great Ocean Road experience OR Yarra Valley winery pass</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-primary-highlight);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-primary);">3</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">Member Fuel Saving:</strong> Included via RACV fuel discount card</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-primary-highlight);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-primary);">4</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">RACV Travel Insurance:</strong> Domestic policy included</span>
+          </div>
+        </div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-muted);">
+          <strong>Target:</strong> Families and couples within 2 hrs of Melbourne<br>
+          <strong>Unique edge:</strong> No OTA can bundle fuel savings + own resort + TI
+        </div>
+      </div>
+
+      <!-- Cruise & Stay -->
+      <div class="card" style="border-top:4px solid var(--color-gold);">
+        <div class="card-header">
+          <span class="card-title">RACV Cruise &amp; Stay</span>
+          <span class="card-badge gold">High Yield</span>
+        </div>
+        <div style="font-size:var(--text-xs);font-weight:700;color:var(--color-text);margin-bottom:var(--space-2);">"Before &amp; After Your Cruise"</div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);margin-bottom:var(--space-3);">
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-gold-highlight);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-gold);">1</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">Pre-cruise:</strong> Cape Schanck or RACV City Club (Melbourne) 1&ndash;2 nights</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-gold-highlight);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-gold);">2</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">Cruise:</strong> APT, Viking or NCL voyage (RACV booked)</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-gold-highlight);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-gold);">3</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">Post-cruise:</strong> Torquay resort (recovery/decompression stay)</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-gold-highlight);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-gold);">4</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">Airport parking:</strong> RACV negotiated parking included</span>
+          </div>
+        </div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-muted);">
+          <strong>Target:</strong> APT / Viking / NCL cruise passengers<br>
+          <strong>Unique edge:</strong> End-to-end door-to-port-to-resort experience
+        </div>
+      </div>
+
+      <!-- Wellness Retreat -->
+      <div class="card" style="border-top:4px solid var(--color-green);">
+        <div class="card-header">
+          <span class="card-title">RACV Wellness Retreat</span>
+          <span class="card-badge green">Premium</span>
+        </div>
+        <div style="font-size:var(--text-xs);font-weight:700;color:var(--color-text);margin-bottom:var(--space-2);">"Disconnect. Restore. Recharge."</div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);margin-bottom:var(--space-3);">
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-green-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-green);">1</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">Resort:</strong> Healesville or Cape Schanck (3 nights minimum)</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-green-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-green);">2</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">One Spa:</strong> 2&times; 60-min treatments (per person)</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-green-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-green);">3</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">Dining:</strong> Daily breakfast + 1&times; dinner included</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-green-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-green);">4</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">Nature:</strong> Guided forest walk OR Yarra Valley winery morning tour</span>
+          </div>
+        </div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-muted);">
+          <strong>Target:</strong> 35&ndash;55 wellness seekers (digital detox positioning)<br>
+          <strong>Pricing:</strong> +30% premium justified (Simon-Kucher 2026)
+        </div>
+      </div>
+
+      <!-- Family Adventure -->
+      <div class="card" style="border-top:4px solid var(--color-amber);">
+        <div class="card-header">
+          <span class="card-title">RACV Family Adventure</span>
+          <span class="card-badge amber">High Volume</span>
+        </div>
+        <div style="font-size:var(--text-xs);font-weight:700;color:var(--color-text);margin-bottom:var(--space-2);">"The Kids Will Love It. So Will You."</div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);margin-bottom:var(--space-3);">
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-amber-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-amber);">1</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">Resort:</strong> Cobram (Murray River) or Inverloch (Bass Coast) 3&ndash;4 nights</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-amber-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-amber);">2</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">Kids activities:</strong> On-resort junior activities + local adventure program</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-amber-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-amber);">3</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">Attraction passes:</strong> Dreamworld (QLD) OR Phillip Island Penguin Parade</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-amber-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-amber);">4</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">RACV TI:</strong> Family domestic travel insurance included</span>
+          </div>
+        </div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-muted);">
+          <strong>Target:</strong> Families with children, school holiday periods<br>
+          <strong>Volume:</strong> Highest bookings during Jul, Sep, Dec/Jan school holidays
+        </div>
+      </div>
+
+      <!-- Golf Getaway -->
+      <div class="card" style="border-top:4px solid var(--color-green);">
+        <div class="card-header">
+          <span class="card-title">RACV Golf Getaway</span>
+          <span class="card-badge green">High Margin</span>
+        </div>
+        <div style="font-size:var(--text-xs);font-weight:700;color:var(--color-text);margin-bottom:var(--space-2);">"Tee Off in Style."</div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);margin-bottom:var(--space-3);">
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-green-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-green);">1</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">Resort:</strong> Torquay, Cape Schanck or Healesville (2&ndash;3 nights)</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-green-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-green);">2</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">Golf:</strong> 18 holes on resort course (included per night)</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-green-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-green);">3</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">Dining:</strong> Post-round dinner package at resort restaurant</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--space-2);font-size:10px;">
+            <span style="width:18px;height:18px;background:var(--color-green-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;font-weight:700;color:var(--color-green);">4</span>
+            <span style="color:var(--color-text-muted);"><strong style="color:var(--color-text);">Corporate:</strong> Optional corporate group rate for 8+ players</span>
+          </div>
+        </div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-muted);">
+          <strong>Target:</strong> Golf enthusiasts, corporate groups<br>
+          <strong>Margin:</strong> Golf + accommodation + F&amp;B = highest per-head yield
+        </div>
+      </div>
+
+      <!-- Ecosystem Summary card -->
+      <div class="card" style="border-top:4px solid var(--color-primary);background:var(--color-primary-highlight);">
+        <div class="card-header">
+          <span class="card-title">The RACV Bundle Advantage</span>
+          <span class="card-badge blue">Unique</span>
+        </div>
+        <div style="font-size:var(--text-xs);font-weight:700;color:var(--color-text);margin-bottom:var(--space-3);">No competitor can replicate this stack:</div>
+        <div class="progress-row"><div class="progress-label">Own Resorts</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:100%;"></div></div><div class="progress-val num">6</div></div>
+        <div class="progress-row"><div class="progress-label">Travel Insurance</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:100%;"></div></div><div class="progress-val">Own</div></div>
+        <div class="progress-row"><div class="progress-label">Roadside Assist</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:100%;"></div></div><div class="progress-val">AU-wide</div></div>
+        <div class="progress-row"><div class="progress-label">Fuel Discounts</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:90%;"></div></div><div class="progress-val">Members</div></div>
+        <div class="progress-row"><div class="progress-label">Attraction Partners</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:80%;background:var(--color-green-dot);"></div></div><div class="progress-val">6 active</div></div>
+        <div class="progress-row"><div class="progress-label">Tour Partners</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:70%;background:var(--color-green-dot);"></div></div><div class="progress-val">4 partners</div></div>
+        <div class="progress-row" style="margin-bottom:0;"><div class="progress-label">Cruise Partners</div><div class="progress-bar-wrap"><div class="progress-bar" style="width:80%;background:var(--color-gold);"></div></div><div class="progress-val">5 partners</div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PRICING STRATEGY TABLE -->
+  <div class="section-gap">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Pricing Strategy Recommendations</span>
+        <span class="card-badge gold">5 Packages</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Package Name</th>
+              <th>Target Segment</th>
+              <th>Est. Price Range</th>
+              <th>Margin Opportunity</th>
+              <th>Competitive Advantage</th>
+              <th>Recommended Launch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Victorian Escape</strong></td>
+              <td>Families &amp; couples, 2-hr radius</td>
+              <td><span class="tag primary">$650 &ndash; $1,100 / couple</span></td>
+              <td><span class="tag green">High &mdash; own resort</span></td>
+              <td>Fuel + TI + Resort bundle unique to RACV</td>
+              <td><span class="tag green">Q2 2026 (now)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Cruise &amp; Stay</strong></td>
+              <td>APT / Viking / NCL cruise passengers</td>
+              <td><span class="tag gold">$1,800 &ndash; $3,200 / couple</span></td>
+              <td><span class="tag green">Very High &mdash; cruise commission + resort</span></td>
+              <td>Seamless door-to-port-to-resort solution</td>
+              <td><span class="tag primary">Q3 2026</span></td>
+            </tr>
+            <tr>
+              <td><strong>Wellness Retreat</strong></td>
+              <td>35&ndash;55 wellness seekers</td>
+              <td><span class="tag gold">$1,200 &ndash; $2,000 / couple</span></td>
+              <td><span class="tag green">High &mdash; +30% wellness premium</span></td>
+              <td>Integrated spa + nature + wine &mdash; no OTA equivalent</td>
+              <td><span class="tag primary">Q3 2026</span></td>
+            </tr>
+            <tr>
+              <td><strong>Family Adventure</strong></td>
+              <td>Families with children</td>
+              <td><span class="tag primary">$900 &ndash; $1,600 / family (4)</span></td>
+              <td><span class="tag amber">Medium &mdash; volume model</span></td>
+              <td>Kids free / attraction passes unique to RACV</td>
+              <td><span class="tag green">Q2 2026 (now)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Golf Getaway</strong></td>
+              <td>Golf enthusiasts &amp; corporates</td>
+              <td><span class="tag gold">$800 &ndash; $1,400 / person</span></td>
+              <td><span class="tag green">High &mdash; golf + F&amp;B + rooms</span></td>
+              <td>Own championship courses at Torquay &amp; Cape Schanck</td>
+              <td><span class="tag primary">Q3 2026</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPETITOR PACKAGE COMPARISON -->
+  <div class="section-gap">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Package Competitive Comparison</span>
+        <span class="card-badge blue">RACV vs Key Rivals</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>RACV Packages</th>
+              <th>Luxury Escapes Flash Sales</th>
+              <th>Booking.com Packages</th>
+              <th>Airbnb Experiences</th>
+              <th>RACV Verdict</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Price Point</strong></td>
+              <td><span class="tag amber">Mid-premium</span></td>
+              <td><span class="tag green">Deep discount (flash)</span></td>
+              <td><span class="tag green">Competitive</span></td>
+              <td><span class="tag amber">Varies widely</span></td>
+              <td style="font-size:10px;">Compete on value-add, not price. Bundle extras rather than discount.</td>
+            </tr>
+            <tr>
+              <td><strong>Own Assets</strong></td>
+              <td><span class="tag green">Yes &mdash; 6 resorts, TI, fuel</span></td>
+              <td><span class="tag red">No &mdash; third party only</span></td>
+              <td><span class="tag red">No &mdash; OTA only</span></td>
+              <td><span class="tag red">No &mdash; host dependent</span></td>
+              <td style="font-size:10px;"><strong>RACV wins.</strong> Only player with own physical resort assets.</td>
+            </tr>
+            <tr>
+              <td><strong>Trust / Brand</strong></td>
+              <td><span class="tag green">Very high (RACV, 1.9M members)</span></td>
+              <td><span class="tag amber">Moderate (flash brand)</span></td>
+              <td><span class="tag amber">Moderate (tech brand)</span></td>
+              <td><span class="tag amber">Variable (host quality)</span></td>
+              <td style="font-size:10px;"><strong>RACV wins.</strong> 100+ years of member trust irreplaceable.</td>
+            </tr>
+            <tr>
+              <td><strong>Bundle Depth</strong></td>
+              <td><span class="tag green">Resort + TI + Fuel + Attract.</span></td>
+              <td><span class="tag amber">Hotel + meal credit only</span></td>
+              <td><span class="tag amber">Flight + hotel only</span></td>
+              <td><span class="tag amber">Experience only</span></td>
+              <td style="font-size:10px;"><strong>RACV wins.</strong> Deepest bundle across most components.</td>
+            </tr>
+            <tr>
+              <td><strong>Personalisation</strong></td>
+              <td><span class="tag amber">Manual / agent-led</span></td>
+              <td><span class="tag amber">Fixed flash sale</span></td>
+              <td><span class="tag green">Dynamic &mdash; AI personalised</span></td>
+              <td><span class="tag green">Host personalised</span></td>
+              <td style="font-size:10px;">Opportunity: Invest in digital package builder for self-serve bundling.</td>
+            </tr>
+            <tr>
+              <td><strong>Exclusivity</strong></td>
+              <td><span class="tag green">Member-only deals</span></td>
+              <td><span class="tag red">Public &mdash; anyone</span></td>
+              <td><span class="tag red">Public &mdash; anyone</span></td>
+              <td><span class="tag red">Public &mdash; anyone</span></td>
+              <td style="font-size:10px;"><strong>RACV wins.</strong> Member exclusivity creates urgency and loyalty.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- WATCHOUTS -->
+  <div class="section-gap">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Watchouts &amp; RACV Actions</span>
+        <span class="card-badge amber">4 Alerts</span>
+      </div>
+      <div class="tl-card section-gap">
+        <div class="tl-light amber"></div>
+        <div class="tl-content">
+          <div class="tl-label">Digital Package Builder Gap</div>
+          <div class="tl-value">RACV lacks a self-serve digital package builder. Members currently require agent contact to bundle. <strong>Action:</strong> Prioritise digital package builder on RACV.com.au &mdash; modelled on Booking.com dynamic packaging.</div>
+        </div>
+      </div>
+      <div class="tl-card section-gap">
+        <div class="tl-light red"></div>
+        <div class="tl-content">
+          <div class="tl-label">Luxury Escapes Price Perception</div>
+          <div class="tl-value">Luxury Escapes flash sales on comparable properties create perception that RACV is more expensive. <strong>Action:</strong> Lead with total bundle value, not room rate comparison. Include TI + fuel savings in price messaging.</div>
+        </div>
+      </div>
+      <div class="tl-card section-gap">
+        <div class="tl-light amber"></div>
+        <div class="tl-content">
+          <div class="tl-label">Wellness Package Positioning</div>
+          <div class="tl-value">Wellness travel is +30% premium justified but RACV resorts not consistently positioned as wellness destinations. <strong>Action:</strong> Rebrand Healesville and Cape Schanck wellness packages. Train sales team on wellness selling.</div>
+        </div>
+      </div>
+      <div class="tl-card">
+        <div class="tl-light green"></div>
+        <div class="tl-content">
+          <div class="tl-label">Cruise + Stay Launch Opportunity</div>
+          <div class="tl-value">1 in 3 Australians planning to cruise in 2026. Pre/post cruise accommodation is an underdeveloped RACV product. <strong>Action:</strong> Launch Cruise &amp; Stay package Q3 2026, targeting APT &amp; Viking departures from Melbourne with Cape Schanck pre-cruise night.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
   </main>
 </div>
 
@@ -5703,6 +7445,10 @@ const pageTitles = {
   resorts: 'RACV Resorts Intelligence',
   conferences: 'Conference & Events',
   cruises: 'RACV Cruises Intelligence',
+  touring: 'Group Touring Intelligence',
+  attractions: 'Attractions & Experiences',
+  hotels: 'Hotel Partners Intelligence',
+  packages: 'Hotel Packages & Bundles',
   market: 'Market Intelligence',
   'ti-overview': 'Travel Insurance — Market Overview',
   'ti-digital': 'Travel Insurance — SEM & SEO',
