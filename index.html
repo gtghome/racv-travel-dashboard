@@ -66,6 +66,7 @@
     </div>
     <div class="lock-title">RACV Travel Intelligence</div>
     <div class="lock-sub">Enter your password to access the dashboard</div>
+    <div style="color:rgba(255,255,255,0.45);font-size:0.72rem;margin-bottom:12px;letter-spacing:0.02em">Microsoft Teams Gavin for new password</div>
     <input id="lock-input" class="lock-input" type="password" placeholder="Password" autocomplete="current-password" />
     <button class="lock-btn" onclick="checkPassword()">Access Dashboard</button>
     <div id="lock-error" class="lock-error"></div>
@@ -79,7 +80,7 @@
   const HASH = '7a9f3b2e1d4c6a8b0f5e2d7c4a1b9e3f6d2c8a5b1e7f4d9c3b6a0e2f8d5c7a1b';
   function djb2(s){let h=5381;for(let i=0;i<s.length;i++)h=((h<<5)+h)+s.charCodeAt(i);return(h>>>0).toString(16).padStart(8,'0');}
   // Actual check against password directly (obfuscated)
-  const P = atob('bWFzY2FyZW5oYXM=');
+  const P = atob('TWFzY2FyZW5oYXM=');
   function checkPassword(){
     const val = document.getElementById('lock-input').value;
     if(val === P){
