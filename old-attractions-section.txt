@@ -1,0 +1,346 @@
+<section class="page" id="page-attractions">
+
+  <!-- PAGE HEADER -->
+  <div class="page-header section-gap">
+    <div style="display:flex;align-items:center;gap:var(--space-3);flex-wrap:wrap;">
+      <div>
+        <h1 style="display:flex;align-items:center;gap:var(--space-3);">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-label="Attractions icon">
+            <polygon points="11,2 13.5,8 20,8.5 15,13 16.5,20 11,16.5 5.5,20 7,13 2,8.5 8.5,8" stroke="var(--color-primary)" stroke-width="1.6" stroke-linejoin="round" fill="none"/>
+          </svg>
+          Attractions &amp; Experiences Intelligence
+        </h1>
+        <p>RACV attractions and experience partners &mdash; promotions, trends, competitive landscape &mdash; April 2026</p>
+      </div>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:var(--space-2);">
+        <span class="tag primary">April 2026</span>
+        <span class="tag green">6 Partners</span>
+        <span class="tag gold">Experience Economy Boom</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="section-gap">
+    <div class="card-header" style="margin-bottom:var(--space-3);">
+      <span class="card-title">Experience Economy Indicators</span>
+      <span class="card-badge blue">Accor / IBISWorld / Globetrender 2026</span>
+    </div>
+    <div class="grid-4">
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Experience Priority</span>
+          <span class="card-badge green">VERY HIGH</span>
+        </div>
+        <div class="kpi-value num">89%</div>
+        <div class="kpi-label">Say live events make travel worthwhile</div>
+        <div class="kpi-delta up">▲ Experiences over possessions</div>
+        <div class="kpi-sub">Emotional ROI driving decisions</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.accor.com/" target="_blank" style="color:var(--color-primary);text-decoration:underline;">Accor / Globetrender 2026</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">AU Tourism Industry</span>
+          <span class="card-badge green">MASSIVE</span>
+        </div>
+        <div class="kpi-value num">$213.2B</div>
+        <div class="kpi-label">Australian tourism industry size 2026</div>
+        <div class="kpi-delta up">▲ Growing year-on-year</div>
+        <div class="kpi-sub">Experiences = fastest growing segment</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.ibisworld.com/au/" target="_blank" style="color:var(--color-primary);text-decoration:underline;">IBISWorld 2026</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">VIC Attractions Covered</span>
+          <span class="card-badge primary">KEY PARTNERS</span>
+        </div>
+        <div class="kpi-value num">6</div>
+        <div class="kpi-label">Active RACV attraction partners</div>
+        <div class="kpi-delta flat">— Dreamworld, Skydeck, Phillip Island,<br>Great Ocean Road, Yarra Valley, Hanrob</div>
+        <div class="kpi-sub">VIC + QLD coverage</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.racv.com.au/travel" target="_blank" style="color:var(--color-primary);text-decoration:underline;">RACV Travel 2026</a></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Member Savings</span>
+          <span class="card-badge gold">UP TO 25% OFF</span>
+        </div>
+        <div class="kpi-value num">25%</div>
+        <div class="kpi-label">Off selected attractions for members</div>
+        <div class="kpi-delta up">▲ Stronger than AA/NRMA offer</div>
+        <div class="kpi-sub">Stackable with VIC free public transport</div>
+        <hr class="divider">
+        <div style="font-size:10px;color:var(--color-text-faint);">Source: <a href="https://www.racv.com.au/travel/travel-offers" target="_blank" style="color:var(--color-primary);text-decoration:underline;">RACV Travel Offers 2026</a></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PARTNER TRAFFIC LIGHTS -->
+  <div class="section-gap">
+    <div class="card-header" style="margin-bottom:var(--space-3);">
+      <span class="card-title">Attractions Partner Assessment</span>
+      <span class="card-badge blue">6 Partners</span>
+    </div>
+
+    <div class="grid-3">
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;">Dreamworld</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">QLD family theme park</div>
+          </div>
+          <span class="tag green">Strong</span>
+        </div>
+        <div class="insight-chip" style="margin-bottom:var(--space-2);">
+          <span class="insight-icon">🎢</span>
+          <span class="insight-text">$116.10 2-day pass, QLD family pack. High family demand in school holidays.</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Deal Value</div><div class="tl-value">$116.10 2-day</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Demand</div><div class="tl-value">School holidays peak</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Member Value</div><div class="tl-value">Unique family offer</div></div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;">Melbourne Skydeck</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">CBD observation deck</div>
+          </div>
+          <span class="tag amber">Watch</span>
+        </div>
+        <div class="insight-chip" style="margin-bottom:var(--space-2);">
+          <span class="insight-icon">🏙️</span>
+          <span class="insight-text">Buy 1 Get 1 Mon&ndash;Fri offer. Weekday-only restriction limits overall uptake.</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Deal Value</div><div class="tl-value">BOGO weekdays</div></div></div>
+          <div class="tl-card"><div class="tl-light amber"></div><div class="tl-content"><div class="tl-label">Uptake Risk</div><div class="tl-value">Weekday-only limit</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Tourism Role</div><div class="tl-value">Melbourne icon</div></div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;">Phillip Island Nature Parks</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">Penguin Parade &amp; wildlife</div>
+          </div>
+          <span class="tag green">Strong</span>
+        </div>
+        <div class="insight-chip" style="margin-bottom:var(--space-2);">
+          <span class="insight-icon">🐧</span>
+          <span class="insight-text">Penguin Parade nightly event, wildlife attractions. Strong domestic and international visitor appeal year-round.</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Demand</div><div class="tl-value">Year-round strong</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Brand Fit</div><div class="tl-value">VIC icon partner</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Package Fit</div><div class="tl-value">Combines with Inverloch</div></div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;">Great Ocean Road Experiences</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">12 Apostles &bull; Otway Rainforest</div>
+          </div>
+          <span class="tag green">Strong</span>
+        </div>
+        <div class="insight-chip" style="margin-bottom:var(--space-2);">
+          <span class="insight-icon">🌊</span>
+          <span class="insight-text">12 Apostles iconic, Otway Rainforest treetop walk. Connects with Great Ocean Road accommodation partners Resort for package bundling.</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Demand</div><div class="tl-value">High &mdash; domestic + intl</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Package Fit</div><div class="tl-value">Links Torquay Resort</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Member Value</div><div class="tl-value">Exclusive GOR passes</div></div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;">Yarra Valley Wineries &amp; Dining</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">Connected to Yarra Valley wine region</div>
+          </div>
+          <span class="tag green">Strong</span>
+        </div>
+        <div class="insight-chip" style="margin-bottom:var(--space-2);">
+          <span class="insight-icon">🍷</span>
+          <span class="insight-text">Integrated with Yarra Valley accommodation partners Country Club &amp; Resort. Wine tourism + wellness positioning.</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Integration</div><div class="tl-value">Healesville Resort link</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Trend Fit</div><div class="tl-value">Wellness + wine boom</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Package Fit</div><div class="tl-value">Wellness Retreat bundle</div></div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div style="font-size:var(--text-xs);font-weight:700;">Hanrob Pet Hotel</div>
+            <div style="font-size:10px;color:var(--color-text-muted);">Pet boarding &mdash; travel enabler</div>
+          </div>
+          <span class="tag amber">Niche</span>
+        </div>
+        <div class="insight-chip" style="margin-bottom:var(--space-2);">
+          <span class="insight-icon">🐾</span>
+          <span class="insight-text">Pet boarding removes travel barrier for pet owners. Niche but high loyalty &mdash; ~40% of AU households have pets.</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Unique Value</div><div class="tl-value">Removes pet barrier</div></div></div>
+          <div class="tl-card"><div class="tl-light amber"></div><div class="tl-content"><div class="tl-label">Scale</div><div class="tl-value">Niche segment</div></div></div>
+          <div class="tl-card"><div class="tl-light green"></div><div class="tl-content"><div class="tl-label">Loyalty Driver</div><div class="tl-value">High repeat usage</div></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TRENDS -->
+  <div class="section-gap">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Trends Impacting Attractions</span>
+        <span class="card-badge gold">5 Key Shifts</span>
+      </div>
+      <div class="grid-2">
+        <div>
+          <div class="insight-chip">
+            <span class="insight-icon">🎭</span>
+            <span class="insight-text"><strong>Experiential travel boom:</strong> 89% of Australians say live events make travel worthwhile. Shift from sightseeing to doing &mdash; cooking classes, wildlife encounters, artisan workshops.</span>
+          </div>
+          <div class="insight-chip">
+            <span class="insight-icon">🎬</span>
+            <span class="insight-text"><strong>Set-jetting:</strong> TV/film locations driving attraction visits (Bridgerton UK, Shogun Japan). Align content with streaming trends for attractions near filming locations.</span>
+          </div>
+          <div class="insight-chip">
+            <span class="insight-icon">🧘</span>
+            <span class="insight-text"><strong>Wellness experiences:</strong> Spa, thermal, mindfulness and nature-based experiences commanding 30%+ premium (Simon-Kucher). Yarra Valley and Cape Schanck well-positioned.</span>
+          </div>
+        </div>
+        <div>
+          <div class="insight-chip">
+            <span class="insight-icon">🗺️</span>
+            <span class="insight-text"><strong>Regional dispersal:</strong> Travellers moving beyond CBD to regional VIC. Great Ocean Road, Yarra Valley and Phillip Island benefit. Boomtown data shows +$286 regional spend premium.</span>
+          </div>
+          <div class="insight-chip">
+            <span class="insight-icon">🚃</span>
+            <span class="insight-text"><strong>VIC free public transport April 2026:</strong> Melbourne CBD attraction accessibility improves. Melbourne Skydeck and CBD experiences gain footfall without the weekday restriction impact.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPETITIVE COMPARISON -->
+  <div class="section-gap">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Attraction Partner Competitive Comparison</span>
+        <span class="card-badge blue">RACV vs NRMA vs RACQ</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>RACV</th>
+              <th>NRMA</th>
+              <th>RACQ</th>
+              <th>RACV Advantage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Theme Parks</strong></td>
+              <td><span class="tag green">Dreamworld (QLD)</span></td>
+              <td><span class="tag amber">Luna Park Sydney</span></td>
+              <td><span class="tag green">Warner Bros. + Sea World</span></td>
+              <td style="font-size:10px;">Dreamworld 2-day pass value strongest. RACQ covers more QLD parks &mdash; monitor.</td>
+            </tr>
+            <tr>
+              <td><strong>Observation Decks</strong></td>
+              <td><span class="tag green">Melbourne Skydeck BOGO</span></td>
+              <td><span class="tag amber">Sydney Tower discount</span></td>
+              <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+              <td style="font-size:10px;">RACV BOGO offer stronger than NRMA 10% off. Extend to weekends.</td>
+            </tr>
+            <tr>
+              <td><strong>Wildlife / Nature</strong></td>
+              <td><span class="tag green">Phillip Island &bull; Great Ocean Road</span></td>
+              <td><span class="tag amber">Taronga Zoo discount</span></td>
+              <td><span class="tag amber">Lone Pine Koala</span></td>
+              <td style="font-size:10px;">RACV nature portfolio strongest in VIC. Unique iconic experiences.</td>
+            </tr>
+            <tr>
+              <td><strong>Wine &amp; Dining</strong></td>
+              <td><span class="tag green">Yarra Valley integrated</span></td>
+              <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+              <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+              <td style="font-size:10px;"><strong>Unique:</strong> No competitor offers integrated winery + resort experience.</td>
+            </tr>
+            <tr>
+              <td><strong>Pet Travel</strong></td>
+              <td><span class="tag green">Hanrob Pet Hotel</span></td>
+              <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+              <td><span style="color:var(--color-text-faint);">&mdash;</span></td>
+              <td style="font-size:10px;"><strong>Unique:</strong> Only motoring club with pet boarding partner. Loyalty differentiator.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- WATCHOUTS -->
+  <div class="section-gap">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Watchouts &amp; RACV Actions</span>
+        <span class="card-badge amber">4 Alerts</span>
+      </div>
+      <div class="tl-card section-gap">
+        <div class="tl-light amber"></div>
+        <div class="tl-content">
+          <div class="tl-label">Skydeck Weekday Restriction</div>
+          <div class="tl-value">BOGO weekday-only limits appeal for working-age members. <strong>Action:</strong> Negotiate weekend extension or add weekend 20% off alternative.</div>
+        </div>
+      </div>
+      <div class="tl-card section-gap">
+        <div class="tl-light red"></div>
+        <div class="tl-content">
+          <div class="tl-label">QLD Competition (RACQ vs RACV)</div>
+          <div class="tl-value">RACQ has Warner Bros. + Sea World + Movie World &mdash; broader QLD theme park coverage than RACV Dreamworld-only. <strong>Action:</strong> Expand QLD attraction portfolio or add Gold Coast theme park bundle.</div>
+        </div>
+      </div>
+      <div class="tl-card section-gap">
+        <div class="tl-light amber"></div>
+        <div class="tl-content">
+          <div class="tl-label">Overtourism at Peak Sites</div>
+          <div class="tl-value">12 Apostles and Penguin Parade face overcrowding. <strong>Action:</strong> Promote off-peak and shoulder-season visits. Develop timed RACV member access slots.</div>
+        </div>
+      </div>
+      <div class="tl-card">
+        <div class="tl-light green"></div>
+        <div class="tl-content">
+          <div class="tl-label">VIC Free Public Transport Opportunity</div>
+          <div class="tl-value">April 2026 Melbourne free PT improves CBD attraction accessibility. <strong>Action:</strong> Bundle Melbourne Skydeck + Federation Square + Queen Vic Market in a &ldquo;Melbourne Day Pass&rdquo; member offer.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
